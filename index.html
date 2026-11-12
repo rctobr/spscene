@@ -1,0 +1,2363 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>SP Scene · agenda LGBTQIA+ de São Paulo</title>
+<meta name="description" content="Agenda da noite LGBTQIA+ de São Paulo: festas, clubes, samba e cultura. Só eventos com data confirmada." />
+<meta name="theme-color" content="#0A0A0A" />
+<link rel="canonical" href="https://spscene.com.br/" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="SP Scene · agenda LGBTQIA+ de São Paulo" />
+<meta property="og:description" content="Agenda da noite LGBTQIA+ de São Paulo: festas, clubes, samba e cultura. Só eventos com data confirmada." />
+<meta property="og:url" content="https://spscene.com.br/" />
+<meta property="og:locale" content="pt_BR" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230A0A0A'/%3E%3Ctext x='50%25' y='58%25' text-anchor='middle' fill='%23FF2D87' font-family='Arial Black' font-weight='900' font-size='18'%3ESP%3C/text%3E%3C/svg%3E" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+/* ── styles/base.css ── */
+/* SP Scene — design tokens + phone-viewport frame + shared primitives.
+ * Risograph flyer language: offset pink/cyan/acid on dark.
+ */
+
+:root {
+  /* Palette — matches the design mockup's TWEAKS block */
+  --sp-pink: #FF2D87;
+  --sp-cyan: #00E0FF;
+  --sp-acid: #F5FF3C;
+  --sp-bg: #0A0A0A;
+  --sp-bg-soft: #141414;
+  --sp-bg-card: #18151F;
+  --sp-ink: #F2ECE0;
+  --sp-ink-dim: rgba(242, 236, 224, 0.6);
+  --sp-ink-mute: rgba(242, 236, 224, 0.35);
+  --sp-line: rgba(242, 236, 224, 0.12);
+  --sp-paper: #F0EEE9;
+
+  /* Typography */
+  --sp-font-display: "Archivo Narrow", "Oswald", Impact, sans-serif;
+  --sp-font-body: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", system-ui, sans-serif;
+  --sp-font-mono: "JetBrains Mono", "Fira Code", ui-monospace, monospace;
+}
+
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+
+body {
+  background: var(--sp-paper);
+  min-height: 100vh;
+  font-family: var(--sp-font-body);
+  color: var(--sp-ink);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ─── Phone viewport framing on desktop ──────────────────────── */
+#sp-root {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sp-phone {
+  width: 100%;
+  max-width: 420px;
+  height: min(100vh, 900px);
+  background: var(--sp-bg);
+  color: var(--sp-ink);
+  position: relative;
+  overflow: hidden;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+@media (min-width: 720px) {
+  body { padding: 24px; }
+  .sp-phone {
+    max-width: 402px;
+    height: 874px;
+    border-radius: 48px;
+    box-shadow:
+      0 40px 80px rgba(0, 0, 0, 0.18),
+      0 0 0 1px rgba(0, 0, 0, 0.12);
+  }
+  .sp-phone::before {
+    content: "";
+    position: absolute;
+    top: 11px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 126px;
+    height: 37px;
+    border-radius: 24px;
+    background: #000;
+    z-index: 80;
+    pointer-events: none;
+  }
+  .sp-phone::after {
+    content: "";
+    position: absolute;
+    bottom: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 139px;
+    height: 5px;
+    border-radius: 100px;
+    background: rgba(255, 255, 255, 0.7);
+    z-index: 80;
+    pointer-events: none;
+  }
+}
+
+/* ─── Grain overlay (risograph texture) ──────────────────────── */
+.sp-grain {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.08;
+  mix-blend-mode: overlay;
+  z-index: 70;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)' opacity='0.6'/></svg>");
+}
+
+/* ─── Type ──────────────────────────────────────────────────── */
+.sp-display {
+  font-family: var(--sp-font-display);
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  line-height: 0.95;
+}
+.sp-label {
+  font-family: var(--sp-font-display);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-weight: 600;
+  font-size: 10px;
+}
+.sp-mono {
+  font-family: var(--sp-font-mono);
+  letter-spacing: -0.01em;
+}
+.sp-body { font-family: var(--sp-font-body); }
+
+/* ─── Shared primitives: chips, priority badges, buttons ─────── */
+.sp-chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-family: var(--sp-font-display);
+  text-transform: uppercase;
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  font-weight: 700;
+  background: transparent;
+  border: 1px solid var(--sp-line);
+  color: var(--sp-ink);
+  cursor: pointer;
+  white-space: nowrap;
+  transition: transform 0.08s ease;
+}
+.sp-chip:hover { transform: translateY(-1px); }
+.sp-chip--on.sp-chip--pink { background: var(--sp-pink); color: #0A0A0A; border-color: var(--sp-pink); }
+.sp-chip--on.sp-chip--cyan { background: var(--sp-cyan); color: #0A0A0A; border-color: var(--sp-cyan); }
+.sp-chip--on.sp-chip--acid { background: var(--sp-acid); color: #0A0A0A; border-color: var(--sp-acid); }
+.sp-chip--on { background: var(--sp-ink); color: #0A0A0A; border-color: var(--sp-ink); }
+
+.sp-prio {
+  display: inline-block;
+  padding: 2px 6px;
+  font-family: var(--sp-font-display);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+.sp-prio-1 { background: var(--sp-acid); color: #0A0A0A; }
+.sp-prio-2 { background: transparent; color: var(--sp-cyan); border: 1px solid var(--sp-cyan); }
+.sp-prio-3 { background: transparent; color: var(--sp-ink-dim); border: 1px solid var(--sp-line); }
+
+.sp-btn {
+  display: flex; align-items: center; justify-content: center; gap: 12px;
+  width: 100%;
+  height: 52px;
+  border-radius: 999px;
+  border: 1px solid var(--sp-line);
+  background: var(--sp-bg-soft);
+  color: var(--sp-ink);
+  font-family: var(--sp-font-display);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.08s ease;
+}
+.sp-btn:active { transform: scale(0.98); }
+.sp-btn--primary {
+  background: var(--sp-ink);
+  color: #0A0A0A;
+  border-color: var(--sp-ink);
+}
+.sp-btn--pink {
+  background: var(--sp-pink);
+  color: #0A0A0A;
+  border-color: var(--sp-pink);
+}
+.sp-btn--ghost {
+  background: transparent;
+  color: var(--sp-ink);
+}
+
+/* ─── Phone body scroll ──────────────────────────────────────── */
+.sp-phone-body {
+  position: absolute;
+  inset: 0;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+.sp-phone-body::-webkit-scrollbar { display: none; }
+
+.sp-safe-top { padding-top: 54px; }
+.sp-safe-bot { padding-bottom: 40px; }
+
+/* Status bar stand-in */
+.sp-statusbar {
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 48px;
+  padding: 14px 28px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  font-family: var(--sp-font-display);
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--sp-ink);
+  z-index: 75;
+  pointer-events: none;
+}
+
+/* Offline banner */
+.sp-offline {
+  position: absolute;
+  top: 48px; left: 12px; right: 12px;
+  z-index: 60;
+  padding: 8px 12px;
+  background: var(--sp-acid);
+  color: #0A0A0A;
+  font-family: var(--sp-font-display);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 10px;
+  font-weight: 700;
+  text-align: center;
+  border-radius: 8px;
+}
+
+/* Empty state */
+.sp-empty {
+  padding: 40px 24px;
+  text-align: center;
+  color: var(--sp-ink-dim);
+  font-size: 14px;
+}
+
+/* Menu sheet (bottom sheet overlay) */
+.sp-sheet {
+  position: absolute;
+  inset: 0;
+  z-index: 90;
+  background: rgba(0,0,0,0.6);
+  display: flex; align-items: flex-end;
+  justify-content: center;
+  backdrop-filter: blur(4px);
+}
+.sp-sheet__panel {
+  width: 100%;
+  background: var(--sp-bg);
+  border-top-left-radius: 24px;
+  border-top-right-radius: 24px;
+  padding: 14px 16px 32px;
+  border-top: 1px solid var(--sp-line);
+}
+.sp-sheet__panel::before {
+  content: "";
+  display: block;
+  width: 48px; height: 4px;
+  background: var(--sp-ink-mute);
+  border-radius: 999px;
+  margin: 0 auto 12px;
+}
+.sp-sheet__item {
+  display: block; width: 100%;
+  text-align: left;
+  padding: 14px 12px;
+  background: transparent;
+  border: 0;
+  color: var(--sp-ink);
+  font-family: var(--sp-font-display);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 13px;
+  cursor: pointer;
+  font-weight: 600;
+  border-radius: 8px;
+}
+.sp-sheet__item:hover { background: var(--sp-bg-soft); }
+.sp-sheet__item--danger { color: var(--sp-pink); }
+
+/* Small screens — trim status chrome padding */
+@media (max-width: 480px) {
+  .sp-welcome { padding-top: 48px; }
+  .sp-profile-setup { padding-top: 56px; }
+}
+
+
+/* ── styles/feed.css ── */
+/* Feed screen: sticky topbar, view switcher, filter ribbon, day groups, event cards. */
+
+.sp-topbar {
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  padding: 56px 16px 8px;
+  background: linear-gradient(to bottom, rgba(10,10,10,1) 0%, rgba(10,10,10,0.92) 80%, rgba(10,10,10,0) 100%);
+}
+.sp-topbar__row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+.sp-logo {
+  font-family: var(--sp-font-display);
+  text-transform: uppercase;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  font-size: 22px;
+  color: var(--sp-ink);
+  line-height: 1;
+}
+.sp-logo em { font-style: normal; color: var(--sp-pink); }
+
+.sp-avatar {
+  width: 36px; height: 36px;
+  border-radius: 999px;
+  background: var(--sp-cyan);
+  color: #0A0A0A;
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--sp-font-display);
+  font-weight: 800;
+  text-transform: uppercase;
+  font-size: 13px;
+  cursor: pointer;
+  border: 2px solid var(--sp-ink);
+}
+
+/* View switcher: Today · Week · Map */
+.sp-switcher {
+  display: inline-flex;
+  border: 1px solid var(--sp-line);
+  border-radius: 999px;
+  padding: 3px;
+  gap: 2px;
+  background: var(--sp-bg-soft);
+}
+.sp-switcher button {
+  background: transparent;
+  border: 0;
+  color: var(--sp-ink-dim);
+  font-family: var(--sp-font-display);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 10px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  cursor: pointer;
+  font-weight: 700;
+}
+.sp-switcher button.is-on {
+  background: var(--sp-pink);
+  color: #0A0A0A;
+}
+
+/* Filter ribbon */
+.sp-ribbon {
+  position: sticky;
+  top: 100px;
+  z-index: 25;
+  padding: 6px 0 10px;
+  background: linear-gradient(to bottom, rgba(10,10,10,0.92) 0%, rgba(10,10,10,0.92) 70%, rgba(10,10,10,0) 100%);
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.sp-ribbon::-webkit-scrollbar { display: none; }
+.sp-ribbon__inner {
+  display: inline-flex;
+  gap: 6px;
+  padding: 0 16px;
+  min-width: 100%;
+}
+
+/* Day heading */
+.sp-day-head {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  padding: 16px 16px 8px;
+  border-top: 1px solid var(--sp-line);
+  margin-top: 4px;
+  flex-wrap: wrap;
+}
+.sp-day-head:first-of-type { border-top: 0; margin-top: 0; }
+.sp-day-head__num {
+  font-family: var(--sp-font-display);
+  font-size: 34px;
+  font-weight: 800;
+  line-height: 0.9;
+  color: var(--sp-ink);
+  text-transform: uppercase;
+}
+.sp-day-head__info {
+  display: flex;
+  flex-direction: column;
+}
+.sp-day-head__dow {
+  font-family: var(--sp-font-display);
+  text-transform: uppercase;
+  font-size: 13px;
+  letter-spacing: 0.12em;
+  color: var(--sp-ink-dim);
+}
+.sp-day-head__month {
+  font-family: var(--sp-font-display);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  color: var(--sp-ink-mute);
+  text-transform: uppercase;
+}
+.sp-day-head__badge {
+  margin-left: auto;
+  padding: 3px 8px;
+  font-family: var(--sp-font-display);
+  text-transform: uppercase;
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  font-weight: 700;
+}
+.sp-day-head__badge--today { background: var(--sp-acid); color: #0A0A0A; }
+.sp-day-head__badge--tomorrow { background: var(--sp-cyan); color: #0A0A0A; }
+
+/* Event card */
+.sp-events {
+  padding: 0 16px 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.sp-card {
+  background: var(--sp-bg-card);
+  border: 1px solid var(--sp-line);
+  border-radius: 14px;
+  overflow: hidden;
+  cursor: pointer;
+  position: relative;
+  transition: transform 0.1s ease;
+}
+.sp-card:active { transform: scale(0.99); }
+.sp-card__art {
+  height: 120px;
+  position: relative;
+  overflow: hidden;
+}
+.sp-card__art__title {
+  position: absolute;
+  inset: 0;
+  padding: 14px;
+  display: flex; align-items: flex-end;
+  font-family: var(--sp-font-display);
+  text-transform: uppercase;
+  font-weight: 800;
+  font-size: 28px;
+  line-height: 0.9;
+  color: #0A0A0A;
+  mix-blend-mode: normal;
+}
+.sp-card__art__tag {
+  position: absolute;
+  top: 10px; right: 10px;
+  display: flex; gap: 6px; align-items: center;
+}
+.sp-card__ongoing {
+  position: absolute;
+  top: 10px; left: 10px;
+  padding: 2px 8px;
+  background: var(--sp-pink);
+  color: #0A0A0A;
+  font-family: var(--sp-font-display);
+  text-transform: uppercase;
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  font-weight: 700;
+  display: flex; align-items: center; gap: 4px;
+}
+.sp-card__ongoing::before {
+  content: "";
+  width: 6px; height: 6px;
+  background: #0A0A0A;
+  border-radius: 999px;
+  animation: spPulse 1.2s infinite;
+}
+@keyframes spPulse { 0%,100%{opacity:1;} 50%{opacity:0.3;} }
+
+.sp-card__body { padding: 12px 14px 14px; }
+.sp-card__time {
+  font-family: var(--sp-font-display);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--sp-pink);
+  margin-bottom: 2px;
+}
+.sp-card__name {
+  font-family: var(--sp-font-display);
+  text-transform: uppercase;
+  font-weight: 800;
+  font-size: 20px;
+  line-height: 1;
+  margin: 0 0 4px;
+  color: var(--sp-ink);
+}
+.sp-card__venue {
+  font-size: 13px;
+  color: var(--sp-ink-dim);
+  margin-bottom: 6px;
+}
+.sp-card__lineup {
+  font-size: 12px;
+  color: var(--sp-ink-mute);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-bottom: 8px;
+}
+.sp-card__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+.sp-card__tags .sp-chip { cursor: default; font-size: 9px; padding: 3px 8px; }
+
+@media (max-width: 480px) {
+  .sp-topbar { padding-top: 48px; }
+  .sp-ribbon { top: 96px; }
+}
+
+
+/* ── styles/details.css ── */
+/* Event details screen (sp-details__*) — full-screen overlay above the feed. */
+
+.sp-details {
+  position: absolute; inset: 0;
+  z-index: 40;
+  background: var(--sp-bg);
+  display: flex; flex-direction: column;
+  overflow: hidden;
+}
+.sp-details__body {
+  flex: 1;
+  overflow-y: auto;
+  scrollbar-width: none;
+}
+.sp-details__body::-webkit-scrollbar { display: none; }
+.sp-details__art {
+  height: 280px;
+  position: relative;
+  overflow: hidden;
+}
+.sp-details__art__title {
+  position: absolute;
+  inset: 0;
+  padding: 20px;
+  display: flex; align-items: flex-end;
+  font-family: var(--sp-font-display);
+  text-transform: uppercase;
+  font-weight: 800;
+  font-size: 48px;
+  line-height: 0.9;
+  color: #0A0A0A;
+}
+.sp-details__close {
+  position: absolute;
+  top: 48px; left: 16px;
+  width: 40px; height: 40px;
+  border-radius: 999px;
+  background: rgba(10,10,10,0.7);
+  color: var(--sp-ink);
+  display: flex; align-items: center; justify-content: center;
+  border: 0; cursor: pointer;
+  z-index: 50;
+  backdrop-filter: blur(12px);
+}
+.sp-details__content { padding: 20px 20px 40px; }
+.sp-details__prio-row { display: flex; gap: 8px; align-items: center; margin-bottom: 10px; }
+.sp-details__name {
+  font-family: var(--sp-font-display);
+  text-transform: uppercase;
+  font-weight: 800;
+  font-size: 34px;
+  line-height: 0.95;
+  margin: 0 0 4px;
+}
+.sp-details__venue {
+  font-family: var(--sp-font-display);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--sp-cyan);
+  font-size: 13px;
+  margin-bottom: 14px;
+}
+.sp-details__meta {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+  padding: 12px;
+  background: var(--sp-bg-soft);
+  border-radius: 10px;
+  border: 1px solid var(--sp-line);
+}
+.sp-details__meta__item {
+  display: flex; flex-direction: column; gap: 2px;
+}
+.sp-details__meta__item .sp-label { color: var(--sp-ink-mute); }
+.sp-details__meta__item .sp-value {
+  font-size: 14px;
+  color: var(--sp-ink);
+  font-family: var(--sp-font-body);
+  font-weight: 500;
+}
+.sp-details__tags {
+  display: flex; flex-wrap: wrap; gap: 6px;
+  margin-bottom: 16px;
+}
+.sp-details__tags .sp-chip { cursor: default; }
+.sp-details__section { margin-bottom: 16px; }
+.sp-details__section h3 {
+  font-family: var(--sp-font-display);
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 11px;
+  color: var(--sp-acid);
+  margin: 0 0 6px;
+}
+.sp-details__section p { margin: 0; font-size: 14px; color: var(--sp-ink-dim); line-height: 1.5; }
+.sp-details__lineup-list {
+  list-style: none; padding: 0; margin: 0;
+  display: flex; flex-direction: column; gap: 4px;
+}
+.sp-details__lineup-list li {
+  font-family: var(--sp-font-display);
+  text-transform: uppercase;
+  font-size: 15px;
+  letter-spacing: 0.04em;
+  color: var(--sp-ink);
+  padding-left: 16px;
+  position: relative;
+}
+.sp-details__lineup-list li::before {
+  content: "";
+  position: absolute;
+  left: 0; top: 50%; transform: translateY(-50%);
+  width: 8px; height: 1px; background: var(--sp-pink);
+}
+.sp-details__address {
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--sp-ink);
+  margin-bottom: 10px;
+  word-wrap: break-word;
+  user-select: all;
+}
+.sp-details__address-actions {
+  display: flex; gap: 8px;
+  flex-wrap: wrap;
+}
+
+.sp-details__actions {
+  display: flex; gap: 10px;
+  padding: 14px 20px 28px;
+  background: var(--sp-bg);
+  border-top: 1px solid var(--sp-line);
+}
+
+
+/* ── styles/map.css ── */
+/* Map view wrapper + selected-pin card + Google InfoWindow styling. */
+
+.sp-mapwrap {
+  /* Sits directly under the MapScreen topbar (single row, no switcher). */
+  position: absolute;
+  top: 100px; left: 0; right: 0; bottom: 0;
+  background: var(--sp-bg);
+  display: flex; flex-direction: column;
+  z-index: 5;
+}
+.sp-mapwrap__map {
+  flex: 1;
+  position: relative;
+  background: #1e1e1e;
+}
+
+/* ─── Light Voyager tiles (no filter) for WCAG legibility ──────────
+   CARTO Voyager gives ~12:1 road / ~18:1 label contrast natively.
+   We don't invert or filter the tile pane — the map tab is light by design.
+   The rest of the app remains dark; this surface opts for readability. */
+
+/* Zoom controls — dark chip on light tiles, mirrors the app's dark UI. */
+.sp-mapwrap__map .leaflet-control-zoom a {
+  background: #0A0A0A;
+  color: #F2ECE0;
+  border: 1px solid #0A0A0A;
+  font-weight: 700;
+}
+.sp-mapwrap__map .leaflet-control-zoom a:hover,
+.sp-mapwrap__map .leaflet-control-zoom a:focus-visible {
+  background: var(--sp-pink);
+  color: #0A0A0A;
+  outline: 3px solid var(--sp-acid);
+  outline-offset: 2px;
+}
+
+/* Attribution — solid light bg with dark text for max legibility. */
+.sp-mapwrap__map .leaflet-control-attribution {
+  background: rgba(255, 255, 255, 0.92);
+  color: #0A0A0A;
+  font-size: 10px;
+}
+.sp-mapwrap__map .leaflet-control-attribution a {
+  color: #005BA1; /* ~7:1 on white */
+  font-weight: 600;
+}
+
+/* Subtle drop-shadow on every interactive marker so they "lift" off the tiles
+   even when the bloom from cataracts compresses pale-on-pale contrast. */
+.sp-mapwrap__map .leaflet-interactive {
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.35));
+}
+
+/* ─── Marker focus ring (WCAG 2.4.7) ───────────────────────────── */
+.sp-mapwrap__map .leaflet-interactive:focus,
+.sp-mapwrap__map .leaflet-interactive:focus-visible {
+  outline: 3px solid #0A0A0A;
+  outline-offset: 3px;
+  filter: drop-shadow(0 0 8px rgba(10, 10, 10, 0.9));
+}
+
+/* ─── Legend (color + size key, pinned top-right) ──────────────── */
+/* Solid black pill with high-contrast white text. Sized for low-vision
+   readability (≥14px body type on a dark, ~18:1 contrast chip). */
+.sp-map-legend {
+  position: absolute;
+  top: 12px; right: 12px;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  background: #0A0A0A;
+  border: 2px solid #FFFFFF;
+  border-radius: 999px;
+  font-family: var(--sp-font-display);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 14px;
+  font-weight: 700;
+  color: #FFFFFF;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.35);
+  line-height: 1;
+}
+.sp-map-legend__dot {
+  display: inline-block;
+  border-radius: 999px;
+  border: 2.5px solid #FFFFFF;
+  box-shadow: 0 0 0 1.5px #0A0A0A;
+  flex-shrink: 0;
+}
+.sp-map-legend__dot--p1 { width: 16px; height: 16px; background: #F5FF3C; }
+.sp-map-legend__dot--p2 { width: 14px; height: 14px; background: #00E0FF; }
+.sp-map-legend__dot--p3 { width: 12px; height: 12px; background: #FF2D87; }
+.sp-map-legend__label {
+  color: #FFFFFF;
+  font-size: 14px;
+  font-weight: 700;
+}
+.sp-map-legend__count {
+  margin-left: 6px;
+  padding-left: 12px;
+  border-left: 1.5px solid rgba(255, 255, 255, 0.5);
+  color: #FFFFFF;
+  font-size: 13px;
+  text-transform: none;
+  letter-spacing: 0.02em;
+  font-weight: 600;
+}
+.sp-mapwrap__pane {
+  position: absolute;
+  left: 8px; right: 8px; bottom: 8px;
+  max-height: 240px;
+  overflow-y: auto;
+  scrollbar-width: none;
+  /* Must sit ABOVE Leaflet's internal panes. Leaflet stacks its tile/marker/
+     popup panes at z-index 200–700; at the old z-index:10 the selected-event
+     card rendered *behind* the map, so clicking a pin gave focus feedback but
+     "nothing popped out" (reported bug). 1000 clears all Leaflet panes. */
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.sp-mapwrap__pane::-webkit-scrollbar { display: none; }
+.sp-map-nokey {
+  padding: 24px;
+  text-align: center;
+  color: var(--sp-ink-dim);
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+/* Google InfoWindow (reserved for future use) */
+.sp-mapinfo {
+  background: var(--sp-bg-card);
+  border: 1px solid var(--sp-line);
+  border-radius: 10px;
+  padding: 10px 12px;
+  min-width: 220px;
+  color: var(--sp-ink);
+}
+.sp-mapinfo__name { font-family: var(--sp-font-display); text-transform: uppercase; font-weight: 700; font-size: 14px; margin-bottom: 4px; }
+.sp-mapinfo__venue { font-size: 12px; color: var(--sp-ink-dim); margin-bottom: 4px; }
+.sp-mapinfo__time { font-family: var(--sp-font-display); letter-spacing: 0.12em; font-size: 10px; color: var(--sp-pink); text-transform: uppercase; margin-bottom: 8px; }
+.sp-mapinfo__cta {
+  background: var(--sp-pink); color: #0A0A0A; border: 0;
+  padding: 6px 10px; border-radius: 999px;
+  font-family: var(--sp-font-display); text-transform: uppercase;
+  letter-spacing: 0.12em; font-size: 10px; font-weight: 700; cursor: pointer;
+}
+
+
+/* ── styles/account.css ── */
+/* Account ("Minha conta") page. */
+
+.sp-account {
+  /* Was `position: absolute; inset: 0` when it was a modal overlay.
+     It's a bottom-nav tab now, so it just flows inside .sp-phone-body. */
+  min-height: 100%;
+  background: var(--sp-bg);
+  display: flex; flex-direction: column;
+  padding-bottom: 24px;
+}
+.sp-account__hero {
+  padding: 8px 24px 24px;
+  background: radial-gradient(ellipse at 50% 0%, rgba(0, 224, 255, 0.25), transparent 65%);
+}
+.sp-account__avatar {
+  width: 72px; height: 72px;
+  border-radius: 999px;
+  background: var(--sp-cyan);
+  color: #0A0A0A;
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--sp-font-display);
+  font-weight: 800;
+  text-transform: uppercase;
+  font-size: 28px;
+  border: 3px solid var(--sp-ink);
+  margin: 12px 0 16px;
+}
+.sp-account__name {
+  font-family: var(--sp-font-display);
+  text-transform: uppercase;
+  font-weight: 800;
+  font-size: 32px;
+  line-height: 1;
+  margin: 0 0 4px;
+}
+.sp-account__nick {
+  color: var(--sp-pink);
+  font-size: 14px;
+  font-family: var(--sp-font-display);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+.sp-account__section {
+  padding: 20px 24px;
+  border-top: 1px solid var(--sp-line);
+}
+.sp-account__section h3 {
+  font-family: var(--sp-font-display);
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 11px;
+  color: var(--sp-acid);
+  margin: 0 0 12px;
+}
+.sp-account__kv {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px dashed var(--sp-line);
+  font-size: 14px;
+}
+.sp-account__kv:last-child { border-bottom: 0; }
+.sp-account__kv label { color: var(--sp-ink-dim); }
+.sp-account__kv span { color: var(--sp-ink); font-family: var(--sp-font-mono); font-size: 13px; }
+
+.sp-account__danger {
+  padding: 20px 24px;
+  background: rgba(255, 45, 135, 0.06);
+  border-top: 1px solid rgba(255, 45, 135, 0.3);
+  border-bottom: 1px solid rgba(255, 45, 135, 0.3);
+  margin-top: 12px;
+}
+.sp-account__danger h3 { color: var(--sp-pink) !important; }
+
+/* Sobre (2026-11-07) */
+.sp-about__p {
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--sp-ink-dim, #bdb6aa);
+  margin: 0 0 12px;
+}
+
+
+/* ── styles/nav.css ── */
+/* Bottom tab bar + save buttons + small topbar additions. */
+
+/* ─── Bottom nav (fixed at bottom of phone frame) ──────────────────── */
+.sp-nav {
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  height: 72px;
+  padding-bottom: 16px; /* iOS home-indicator safe area */
+  z-index: 45;
+  display: flex;
+  background: rgba(10, 10, 10, 0.92);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border-top: 1px solid var(--sp-line);
+}
+.sp-nav__item {
+  flex: 1;
+  background: transparent;
+  border: 0;
+  color: var(--sp-ink-dim);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  padding: 8px 4px 0;
+  cursor: pointer;
+  font-family: var(--sp-font-display);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 9.5px;
+  font-weight: 700;
+  position: relative;
+  transition: color 0.15s ease, transform 0.08s ease;
+}
+.sp-nav__item:active { transform: scale(0.94); }
+.sp-nav__item.is-on { color: var(--sp-pink); }
+.sp-nav__item.is-on::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 28px; height: 2px;
+  background: var(--sp-pink);
+  border-radius: 2px;
+}
+.sp-nav__icon {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+}
+.sp-nav__badge {
+  position: absolute;
+  top: -4px; right: -8px;
+  min-width: 16px;
+  height: 16px;
+  padding: 0 4px;
+  border-radius: 8px;
+  background: var(--sp-pink);
+  color: #0A0A0A;
+  font-family: var(--sp-font-display);
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1.5px solid var(--sp-bg);
+  line-height: 1;
+}
+.sp-nav__label {
+  line-height: 1;
+}
+
+/* When tabs are visible, the scrolling body stops above the nav. */
+.sp-phone--tabbed .sp-phone-body {
+  bottom: 72px;
+}
+
+/* Add a small hello pill in the Feed topbar (replaces the old avatar menu). */
+.sp-hello {
+  font-family: var(--sp-font-display);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 10px;
+  color: var(--sp-ink-dim);
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+.sp-hello strong {
+  color: var(--sp-cyan);
+  font-weight: 700;
+}
+
+/* "Salvos" / "Mapa" / "Conta" label in the topbar of non-feed tabs */
+.sp-screen-tag {
+  font-family: var(--sp-font-display);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 10px;
+  color: var(--sp-acid);
+  padding: 4px 10px;
+  border: 1px solid var(--sp-acid);
+  border-radius: 999px;
+}
+
+/* Save heart button on event cards (top-right of art block) */
+.sp-save--card {
+  position: absolute;
+  bottom: 10px; right: 10px;
+  width: 32px; height: 32px;
+  border-radius: 999px;
+  background: rgba(10, 10, 10, 0.55);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 0;
+  color: var(--sp-ink);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.08s ease, color 0.15s ease;
+  padding: 0;
+  z-index: 2;
+}
+.sp-save--card:active { transform: scale(0.9); }
+.sp-save--card.is-on {
+  color: var(--sp-pink);
+  background: rgba(10, 10, 10, 0.75);
+}
+
+/* Save heart button on the event details screen (top-right corner) */
+.sp-details__save {
+  position: absolute;
+  top: 48px; right: 16px;
+  width: 40px; height: 40px;
+  border-radius: 999px;
+  background: rgba(10, 10, 10, 0.7);
+  color: var(--sp-ink);
+  display: flex; align-items: center; justify-content: center;
+  border: 0; cursor: pointer;
+  z-index: 50;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  transition: color 0.15s ease, transform 0.08s ease;
+}
+.sp-details__save:active { transform: scale(0.92); }
+.sp-details__save.is-on { color: var(--sp-pink); }
+
+/* Saved tab — richer empty state */
+.sp-empty--saved {
+  padding: 48px 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 12px;
+  color: var(--sp-ink-dim);
+}
+.sp-empty__glyph {
+  width: 64px; height: 64px;
+  border-radius: 999px;
+  background: rgba(255, 45, 135, 0.12);
+  color: var(--sp-pink);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(255, 45, 135, 0.3);
+}
+.sp-empty--saved h3 {
+  margin: 8px 0 0;
+  font-family: var(--sp-font-display);
+  text-transform: uppercase;
+  font-size: 20px;
+  letter-spacing: 0.04em;
+  color: var(--sp-ink);
+}
+.sp-empty--saved p {
+  font-size: 13px;
+  line-height: 1.55;
+  max-width: 260px;
+  margin: 0;
+}
+.sp-empty--saved p svg {
+  vertical-align: -2px;
+  color: var(--sp-pink);
+}
+
+/* Topbar variant for the Account tab — it scrolls inside sp-account, so
+   don't make it sticky; just use the same padding. */
+.sp-topbar--account {
+  position: relative;
+}
+
+</style>
+<script crossorigin src="https://unpkg.com/react@18.3.1/umd/react.production.min.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js"></script>
+</head>
+<body>
+<div id="sp-root"></div>
+<noscript><p style="color:#fff;padding:24px;font-family:sans-serif">O SP Scene precisa de JavaScript ligado.</p></noscript>
+<script>
+// ── config.js ──
+// SP Scene — runtime configuration
+// Paste your Google Maps JavaScript API key here to enable the interactive map view.
+// Leaflet + OpenStreetMap is used as a fallback when no key is provided,
+// so the map works immediately for the first-draft review.
+
+window.SP_CONFIG = {
+  googleMapsApiKey: "", // e.g. "AIzaSy..." — leave empty to use Leaflet fallback
+  apiBaseUrl: "", // future backend base URL — empty means use built-in mock API
+  appVersion: "0.1.0-draft",
+};
+
+
+// ── data/events.js ──
+// SP Scene — agenda de eventos (gerado por tools/write_events.py; não editar à mão)
+// Atualizado em 2026-11-11T21:12-03:00 (horário de São Paulo). Cada evento tem sourceUrl e note
+// dizendo onde a data foi confirmada. Coordenadas: OpenStreetMap/Nominatim.
+window.SP_DATA_UPDATED_AT = "2026-11-11T21:12-03:00";
+window.SP_EVENTS = [
+  {
+    "id": "evt-macbeth-drag-sesc-pompeia-1111",
+    "priority": 2,
+    "name": "Macbeth (versão drag) — Cia. Extemporânea",
+    "venue": "Sesc Pompeia",
+    "description": "Tragédia de Shakespeare encenada por um elenco de drag queens.",
+    "date": "2026-11-11",
+    "startTime": "20:00",
+    "endTime": "",
+    "tags": [
+      "Drag",
+      "Queer"
+    ],
+    "lineup": [
+      "Alexia Twister",
+      "Antonia Pethit",
+      "DaCota Monteiro",
+      "Ginger Moon",
+      "Lilith Prexeva",
+      "Maldita Hammer",
+      "Mercedez Vulcão",
+      "Thelores",
+      "Xaniqua Laquisha"
+    ],
+    "address": "Rua Clélia, 93 · Pompeia, São Paulo",
+    "latitude": -23.52581,
+    "longitude": -46.6835,
+    "ticketUrl": "",
+    "price": "R$ 60 (inteira) / R$ 30 (meia) / R$ 18 (credencial plena)",
+    "sourceUrl": "https://www.sescsp.org.br/wp-content/uploads/2026/10/V13_Em-Cartaz_2026_novembro_VF.pdf",
+    "note": "cultura. Data confirmada no guia Em Cartaz Sesc SP novembro/2026 (PDF oficial, lido em 07/11/2026 e relido em 11/11/2026): 'Até 15/11. Quartas a sábados, 20h. Exceto dia 4/11. Sextas, 16h e 20h. Domingos, 18h. A14'. Elenco e divisão dos preços vistos em baressp.com.br (não oficial). Duração: guia diz 120 min, BaresSP diz 105 min — endTime vazio. Venda em sescsp.org.br/bilheterias; página de ingresso específica não encontrada."
+  },
+  {
+    "id": "evt-boca-solta-onze-onze-1111",
+    "priority": 3,
+    "name": "Boca Solta: Stand-up com Tina & Audácia",
+    "venue": "Onze Onze House",
+    "description": "Noite de stand-up e arte drag com Tina e Audácia, na estreia da casa Onze Onze House na Bela Vista.",
+    "date": "2026-11-11",
+    "startTime": "20:00",
+    "endTime": "00:00",
+    "tags": [
+      "Drag"
+    ],
+    "lineup": [
+      "Tina",
+      "Audácia"
+    ],
+    "address": "Rua São Domingos, 54 · Bela Vista, São Paulo",
+    "latitude": -23.55276,
+    "longitude": -46.64405,
+    "ticketUrl": "https://www.sympla.com.br/evento/boca-solta-stand-up-com-tina-audacia-estreia-da-onze-onze-house/3641001",
+    "price": "",
+    "sourceUrl": "https://www.sympla.com.br/evento/boca-solta-stand-up-com-tina-audacia-estreia-da-onze-onze-house/3641001",
+    "note": "casa fixa (nova, estreia neste dia); data e horário vistos no Sympla em 11/11; é show de humor drag, não festa de pista; preço não aparece no texto da página. · posição no mapa aproximada"
+  },
+  {
+    "id": "evt-siri-candeia-1111",
+    "priority": 3,
+    "name": "Siri & Candeia · Forró das Minas",
+    "venue": "Siri & Candeia (Sirigoela)",
+    "description": "Samba, pagode e forró no Bixiga, na casa que se apresenta como “a casa com mais diversidade em SP”. Entrada gratuita.",
+    "date": "2026-11-11",
+    "startTime": "20:30",
+    "endTime": "",
+    "tags": [
+      "Queer"
+    ],
+    "lineup": [
+      "Forró das Minas (20h30)"
+    ],
+    "address": "Rua Treze de Maio, 570 · Bela Vista, São Paulo",
+    "latitude": -23.55822,
+    "longitude": -46.64663,
+    "ticketUrl": "",
+    "price": "Grátis",
+    "sourceUrl": "https://www.instagram.com/p/Dfmz0SrloHt/",
+    "note": "casa fixa; agenda semanal 11/11 a 15/11 vista no post de @sirigoelabixiga e @candeiabixiga em 11/11/2026 (lido no Instagram em 11/11, 21h)"
+  },
+  {
+    "id": "evt-macbeth-drag-sesc-pompeia-1112",
+    "priority": 2,
+    "name": "Macbeth (versão drag) — Cia. Extemporânea",
+    "venue": "Sesc Pompeia",
+    "description": "Tragédia de Shakespeare encenada por um elenco de drag queens.",
+    "date": "2026-11-12",
+    "startTime": "20:00",
+    "endTime": "",
+    "tags": [
+      "Drag",
+      "Queer"
+    ],
+    "lineup": [
+      "Alexia Twister",
+      "Antonia Pethit",
+      "DaCota Monteiro",
+      "Ginger Moon",
+      "Lilith Prexeva",
+      "Maldita Hammer",
+      "Mercedez Vulcão",
+      "Thelores",
+      "Xaniqua Laquisha"
+    ],
+    "address": "Rua Clélia, 93 · Pompeia, São Paulo",
+    "latitude": -23.52581,
+    "longitude": -46.6835,
+    "ticketUrl": "",
+    "price": "R$ 60 (inteira) / R$ 30 (meia) / R$ 18 (credencial plena)",
+    "sourceUrl": "https://www.sescsp.org.br/wp-content/uploads/2026/10/V13_Em-Cartaz_2026_novembro_VF.pdf",
+    "note": "cultura. Data confirmada no guia Em Cartaz Sesc SP novembro/2026 (PDF oficial, lido em 07/11/2026 e relido em 11/11/2026): 'Até 15/11. Quartas a sábados, 20h. Exceto dia 4/11. Sextas, 16h e 20h. Domingos, 18h. A14'. Elenco e divisão dos preços vistos em baressp.com.br (não oficial). Duração: guia diz 120 min, BaresSP diz 105 min — endTime vazio. Venda em sescsp.org.br/bilheterias; página de ingresso específica não encontrada."
+  },
+  {
+    "id": "evt-siri-candeia-1112",
+    "priority": 3,
+    "name": "Siri & Candeia · Especial Aldo Bueno",
+    "venue": "Siri & Candeia (Sirigoela)",
+    "description": "Samba, pagode e forró no Bixiga, na casa que se apresenta como “a casa com mais diversidade em SP”. Entrada gratuita.",
+    "date": "2026-11-12",
+    "startTime": "20:30",
+    "endTime": "",
+    "tags": [
+      "Queer"
+    ],
+    "lineup": [
+      "Especial Aldo Bueno + convidados (20h30)"
+    ],
+    "address": "Rua Treze de Maio, 570 · Bela Vista, São Paulo",
+    "latitude": -23.55822,
+    "longitude": -46.64663,
+    "ticketUrl": "",
+    "price": "Grátis",
+    "sourceUrl": "https://www.instagram.com/p/Dfmz0SrloHt/",
+    "note": "casa fixa; agenda semanal 11/11 a 15/11 vista no post de @sirigoelabixiga e @candeiabixiga em 11/11/2026 (lido no Instagram em 11/11, 21h)"
+  },
+  {
+    "id": "evt-peaches-zig-1113",
+    "priority": 1,
+    "name": "Peaches (ao vivo): No Lube So Rude Tour",
+    "venue": "ZIG Studio",
+    "description": "Show da cantora Peaches com a turnê No Lube So Rude, sobre identidade, sexualidade e autonomia.",
+    "date": "2026-11-13",
+    "startTime": "23:00",
+    "endTime": "06:00",
+    "tags": [
+      "Queer"
+    ],
+    "lineup": [
+      "Peaches"
+    ],
+    "address": "Avenida Pacaembu, 33 · Barra Funda, São Paulo",
+    "latitude": -23.53235,
+    "longitude": -46.6613,
+    "ticketUrl": "https://shotgun.live/pt-br/events/peaches-aovivo-no-lube-so-rude-tour-zig-studio-sao-paulo",
+    "price": "R$ 150",
+    "sourceUrl": "https://shotgun.live/pt-br/events/peaches-aovivo-no-lube-so-rude-tour-zig-studio-sao-paulo",
+    "note": "casa fixa (ZIG); data (sex 13/11/2026), horário 23h–06h e endereço reconfirmados na página do evento na Shotgun em 11/11; preço R$ 150 visto na página da ZIG na Shotgun em 11/11; a página do evento não mostra valores nem DJs de apoio; +18. · posição no mapa aproximada"
+  },
+  {
+    "id": "evt-top-20-clipes-queer-sesc-paulista-1113",
+    "priority": 2,
+    "name": "TOP 20 Clipes Queer, com Jup do Bairro",
+    "venue": "Sesc Avenida Paulista",
+    "description": "Jup do Bairro apresenta 20 videoclipes feitos e/ou estrelados por pessoas da comunidade queer.",
+    "date": "2026-11-13",
+    "startTime": "19:00",
+    "endTime": "",
+    "tags": [
+      "Queer",
+      "Pop"
+    ],
+    "lineup": [
+      "Jup do Bairro"
+    ],
+    "address": "Avenida Paulista, 119 · Bela Vista, São Paulo",
+    "latitude": -23.56675,
+    "longitude": -46.65,
+    "ticketUrl": "",
+    "price": "Grátis",
+    "sourceUrl": "https://www.sescsp.org.br/wp-content/uploads/2026/10/V13_Em-Cartaz_2026_novembro_VF.pdf",
+    "note": "cultura. Data confirmada no guia Em Cartaz Sesc SP novembro/2026 (PDF oficial, lido em 07/11/2026 e relido em 11/11/2026): 'Dia 13/11. Sexta, 19h. GRÁTIS.' · posição no mapa aproximada"
+  },
+  {
+    "id": "evt-mixbrasil-eu-vou-ter-saudades-de-voce-1113",
+    "priority": 2,
+    "name": "Festival MixBrasil: Eu Vou Ter Saudades de Você",
+    "venue": "CineSesc",
+    "description": "Filme de abertura do MixBrasil, de Daniel Ribeiro. Depois de sete anos juntos, Amanda e Caio vão morar juntos, e a chegada de João põe o casal à prova. Classificação 16 anos.",
+    "date": "2026-11-13",
+    "startTime": "19:30",
+    "endTime": "",
+    "tags": [
+      "Queer"
+    ],
+    "lineup": [],
+    "address": "Rua Augusta, 2075 · Cerqueira César, São Paulo",
+    "latitude": -23.56043,
+    "longitude": -46.66247,
+    "ticketUrl": "",
+    "price": "Grátis (ingresso retirado 1h antes)",
+    "sourceUrl": "https://2026.mixbrasil.org.br/competitiva-brasil-longas/eu-vou-ter-saudades-de-voce/",
+    "note": "cultura. Site oficial do 34º Festival MixBrasil (2026.mixbrasil.org.br, lido em 11/11/2026): página do filme e grade geral dizem '13 NOV (SEX) | 19h30 | CineSesc'. Duração 87 min. Gratuidade e retirada 1h antes conforme página de ingressos do festival. Outra sessão: 17/11, 19h30, IMS Paulista."
+  },
+  {
+    "id": "evt-macbeth-drag-sesc-pompeia-1113",
+    "priority": 2,
+    "name": "Macbeth (versão drag) — Cia. Extemporânea",
+    "venue": "Sesc Pompeia",
+    "description": "Tragédia de Shakespeare encenada por um elenco de drag queens.",
+    "date": "2026-11-13",
+    "startTime": "20:00",
+    "endTime": "",
+    "tags": [
+      "Drag",
+      "Queer"
+    ],
+    "lineup": [
+      "Alexia Twister",
+      "Antonia Pethit",
+      "DaCota Monteiro",
+      "Ginger Moon",
+      "Lilith Prexeva",
+      "Maldita Hammer",
+      "Mercedez Vulcão",
+      "Thelores",
+      "Xaniqua Laquisha"
+    ],
+    "address": "Rua Clélia, 93 · Pompeia, São Paulo",
+    "latitude": -23.52581,
+    "longitude": -46.6835,
+    "ticketUrl": "",
+    "price": "R$ 60 (inteira) / R$ 30 (meia) / R$ 18 (credencial plena)",
+    "sourceUrl": "https://www.sescsp.org.br/wp-content/uploads/2026/10/V13_Em-Cartaz_2026_novembro_VF.pdf",
+    "note": "cultura. Data confirmada no guia Em Cartaz Sesc SP novembro/2026 (PDF oficial, lido em 07/11/2026 e relido em 11/11/2026): 'Até 15/11. Quartas a sábados, 20h. Exceto dia 4/11. Sextas, 16h e 20h. Domingos, 18h. A14'. Sexta tem duas sessões: 16h e 20h (a das 20h com Libras, segundo o guia). Elenco e divisão dos preços vistos em baressp.com.br (não oficial). Duração: guia diz 120 min, BaresSP diz 105 min — endTime vazio. Venda em sescsp.org.br/bilheterias; página de ingresso específica não encontrada."
+  },
+  {
+    "id": "evt-teddney-britney-1113",
+    "priority": 2,
+    "name": "Teddiney — Especial Britney 25 Anos",
+    "venue": "Blue Space",
+    "description": "Festa da Teddy que celebra os 25 anos do álbum Britney, com dark room e entrada grátis para drags montadas.",
+    "date": "2026-11-13",
+    "startTime": "22:00",
+    "endTime": "06:00",
+    "tags": [
+      "Pop",
+      "Queer"
+    ],
+    "lineup": [],
+    "address": "Rua Brigadeiro Galvão, 723 · Barra Funda, São Paulo",
+    "latitude": -23.52987,
+    "longitude": -46.65831,
+    "ticketUrl": "https://shotgun.live/pt-br/events/teddney25anosbritney",
+    "price": "R$ 50",
+    "sourceUrl": "https://shotgun.live/pt-br/events/teddney25anosbritney",
+    "note": "itinerante (Teddy Club) no Blue Space; data sex 13/11/2026, 22h–06h, reconfirmada em 11/11 na página do evento na Shotgun e nas páginas do Teddy Club e do Blue Space; preço R$ 50 visto nessas duas páginas; a descrição ainda diz \"13/01\" (erro de digitação provável). Drags montadas entram free, há lista trans e dark room. Line-up não divulgado."
+  },
+  {
+    "id": "evt-tunnel-pop-vs-retro-1113",
+    "priority": 2,
+    "name": "Tunnel — Pop vs Retro",
+    "venue": "Balada Tunnel",
+    "description": "Sexta de pop e retrô na Tunnel, com shows de drag de Silvetty Montilla e convidadas.",
+    "date": "2026-11-13",
+    "startTime": "23:00",
+    "endTime": "05:00",
+    "tags": [
+      "Pop",
+      "Drag"
+    ],
+    "lineup": [
+      "Paulo Pringles",
+      "Meduzaa",
+      "Silvetty Montilla",
+      "Alexia Twister",
+      "Radha Vasconcelos"
+    ],
+    "address": "Rua dos Ingleses, 355 · Bela Vista, São Paulo",
+    "latitude": -23.56109,
+    "longitude": -46.6469,
+    "ticketUrl": "https://www.sympla.com.br/evento/13-11-sexta-feira-pop-vs-retro/3627278",
+    "price": "R$ 10–80",
+    "sourceUrl": "https://www.sympla.com.br/evento/13-11-sexta-feira-pop-vs-retro/3627278",
+    "note": "casa fixa; data, horário e line-up reconfirmados no Sympla em 11/11 (pista R$ 10–15; camarote open bar R$ 50–60 antecipado, R$ 80 na portaria; combos à parte)."
+  },
+  {
+    "id": "evt-zipper-by-bigger-1113",
+    "priority": 2,
+    "name": "Zipper by Bigger — O Vestiário",
+    "venue": "Hey Hey Club",
+    "description": "Festa temática de vestiário da Bigger, com go-gos, darkroom, playground e sling.",
+    "date": "2026-11-13",
+    "startTime": "23:00",
+    "endTime": "07:00",
+    "tags": [
+      "Fetish"
+    ],
+    "lineup": [
+      "Alle Reich",
+      "DGroove",
+      "Earl Oliveira",
+      "Gustavo Vianna",
+      "Leanh",
+      "Marcelo Duarte"
+    ],
+    "address": "Rua Marquês de Itu, 284 · Vila Buarque, São Paulo",
+    "latitude": -23.54376,
+    "longitude": -46.6471,
+    "ticketUrl": "https://www.sympla.com.br/evento/o-vestiario-zipper-by-bigger-sexta-13-novembro-23h/3602275",
+    "price": "",
+    "sourceUrl": "https://www.sympla.com.br/evento/o-vestiario-zipper-by-bigger-sexta-13-novembro-23h/3602275",
+    "note": "itinerante (Bigger Party); data, horário e DJs reconfirmados no Sympla em 11/11; ingressos só online e consumíveis; preço não aparece no texto da página. O guia gaytravel4u descreve a Bigger como festa só para homens, voltada a ursos e admiradores."
+  },
+  {
+    "id": "evt-siri-candeia-1113",
+    "priority": 3,
+    "name": "Siri & Candeia · Raquel Tobias & Trio de Prata",
+    "venue": "Siri & Candeia (Sirigoela)",
+    "description": "Samba, pagode e forró no Bixiga, na casa que se apresenta como “a casa com mais diversidade em SP”. Entrada gratuita.",
+    "date": "2026-11-13",
+    "startTime": "19:00",
+    "endTime": "",
+    "tags": [
+      "Queer"
+    ],
+    "lineup": [
+      "Raquel Tobias & Trio de Prata (19h)",
+      "Luana Gaudý, Leandro Costa e Banda Todo Batuque (22h30)"
+    ],
+    "address": "Rua Treze de Maio, 570 · Bela Vista, São Paulo",
+    "latitude": -23.55822,
+    "longitude": -46.64663,
+    "ticketUrl": "",
+    "price": "Grátis",
+    "sourceUrl": "https://www.instagram.com/p/Dfmz0SrloHt/",
+    "note": "casa fixa; agenda semanal 11/11 a 15/11 vista no post de @sirigoelabixiga e @candeiabixiga em 11/11/2026 (lido no Instagram em 11/11, 21h)"
+  },
+  {
+    "id": "evt-batekoo-festival-1114",
+    "priority": 1,
+    "name": "BATEKOO Festival 2026",
+    "venue": "Arena Canindé",
+    "description": "Festival de 12 horas, em dois palcos, feito por e para pessoas negras, periféricas e LGBTQIAPN+, com shows e performances.",
+    "date": "2026-11-14",
+    "startTime": "18:00",
+    "endTime": "06:00",
+    "tags": [
+      "Queer"
+    ],
+    "lineup": [
+      "Pixote",
+      "Sango",
+      "D'Leesa",
+      "Bia Soull",
+      "Vita",
+      "Yuri Redicopa",
+      "djmikeq",
+      "Clementaum",
+      "Majis",
+      "WuK Beats",
+      "Paulete Lindacelva",
+      "AKILA",
+      "DJ RD DA DZ7",
+      "iamlope$$",
+      "Jyoty",
+      "yure idd",
+      "Batekoo"
+    ],
+    "address": "Rua Comendador Nestor Pereira, 33 · Canindé, São Paulo",
+    "latitude": -23.52437,
+    "longitude": -46.61939,
+    "ticketUrl": "https://shotgun.live/pt-br/festivals/batekoo-festival-2026",
+    "price": "R$ 87,50",
+    "sourceUrl": "https://shotgun.live/pt-br/festivals/batekoo-festival-2026",
+    "note": "itinerante; data e horário (sáb 14/11, 18h–06h) reconfirmados em 11/11 na página do festival na Shotgun, que agora mostra o local: Arena Canindé, Rua Comendador Nestor Pereira. O número 33 vem do RA (https://ra.co/events/2583006), que chama o lugar de \"Village Canindé\". R$ 87,50 é o valor da página da BATEKOO na Shotgun (não diz se é o mais barato); +18. · posição no mapa aproximada"
+  },
+  {
+    "id": "evt-horse-meat-disco-1114",
+    "priority": 1,
+    "name": "Horse Meat Disco • São Paulo",
+    "venue": "Cine Jussara",
+    "description": "Primeira vinda a São Paulo da festa londrina de disco com raízes na cultura queer, numa noite de disco e house.",
+    "date": "2026-11-14",
+    "startTime": "20:00",
+    "endTime": "06:00",
+    "tags": [
+      "House",
+      "Queer"
+    ],
+    "lineup": [
+      "Horse Meat Disco",
+      "Garage Disco",
+      "Benjamin Ferreira",
+      "Pedro Gariani",
+      "Etcetera"
+    ],
+    "address": "Rua Dom José de Barros, 306 · República, São Paulo",
+    "latitude": -23.54338,
+    "longitude": -46.63949,
+    "ticketUrl": "https://r.shotgun.live/pt-br/events/horse-meat-disco-sp",
+    "price": "R$ 60",
+    "sourceUrl": "https://r.shotgun.live/pt-br/events/horse-meat-disco-sp",
+    "note": "itinerante (produtora House of Love); data e horário (sáb 14/11, 20h–06h) reconfirmados em 11/11 na Shotgun e no RA (https://ra.co/events/2549400). Endereço: a Shotgun diz nº 306 e o RA diz nº 288. Preço \"60\" visto no RA; a Shotgun continua sem mostrar valores."
+  },
+  {
+    "id": "evt-siri-candeia-1114",
+    "priority": 2,
+    "name": "Siri & Candeia · As Sambixas + Samba do Mundão",
+    "venue": "Siri & Candeia (Sirigoela)",
+    "description": "Samba, pagode e forró no Bixiga, na casa que se apresenta como “a casa com mais diversidade em SP”. Entrada gratuita.",
+    "date": "2026-11-14",
+    "startTime": "16:00",
+    "endTime": "",
+    "tags": [
+      "Queer"
+    ],
+    "lineup": [
+      "Trio da Lelê (16h)",
+      "As Sambixas (20h)",
+      "Samba do Mundão (meia-noite)"
+    ],
+    "address": "Rua Treze de Maio, 570 · Bela Vista, São Paulo",
+    "latitude": -23.55822,
+    "longitude": -46.64663,
+    "ticketUrl": "",
+    "price": "Grátis",
+    "sourceUrl": "https://www.instagram.com/p/Dfmz0SrloHt/",
+    "note": "casa fixa; agenda semanal 11/11 a 15/11 vista no post de @sirigoelabixiga e @candeiabixiga em 11/11/2026 (lido no Instagram em 11/11, 21h)"
+  },
+  {
+    "id": "evt-mixbrasil-ney-por-tras-das-mascaras-1114",
+    "priority": 2,
+    "name": "Festival MixBrasil: Patricio Bisso + Ney por Trás das Máscaras",
+    "venue": "Centro Cultural São Paulo – Sala Lima Barreto (Spcine)",
+    "description": "Curta sobre o artista transformista Patricio Bisso, seguido do documentário que acompanha Ney Matogrosso na preparação para um desfile de Carnaval. Classificação 14 anos.",
+    "date": "2026-11-14",
+    "startTime": "17:15",
+    "endTime": "",
+    "tags": [
+      "Queer",
+      "Drag"
+    ],
+    "lineup": [
+      "Ney Matogrosso"
+    ],
+    "address": "Rua Vergueiro, 1000 · Paraíso, São Paulo",
+    "latitude": -23.57064,
+    "longitude": -46.6402,
+    "ticketUrl": "",
+    "price": "Grátis (ingresso retirado 1h antes)",
+    "sourceUrl": "https://2026.mixbrasil.org.br/queer-doc/ney-por-tras-das-mascaras/",
+    "note": "cultura. Site oficial MixBrasil (lido em 11/11/2026): grade geral '17h15 | CINEMA | Patricio Bisso (9’) + Ney por Trás das Máscaras (91′) | 14 anos' em Spcine CCSP Lima Barreto, 14/11. Ney aparece no filme (não é show ao vivo). CCSP diz no próprio site que a entrada é grátis, com ingresso retirado 1h antes. Outra sessão: 22/11, 14h, MIS."
+  },
+  {
+    "id": "evt-macbeth-drag-sesc-pompeia-1114",
+    "priority": 2,
+    "name": "Macbeth (versão drag) — Cia. Extemporânea",
+    "venue": "Sesc Pompeia",
+    "description": "Tragédia de Shakespeare encenada por um elenco de drag queens.",
+    "date": "2026-11-14",
+    "startTime": "20:00",
+    "endTime": "",
+    "tags": [
+      "Drag",
+      "Queer"
+    ],
+    "lineup": [
+      "Alexia Twister",
+      "Antonia Pethit",
+      "DaCota Monteiro",
+      "Ginger Moon",
+      "Lilith Prexeva",
+      "Maldita Hammer",
+      "Mercedez Vulcão",
+      "Thelores",
+      "Xaniqua Laquisha"
+    ],
+    "address": "Rua Clélia, 93 · Pompeia, São Paulo",
+    "latitude": -23.52581,
+    "longitude": -46.6835,
+    "ticketUrl": "",
+    "price": "R$ 60 (inteira) / R$ 30 (meia) / R$ 18 (credencial plena)",
+    "sourceUrl": "https://www.sescsp.org.br/wp-content/uploads/2026/10/V13_Em-Cartaz_2026_novembro_VF.pdf",
+    "note": "cultura. Data confirmada no guia Em Cartaz Sesc SP novembro/2026 (PDF oficial, lido em 07/11/2026 e relido em 11/11/2026): 'Até 15/11. Quartas a sábados, 20h. Exceto dia 4/11. Sextas, 16h e 20h. Domingos, 18h. A14'. Elenco e divisão dos preços vistos em baressp.com.br (não oficial). Duração: guia diz 120 min, BaresSP diz 105 min — endTime vazio. Venda em sescsp.org.br/bilheterias; página de ingresso específica não encontrada."
+  },
+  {
+    "id": "evt-bigger-13-anos-1114",
+    "priority": 2,
+    "name": "Bigger 13 Anos — Supermarket",
+    "venue": "Kiki Klub",
+    "description": "Festa de 13 anos da Bigger, festa de ursos e admiradores, na véspera do feriado.",
+    "date": "2026-11-14",
+    "startTime": "23:00",
+    "endTime": "08:00",
+    "tags": [
+      "Queer"
+    ],
+    "lineup": [
+      "Jose Rendon",
+      "Earl Oliveira",
+      "Gustavo Vianna",
+      "Ponzo & Marcelo Almeida",
+      "VMC & Zambianco",
+      "Lysa Bombom"
+    ],
+    "address": "Rua Rego Freitas, 470 · Consolação, São Paulo",
+    "latitude": -23.54464,
+    "longitude": -46.6466,
+    "ticketUrl": "https://www.sympla.com.br/evento/bigger-13-anos-supermarket-sabado-14-novembro-vesp-feriado-23h-kiki-klub/3450790",
+    "price": "",
+    "sourceUrl": "https://www.sympla.com.br/evento/bigger-13-anos-supermarket-sabado-14-novembro-vesp-feriado-23h-kiki-klub/3450790",
+    "note": "itinerante (Bigger Party) na casa fixa Kiki Klub; data e horário reconfirmados no Sympla em 11/11; preço não aparece no texto da página; Lysa Bombom é a hostess. O público de ursos vem do guia gaytravel4u, não da página de ingressos. · posição no mapa aproximada"
+  },
+  {
+    "id": "evt-ursound-1114",
+    "priority": 2,
+    "name": "Ursound",
+    "venue": "Club Hotel Cambridge",
+    "description": "Festa de ursos, daddies, chubbies e admiradores, com duas pistas de pop, house e tribal.",
+    "date": "2026-11-14",
+    "startTime": "23:00",
+    "endTime": "06:00",
+    "tags": [
+      "Pop",
+      "House"
+    ],
+    "lineup": [
+      "Alle Reich",
+      "Nill Rogger",
+      "Marcos Freitas",
+      "Thiago Pereira",
+      "André Plácido",
+      "Arena",
+      "Rodrigo Borro",
+      "Rafa Viana",
+      "DJ Catatau",
+      "Daniel MS"
+    ],
+    "address": "Rua João Adolfo, 108 · Centro, São Paulo",
+    "latitude": -23.54862,
+    "longitude": -46.64053,
+    "ticketUrl": "https://www.sympla.com.br/evento/ursound-sabado-14-de-novembro-de-2026-a-partir-das-23h-no-club-hotel-cambridge/3646285",
+    "price": "",
+    "sourceUrl": "https://www.sympla.com.br/evento/ursound-sabado-14-de-novembro-de-2026-a-partir-das-23h-no-club-hotel-cambridge/3646285",
+    "note": "itinerante; data e horário reconfirmados no Sympla em 11/11; o line-up, antes \"em breve\", agora está na página (duas pistas). A página dá o endereço Rua João Adolfo, 126, com entrada pelo nº 108. Preço não aparece no texto da página."
+  },
+  {
+    "id": "evt-tunnel-haus-of-oliver-1114",
+    "priority": 2,
+    "name": "Tunnel — Haus Of Oliver (20 anos de carreira)",
+    "venue": "Balada Tunnel",
+    "description": "Noite especial pelos 20 anos de carreira de Haus of Oliver, com mais de 15 shows de drag.",
+    "date": "2026-11-14",
+    "startTime": "23:00",
+    "endTime": "05:00",
+    "tags": [
+      "Pop",
+      "Drag"
+    ],
+    "lineup": [
+      "Tico Malagueta",
+      "Rodrigo Valentin",
+      "Jura Ferreira",
+      "Valenttini",
+      "Aysllah Oliver",
+      "Deborah Killer",
+      "Corona Boogie Oogie",
+      "Waysla Blond",
+      "Agatha Cox",
+      "Leticia Drag",
+      "Stephanny Queen",
+      "Nathally Hills",
+      "Alana D'Lucca",
+      "Natasha Princess",
+      "Ashilley Prado",
+      "Hayra Top",
+      "Rafas Poul",
+      "Marvena Ubuntu"
+    ],
+    "address": "Rua dos Ingleses, 355 · Bela Vista, São Paulo",
+    "latitude": -23.56109,
+    "longitude": -46.6469,
+    "ticketUrl": "https://www.sympla.com.br/evento/14-11-sabado-haus-of-oliver/3627239",
+    "price": "R$ 20–90",
+    "sourceUrl": "https://www.sympla.com.br/evento/14-11-sabado-haus-of-oliver/3627239",
+    "note": "casa fixa; data, horário e line-up reconfirmados no Sympla em 11/11 (pista R$ 20; camarote open bar R$ 50–70 antecipado, R$ 90 na portaria; combos à parte)."
+  },
+  {
+    "id": "evt-minhoqueens-baronesa-1114",
+    "priority": 3,
+    "name": "Estreia! Minhoqueens no Terraço Baronesa",
+    "venue": "Baronesa Rooftop",
+    "description": "Tarde de festa do bloco LGBT Minhoqueens num terraço do centro, com especial \"Sunset 2000\" de pop e eletrohits.",
+    "date": "2026-11-14",
+    "startTime": "15:00",
+    "endTime": "22:00",
+    "tags": [
+      "Pop",
+      "Queer",
+      "Bloquinho"
+    ],
+    "lineup": [
+      "Paola Cadillac",
+      "DJ Luis Giusti",
+      "Kerodrama",
+      "Vinicius da Ilha"
+    ],
+    "address": "Rua Formosa, 51 · Centro Histórico, São Paulo",
+    "latitude": -23.54768,
+    "longitude": -46.63908,
+    "ticketUrl": "https://shotgun.live/pt-br/events/estreia-minhoqueens-no-terraco-baronesa-14-11",
+    "price": "R$ 30",
+    "sourceUrl": "https://shotgun.live/pt-br/events/estreia-minhoqueens-no-terraco-baronesa-14-11",
+    "note": "itinerante; data e horário vistos na página do evento na Shotgun em 07/11. NÃO reconfirmado em 11/11: o WebFetch não abriu a página e o curl é bloqueado pela Shotgun. Preço visto na página da Minhoqueens na Shotgun em 07/11. O rótulo de bloco LGBT vem de uma matéria da Band (fev/2026)."
+  },
+  {
+    "id": "evt-malice-1114",
+    "priority": 3,
+    "name": "Festa Malice — 2ª edição",
+    "venue": "Club Jerome",
+    "description": "Segunda edição de uma festa para mulheres, no estilo \"lesbian chic\", no fim de tarde de sábado.",
+    "date": "2026-11-14",
+    "startTime": "18:00",
+    "endTime": "23:59",
+    "tags": [
+      "Queer"
+    ],
+    "lineup": [],
+    "address": "Rua Mato Grosso, 398 · Higienópolis, São Paulo",
+    "latitude": -23.54934,
+    "longitude": -46.65686,
+    "ticketUrl": "https://www.sympla.com.br/evento/festa-malice-segunda-edicao/3621216",
+    "price": "",
+    "sourceUrl": "https://www.sympla.com.br/evento/festa-malice-segunda-edicao/3621216",
+    "note": "itinerante; data e horário vistos no Sympla em 11/11; a descrição só lista palavras (\"Mulheres\", \"Lesbian Chic\", \"Diversidade\"); preço não aparece no texto da página. · posição no mapa aproximada"
+  },
+  {
+    "id": "evt-zuno-deleite-se-1114",
+    "priority": 3,
+    "name": "Zuno: Deleite-se — Edição Especial Black",
+    "venue": "Zuno Bar",
+    "description": "Noite com seis performers num bar só para homens, com cabines, cinema, dark room e glory hole.",
+    "date": "2026-11-14",
+    "startTime": "22:00",
+    "endTime": "04:30",
+    "tags": [
+      "Fetish"
+    ],
+    "lineup": [
+      "Alê Monio",
+      "Dom Mineiro",
+      "Daylan",
+      "Junior Delão",
+      "Alê Antrato"
+    ],
+    "address": "Rua Doutor Olavo Egídio, 327 · Santana, São Paulo",
+    "latitude": -23.49983,
+    "longitude": -46.6225,
+    "ticketUrl": "https://www.sympla.com.br/evento/zuno-deleite-se-edicao-especial-black/3640055",
+    "price": "R$ 50–60",
+    "sourceUrl": "https://www.sympla.com.br/evento/zuno-deleite-se-edicao-especial-black/3640055",
+    "note": "casa fixa; data, horário e preço (R$ 50 antecipado, R$ 60 na porta) reconfirmados no Sympla em 11/11; só homens, +18."
+  },
+  {
+    "id": "evt-macbeth-drag-sesc-pompeia-1115",
+    "priority": 2,
+    "name": "Macbeth (versão drag) — Cia. Extemporânea",
+    "venue": "Sesc Pompeia",
+    "description": "Tragédia de Shakespeare encenada por um elenco de drag queens.",
+    "date": "2026-11-15",
+    "startTime": "18:00",
+    "endTime": "",
+    "tags": [
+      "Drag",
+      "Queer"
+    ],
+    "lineup": [
+      "Alexia Twister",
+      "Antonia Pethit",
+      "DaCota Monteiro",
+      "Ginger Moon",
+      "Lilith Prexeva",
+      "Maldita Hammer",
+      "Mercedez Vulcão",
+      "Thelores",
+      "Xaniqua Laquisha"
+    ],
+    "address": "Rua Clélia, 93 · Pompeia, São Paulo",
+    "latitude": -23.52581,
+    "longitude": -46.6835,
+    "ticketUrl": "",
+    "price": "R$ 60 (inteira) / R$ 30 (meia) / R$ 18 (credencial plena)",
+    "sourceUrl": "https://www.sescsp.org.br/wp-content/uploads/2026/10/V13_Em-Cartaz_2026_novembro_VF.pdf",
+    "note": "cultura. Data confirmada no guia Em Cartaz Sesc SP novembro/2026 (PDF oficial, lido em 07/11/2026 e relido em 11/11/2026): 'Até 15/11. Quartas a sábados, 20h. Exceto dia 4/11. Sextas, 16h e 20h. Domingos, 18h. A14'. Última sessão da temporada (guia: 'Até 15/11'). Elenco e divisão dos preços vistos em baressp.com.br (não oficial). Duração: guia diz 120 min, BaresSP diz 105 min — endTime vazio. Venda em sescsp.org.br/bilheterias; página de ingresso específica não encontrada."
+  },
+  {
+    "id": "evt-mixbrasil-alice-junior-ferias-de-verao-1115",
+    "priority": 2,
+    "name": "Festival MixBrasil: Alice Júnior Férias de Verão",
+    "venue": "Centro Cultural São Paulo – Sala Lima Barreto (Spcine)",
+    "description": "A influencer Alice Júnior é cancelada e vai para a Ilha do Mel, onde uma matriarca trans, rituais e segredos mudam suas férias. Classificação 16 anos.",
+    "date": "2026-11-15",
+    "startTime": "19:30",
+    "endTime": "",
+    "tags": [
+      "Queer",
+      "Pop"
+    ],
+    "lineup": [],
+    "address": "Rua Vergueiro, 1000 · Paraíso, São Paulo",
+    "latitude": -23.57064,
+    "longitude": -46.6402,
+    "ticketUrl": "",
+    "price": "Grátis (ingresso retirado 1h antes)",
+    "sourceUrl": "https://2026.mixbrasil.org.br/pop-mix/alice-junior-ferias-de-verao/",
+    "note": "cultura. Site oficial MixBrasil (lido em 11/11/2026): '15 NOV (DOM) | 19h30 | Spcine CCSP Lima Barreto'. Duração 120 min. Outras sessões: 13/11 19h no Cine na Praça (local sem endereço no site) e 22/11 19h45 no Spcine CCSP Paulo Emilio."
+  },
+  {
+    "id": "evt-dragzissima-1115",
+    "priority": 3,
+    "name": "Dragzíssima — edição #11",
+    "venue": "Sky Hall Terrace Bar",
+    "description": "Brunch com show de drag queens apresentado por Ikaro Kadoshi, com oito drags convidadas e DJ.",
+    "date": "2026-11-15",
+    "startTime": "11:00",
+    "endTime": "15:00",
+    "tags": [
+      "Drag",
+      "Pop"
+    ],
+    "lineup": [
+      "Ikaro Kadoshi",
+      "DJ Sasha Zimmer"
+    ],
+    "address": "Avenida Presidente Juscelino Kubitschek, 1327 · Vila Nova Conceição, São Paulo",
+    "latitude": -23.59094,
+    "longitude": -46.68195,
+    "ticketUrl": "https://www.sympla.com.br/evento/dragzissima-15-de-novembro-de-2026-edicao-11/3593940",
+    "price": "",
+    "sourceUrl": "https://www.sympla.com.br/evento/dragzissima-15-de-novembro-de-2026-edicao-11/3593940",
+    "note": "itinerante; data e horário vistos no Sympla em 11/11; shows a partir das 12h30; ingressos por mesa (setores VIP, A e B); preço não aparece no texto da página; classificação livre (menores só com responsável)."
+  },
+  {
+    "id": "evt-siri-candeia-1115",
+    "priority": 3,
+    "name": "Siri & Candeia · Pimenta de Boteco",
+    "venue": "Siri & Candeia (Sirigoela)",
+    "description": "Samba, pagode e forró no Bixiga, na casa que se apresenta como “a casa com mais diversidade em SP”. Entrada gratuita.",
+    "date": "2026-11-15",
+    "startTime": "16:00",
+    "endTime": "",
+    "tags": [
+      "Queer"
+    ],
+    "lineup": [
+      "Pimenta de Boteco (16h)",
+      "Malokeiros da Terceira Idade (20h)"
+    ],
+    "address": "Rua Treze de Maio, 570 · Bela Vista, São Paulo",
+    "latitude": -23.55822,
+    "longitude": -46.64663,
+    "ticketUrl": "",
+    "price": "Grátis",
+    "sourceUrl": "https://www.instagram.com/p/Dfmz0SrloHt/",
+    "note": "casa fixa; agenda semanal 11/11 a 15/11 vista no post de @sirigoelabixiga e @candeiabixiga em 11/11/2026 (lido no Instagram em 11/11, 21h)"
+  },
+  {
+    "id": "evt-mixbrasil-tchantchantchan-1116",
+    "priority": 2,
+    "name": "Festival MixBrasil: Tchantchantchan",
+    "venue": "Galeria Vermelho",
+    "description": "Noite especial do MixBrasil, em parte ao ar livre: Campeonato de Mico Queer, vídeos de Carlos Motta, prévia de O Onanista e o live PA eletrônico Disco Distopia.",
+    "date": "2026-11-16",
+    "startTime": "19:00",
+    "endTime": "",
+    "tags": [
+      "Queer",
+      "Experimental"
+    ],
+    "lineup": [
+      "Luca Lauri",
+      "Moritz Schoenerman",
+      "Dora Longo Bahia",
+      "Carlos Motta"
+    ],
+    "address": "Rua Minas Gerais, 350 · Higienópolis, São Paulo",
+    "latitude": -23.55529,
+    "longitude": -46.66475,
+    "ticketUrl": "",
+    "price": "Grátis (sem retirada de ingresso)",
+    "sourceUrl": "https://2026.mixbrasil.org.br/show-do-gongo/tchantchantchan/",
+    "note": "cultura. Site oficial MixBrasil (lido em 11/11/2026). HORÁRIO DIVERGE: a grade geral (2026.mixbrasil.org.br/programacao/) diz 19h00; a página do evento diz '16/NOV | às 20h00 | Galeria Vermelho'. Usei 19h da grade; confirmar. Entrada livre conforme página de ingressos do festival. · posição no mapa aproximada"
+  },
+  {
+    "id": "evt-mixbrasil-show-do-gongo-1117",
+    "priority": 2,
+    "name": "Festival MixBrasil: Show do Gongo",
+    "venue": "Centro Cultural São Paulo – Sala Adoniran Barbosa",
+    "description": "Tradição do MixBrasil desde 1999: vídeos curtos enfrentam a plateia e o gongo. Apresentação de Suzy Brasil, com júri comandado por Silvetty Montilla. Classificação 18 anos.",
+    "date": "2026-11-17",
+    "startTime": "20:00",
+    "endTime": "",
+    "tags": [
+      "Drag",
+      "Queer"
+    ],
+    "lineup": [
+      "Suzy Brasil",
+      "Silvetty Montilla"
+    ],
+    "address": "Rua Vergueiro, 1000 · Paraíso, São Paulo",
+    "latitude": -23.57064,
+    "longitude": -46.6402,
+    "ticketUrl": "",
+    "price": "R$ 20 (meia para todas as pessoas)",
+    "sourceUrl": "https://2026.mixbrasil.org.br/programacao/",
+    "note": "cultura. Data e hora iguais em todas as fontes (17/11, 20h). LOCAL DIVERGE: a grade geral do site oficial (lida em 11/11/2026) diz 'Spcine CCSP Adoniran Barbosa | 20h00 | GONGO | Show do Gongo (120′) | 18 anos', e a Rolling Stone Brasil (04/11/2026) também diz Sala Adoniran Barbosa do CCSP; já a página do evento (2026.mixbrasil.org.br/show-do-gongo/show-do-gongo/) diz 'Teatro Sérgio Cardoso'. Usei CCSP. A agenda do site do CCSP não lista o show. Preço: R$ 20 na página de ingressos do festival, que também cita o Teatro Sérgio Cardoso. Confirmar local antes de publicar."
+  },
+  {
+    "id": "evt-mixbrasil-premiacao-1118",
+    "priority": 2,
+    "name": "Festival MixBrasil: cerimônia de premiação + Patricio Bisso",
+    "venue": "MIS – Museu da Imagem e do Som",
+    "description": "Entrega dos prêmios do 34º MixBrasil, com exibição especial do curta sobre o artista transformista Patricio Bisso. Classificação 14 anos.",
+    "date": "2026-11-18",
+    "startTime": "19:00",
+    "endTime": "",
+    "tags": [
+      "Queer",
+      "Drag"
+    ],
+    "lineup": [],
+    "address": "Avenida Europa, 158 · Jardim Europa, São Paulo",
+    "latitude": -23.5726,
+    "longitude": -46.67618,
+    "ticketUrl": "",
+    "price": "Grátis (sem retirada de ingresso)",
+    "sourceUrl": "https://2026.mixbrasil.org.br/programacao/",
+    "note": "cultura. Site oficial MixBrasil, grade geral (lida em 11/11/2026): 18/11, Museu da Imagem e do Som, '19h00 | CINEMA | Exibição especial: Patricio Bisso (9′) + Cerimônia de Premiação | 14 anos'. Entrada livre no MIS conforme página de ingressos do festival. Endereço do MIS da lista de espaços do próprio site."
+  },
+  {
+    "id": "evt-tunnel-festa-brilho-1119",
+    "priority": 2,
+    "name": "Tunnel — Festa Brilho Diva Black 2000 (véspera de feriado)",
+    "venue": "Balada Tunnel",
+    "description": "Quinta de véspera de feriado na Tunnel, com hits de divas black dos anos 2000 e shows de drag.",
+    "date": "2026-11-19",
+    "startTime": "23:00",
+    "endTime": "05:00",
+    "tags": [
+      "Pop",
+      "Drag"
+    ],
+    "lineup": [
+      "Paulo Pringles",
+      "Rodrigo Scher",
+      "Sasha Zimmer",
+      "Silvetty Montilla",
+      "Danny Cowlt",
+      "Mahina Starligth",
+      "Ludmila Jackson"
+    ],
+    "address": "Rua dos Ingleses, 355 · Bela Vista, São Paulo",
+    "latitude": -23.56109,
+    "longitude": -46.6469,
+    "ticketUrl": "https://www.sympla.com.br/evento/19-11-quinta-vesp-feriado-festa-brilho/3651588",
+    "price": "R$ 10–80",
+    "sourceUrl": "https://www.sympla.com.br/evento/19-11-quinta-vesp-feriado-festa-brilho/3651588",
+    "note": "casa fixa; data, horário e preços vistos no Sympla em 11/11 (pista R$ 10–15; camarote open bar R$ 50–60 antecipado, R$ 80 na portaria; combos à parte)."
+  },
+  {
+    "id": "evt-jungle-drag-1119",
+    "priority": 2,
+    "name": "Jungle Drag 2026 — 3ª edição",
+    "venue": "Kiki Klub",
+    "description": "Noite de música eletrônica com DJs drag queens, DJs conhecidos montados de drag e performances.",
+    "date": "2026-11-19",
+    "startTime": "23:00",
+    "endTime": "09:00",
+    "tags": [
+      "Drag",
+      "Queer"
+    ],
+    "lineup": [],
+    "address": "Rua Rego Freitas, 470 · Consolação, São Paulo",
+    "latitude": -23.54464,
+    "longitude": -46.6466,
+    "ticketUrl": "https://www.sympla.com.br/evento/jungle-drag-2026/3629193",
+    "price": "",
+    "sourceUrl": "https://www.sympla.com.br/evento/jungle-drag-2026/3629193",
+    "note": "itinerante (Jungle Party) na casa fixa Kiki Klub; data e horário vistos no Sympla em 11/11; line-up \"em breve\"; aniversariantes de novembro entram VIP até 1h; preço não aparece no texto da página. · posição no mapa aproximada"
+  },
+  {
+    "id": "evt-zipper-by-bigger-1119",
+    "priority": 2,
+    "name": "Zipper by Bigger — véspera de feriado",
+    "venue": "Hey Hey Club",
+    "description": "Edição de véspera de feriado da Zipper, festa da Bigger para ursos e admiradores.",
+    "date": "2026-11-19",
+    "startTime": "23:00",
+    "endTime": "07:00",
+    "tags": [
+      "Queer"
+    ],
+    "lineup": [
+      "Earl Oliveira",
+      "Gustavo Vianna",
+      "Lukas Andrades",
+      "Marcio Tesouro",
+      "Paulo Sobral",
+      "VMC"
+    ],
+    "address": "Rua Marquês de Itu, 284 · Vila Buarque, São Paulo",
+    "latitude": -23.54376,
+    "longitude": -46.6471,
+    "ticketUrl": "https://www.sympla.com.br/evento/zipper-by-bigger-quinta-19-novembro-vespera-de-feriado-23h/3600142",
+    "price": "",
+    "sourceUrl": "https://www.sympla.com.br/evento/zipper-by-bigger-quinta-19-novembro-vespera-de-feriado-23h/3600142",
+    "note": "itinerante (Bigger Party); data e horário vistos no Sympla em 11/11; ingressos só online e consumíveis; preço não aparece no texto da página. O público de ursos vem do guia gaytravel4u, não da página."
+  },
+  {
+    "id": "evt-hyperponei-blue-1119",
+    "priority": 2,
+    "name": "Hyperpônei Blue — Véspera de Feriado",
+    "venue": "Casa da Luz - Espaço Cultural",
+    "description": "Festa sáfica de hyperpop da Pônei Rosa com a Blue, com estética teatral e digital.",
+    "date": "2026-11-19",
+    "startTime": "23:00",
+    "endTime": "06:00",
+    "tags": [
+      "Pop",
+      "Queer"
+    ],
+    "lineup": [
+      "Blue Blue",
+      "dupas☆★"
+    ],
+    "address": "Rua Mauá, 512 · Centro Histórico, São Paulo",
+    "latitude": -23.5356,
+    "longitude": -46.63502,
+    "ticketUrl": "https://shotgun.live/pt-br/events/hyperponei-blue",
+    "price": "R$ 20",
+    "sourceUrl": "https://shotgun.live/pt-br/events/hyperponei-blue",
+    "note": "itinerante (Pônei Rosa Club + BLUE BLUE, na Casa da Luz); data e horário vistos em 11/11 no topo da página do evento na Shotgun; a descrição diz \"16 de novembro\", conflito a confirmar; preço R$ 20 visto nas páginas da Pônei Rosa e da Casa da Luz na Shotgun; +18."
+  },
+  {
+    "id": "evt-bananal-1119",
+    "priority": 3,
+    "name": "Festa Bananal",
+    "venue": "Cine Hot",
+    "description": "Festa de pegação para homens de todos os estilos e idades, com funk, pop e hip hop e áreas de interação.",
+    "date": "2026-11-19",
+    "startTime": "23:00",
+    "endTime": "05:00",
+    "tags": [
+      "Pop",
+      "Queer"
+    ],
+    "lineup": [],
+    "address": "Avenida São João, 1081 · República, São Paulo",
+    "latitude": -23.54047,
+    "longitude": -46.64392,
+    "ticketUrl": "https://www.sympla.com.br/evento/festa-bananal/3647931",
+    "price": "R$ 30–70",
+    "sourceUrl": "https://www.sympla.com.br/evento/festa-bananal/3647931",
+    "note": "itinerante; data, horário e preços vistos no Sympla em 11/11 (lote promocional R$ 30, lote 1 R$ 40, entrada + consumação R$ 70); +18."
+  },
+  {
+    "id": "evt-cineclube-negrum3-mds-1120",
+    "priority": 2,
+    "name": "Cineclube MDS: NEGRUM3 + conversa com Diego Paulino",
+    "venue": "Museu da Diversidade Sexual",
+    "description": "Exibição do curta NEGRUM3, ensaio sobre negritude, viadagem e sonhos de jovens negros de São Paulo, seguida de conversa com o diretor. No feriado da Consciência Negra.",
+    "date": "2026-11-20",
+    "startTime": "15:00",
+    "endTime": "17:00",
+    "tags": [
+      "Queer"
+    ],
+    "lineup": [
+      "Diego Paulino"
+    ],
+    "address": "Rua do Arouche, 24 · República, São Paulo",
+    "latitude": -23.54304,
+    "longitude": -46.64393,
+    "ticketUrl": "https://www.sympla.com.br/evento/cineclube---negrum3--roda-de-conversa-com-diego-paulino/3641891",
+    "price": "Grátis",
+    "sourceUrl": "https://www.museudadiversidadesexual.org.br/programacao/cineclube-mds-negrum3",
+    "note": "cultura (Consciência Negra). Site oficial do MDS e Sympla (lidos em 11/11/2026): '20 de novembro de 2026, das 15h às 17h', atividade gratuita. O museu fica no mezanino da Estação República do Metrô, saída Rua do Arouche (endereço do site do MDS; o site do MixBrasil traz outro endereço, desatualizado)."
+  },
+  {
+    "id": "evt-mixbrasil-afrontosa-1120",
+    "priority": 2,
+    "name": "Festival MixBrasil: Afrontosa",
+    "venue": "MIS – Museu da Imagem e do Som",
+    "description": "Documentário sobre Suzy Santos, mulher trans, preta e periférica de Campinas que saiu das ruas, virou redutora de danos no SUS e entrou na política. Sessão no feriado da Consciência Negra. Classificação 14 anos.",
+    "date": "2026-11-20",
+    "startTime": "16:00",
+    "endTime": "",
+    "tags": [
+      "Queer"
+    ],
+    "lineup": [],
+    "address": "Avenida Europa, 158 · Jardim Europa, São Paulo",
+    "latitude": -23.5726,
+    "longitude": -46.67618,
+    "ticketUrl": "",
+    "price": "Grátis (sem retirada de ingresso)",
+    "sourceUrl": "https://2026.mixbrasil.org.br/queer-doc/afrontosa/",
+    "note": "cultura (Consciência Negra). Site oficial MixBrasil (lido em 11/11/2026): '20 NOV (SEX) | 16h00 | Museu da Imagem e do Som'; grade geral confirma. Duração 85-86 min. Outra sessão: 13/11, 19h30, Spcine CCSP Lima Barreto."
+  },
+  {
+    "id": "evt-last-night-ball-1120",
+    "priority": 2,
+    "name": "The Last Night Ball",
+    "venue": "Cineclube Cortina",
+    "description": "Ball da cultura ballroom com disputas em várias categorias, como runway e performance, em parceria com a Vogue For Life.",
+    "date": "2026-11-20",
+    "startTime": "22:00",
+    "endTime": "04:00",
+    "tags": [
+      "Queer"
+    ],
+    "lineup": [
+      "Muryllo Balenciaga",
+      "Vinii Revlon"
+    ],
+    "address": "Rua Araújo, 62 · República, São Paulo",
+    "latitude": -23.54444,
+    "longitude": -46.64451,
+    "ticketUrl": "https://www.sympla.com.br/evento/the-last-night-ball-20-11-cortina/3643138",
+    "price": "",
+    "sourceUrl": "https://www.sympla.com.br/evento/the-last-night-ball-20-11-cortina/3643138",
+    "note": "casa fixa (Cortina); data e horário vistos no Sympla em 11/11; a página apresenta a ballroom como cultura LGBTQIAPN+; preço não aparece no texto da página; +18."
+  },
+  {
+    "id": "evt-tunnel-noite-preta-1120",
+    "priority": 2,
+    "name": "Tunnel — Noite Preta",
+    "venue": "Balada Tunnel",
+    "description": "Sexta de feriado da Consciência Negra na Tunnel, com DJs e shows de drag.",
+    "date": "2026-11-20",
+    "startTime": "23:00",
+    "endTime": "05:00",
+    "tags": [
+      "Pop",
+      "Drag"
+    ],
+    "lineup": [
+      "Ale Vilela",
+      "Alcimar",
+      "Silvetty Montilla",
+      "Natasha Princess",
+      "Corona Boogie Oogie"
+    ],
+    "address": "Rua dos Ingleses, 355 · Bela Vista, São Paulo",
+    "latitude": -23.56109,
+    "longitude": -46.6469,
+    "ticketUrl": "https://www.sympla.com.br/evento/20-11-sexta-noite-preta/3651593",
+    "price": "R$ 10–80",
+    "sourceUrl": "https://www.sympla.com.br/evento/20-11-sexta-noite-preta/3651593",
+    "note": "casa fixa; data, horário e preços vistos no Sympla em 11/11 (pista R$ 10–15; camarote open bar R$ 50–60 antecipado, R$ 80 na portaria; combos à parte)."
+  },
+  {
+    "id": "evt-rolezinho-lgbtqia-mds-1121",
+    "priority": 2,
+    "name": "Rolezinho LGBTQIA+: Presenças LGBT+ em São Paulo, com Gretta Starr",
+    "venue": "Museu da Diversidade Sexual (ponto de partida)",
+    "description": "Caminhada pelo centro por lugares de encontro e paquera LGBT+ desde os anos 1930, com a artista travesti Gretta Starr e a arquivista Angel Natan, do Arquivo Transformista.",
+    "date": "2026-11-21",
+    "startTime": "15:00",
+    "endTime": "17:00",
+    "tags": [
+      "Queer"
+    ],
+    "lineup": [
+      "Gretta Starr",
+      "Angel Natan"
+    ],
+    "address": "Rua do Arouche, 24 · República, São Paulo",
+    "latitude": -23.54304,
+    "longitude": -46.64393,
+    "ticketUrl": "",
+    "price": "",
+    "sourceUrl": "https://www.museudadiversidadesexual.org.br/programacao/rolezinho-lgbtqia-presencas-lgbt-em-sao-paulo-da-decada-de-30-aos-anos-90",
+    "note": "cultura. Site oficial do MDS (lido em 11/11/2026): 'Dia 21 de novembro de 2026, das 15h às 17h', saída do MDS. Pede inscrição, mas o link do site leva a uma prévia do Sympla que dá 404 (11/11/2026), por isso ticketUrl vazio. Preço não informado na página (outras atividades do MDS são grátis)."
+  },
+  {
+    "id": "evt-mixbrasil-paixao-segundo-ghb-1121",
+    "priority": 2,
+    "name": "Festival MixBrasil: Pirexia + A Paixão Segundo G.H.B.",
+    "venue": "Cine Satyros Bijou",
+    "description": "Sessão dupla 18+: o curta Pirexia e o longa de Gustavo Vinagre e Viva Couto, uma odisseia gay de realismo mágico que começa num encontro casual e vira orgia.",
+    "date": "2026-11-21",
+    "startTime": "20:00",
+    "endTime": "",
+    "tags": [
+      "Queer",
+      "Experimental"
+    ],
+    "lineup": [],
+    "address": "Praça Franklin Roosevelt, 172 · Consolação, São Paulo",
+    "latitude": -23.54843,
+    "longitude": -46.64613,
+    "ticketUrl": "",
+    "price": "",
+    "sourceUrl": "https://2026.mixbrasil.org.br/reframe/a-paixao-segundo-g-h-b/",
+    "note": "cultura. Site oficial MixBrasil (lido em 11/11/2026): '21 NOV (SÁB) | 20h00 | Cine Satyros Bijou', classificação 18 anos; grade geral confirma (98 min a sessão). Preço vazio: a página de ingressos do festival não cita o Satyros Bijou; a imprensa (Rolling Stone Brasil, 04/11/2026) fala em R$ 20 lá. Endereço visto só em ma.to (não oficial)."
+  },
+  {
+    "id": "evt-tunnel-we-love-pop-1121",
+    "priority": 2,
+    "name": "Tunnel — We Love Pop",
+    "venue": "Balada Tunnel",
+    "description": "Noite de pop na Tunnel com DJs e shows de drag.",
+    "date": "2026-11-21",
+    "startTime": "23:00",
+    "endTime": "05:00",
+    "tags": [
+      "Pop",
+      "Drag"
+    ],
+    "lineup": [
+      "Guuto Ferreira",
+      "Guizo",
+      "Rafa Nonato",
+      "Valenttini",
+      "Ashilley Prado",
+      "Dmitry"
+    ],
+    "address": "Rua dos Ingleses, 355 · Bela Vista, São Paulo",
+    "latitude": -23.56109,
+    "longitude": -46.6469,
+    "ticketUrl": "https://www.sympla.com.br/evento/21-11-sabado-we-love-pop/3651603",
+    "price": "R$ 20–90",
+    "sourceUrl": "https://www.sympla.com.br/evento/21-11-sabado-we-love-pop/3651603",
+    "note": "casa fixa; data, horário e preços vistos no Sympla em 11/11 (pista R$ 20; camarote open bar R$ 50–70 antecipado, R$ 90 na portaria; combos à parte)."
+  },
+  {
+    "id": "evt-pre-parada-trans-1121",
+    "priority": 2,
+    "name": "Festa Pré Parada Trans & NB+",
+    "venue": "Casa da Luz - Espaço Cultural",
+    "description": "Festa feita por e para pessoas trans, que arrecada dinheiro para a Parada Trans & NB+ de 29/11 no Largo do Arouche.",
+    "date": "2026-11-21",
+    "startTime": "23:00",
+    "endTime": "05:00",
+    "tags": [
+      "Queer"
+    ],
+    "lineup": [
+      "dupas☆★",
+      "Maia Caos",
+      "CANOAH"
+    ],
+    "address": "Rua Mauá, 512 · Centro Histórico, São Paulo",
+    "latitude": -23.5356,
+    "longitude": -46.63502,
+    "ticketUrl": "https://shotgun.live/fr/events/festa-pre-parada-trans-nb",
+    "price": "R$ 15",
+    "sourceUrl": "https://shotgun.live/fr/events/festa-pre-parada-trans-nb",
+    "note": "itinerante (Festa Egrégora na Casa da Luz); data e horário vistos em 11/11 na página do evento na Shotgun; preço R$ 15 visto na página da Casa da Luz na Shotgun. A página diz que a festa aceita pessoas cis."
+  },
+  {
+    "id": "evt-pink-flamingo-miss-simpatia-1121",
+    "priority": 3,
+    "name": "Pink Flamingo — Miss Simpatia 2026 com LaLa Ri",
+    "venue": "Pink Flamingo São Paulo",
+    "description": "Noite do concurso Miss Simpatia 2026 com a drag LaLa Ri, de All Stars Drag Race.",
+    "date": "2026-11-21",
+    "startTime": "22:00",
+    "endTime": "05:00",
+    "tags": [
+      "Drag"
+    ],
+    "lineup": [
+      "LaLa Ri"
+    ],
+    "address": "Avenida Brigadeiro Faria Lima, 2776, São Paulo",
+    "latitude": -23.58092,
+    "longitude": -46.68513,
+    "ticketUrl": "https://www.sympla.com.br/evento/pink-flamingo-sao-paulo-miss-simpatia-2026-com-lala-ri-all-stars-drag-race-sabado-21-11/3620637",
+    "price": "",
+    "sourceUrl": "https://www.sympla.com.br/evento/pink-flamingo-sao-paulo-miss-simpatia-2026-com-lala-ri-all-stars-drag-race-sabado-21-11/3620637",
+    "note": "casa fixa; data e horário vistos no Sympla em 11/11; a página não tem descrição, então a descrição sai só do título; bairro e preço não aparecem."
+  }
+];
+
+
+// ── data/tags.js ──
+// Tag taxonomy (matches PRD). Order = display order in the filter ribbon.
+window.SP_TAGS = ["Techno", "House", "Drag", "Queer", "Fetish", "Pop", "Experimental", "Bloquinho"];
+
+</script>
+<script>
+const{useState,useEffect,useMemo,useCallback,useRef}=React,CACHE_KEY="sp_scene_cache_v1",USER_KEY="sp_scene_user_v1",SAVED_KEY="sp_scene_saved_v1";function sleep(e){return new Promise(a=>setTimeout(a,e))}function nowISO(){return new Date().toISOString()}function sourceHost(e){try{return new URL(e).hostname.replace(/^www\./,"")}catch(a){return e}}function formatUpdatedAt(e){const a=new Date(e);if(isNaN(a))return"";const t=["dom","seg","ter","qua","qui","sex","sáb"][a.getDay()],s=String(a.getDate()).padStart(2,"0"),n=String(a.getMonth()+1).padStart(2,"0");return`${t} ${s}/${n}`}function getSavedIds(){try{return JSON.parse(localStorage.getItem(SAVED_KEY)||"[]")}catch(e){return[]}}function setSavedIds(e){localStorage.setItem(SAVED_KEY,JSON.stringify(e)),window.dispatchEvent(new CustomEvent("sp:saved-changed",{detail:e}))}function isSaved(e){return getSavedIds().includes(e)}function toggleSaved(e){const a=getSavedIds(),t=a.indexOf(e);return t>=0?a.splice(t,1):a.push(e),setSavedIds(a),a}function useSavedIds(){const[e,a]=useState(()=>getSavedIds());return useEffect(()=>{const t=()=>a(getSavedIds());return window.addEventListener("sp:saved-changed",t),window.addEventListener("storage",t),()=>{window.removeEventListener("sp:saved-changed",t),window.removeEventListener("storage",t)}},[]),e}const ApiClient={async listEvents({from:e,to:a,tags:t=[],simulateFailure:s=!1}={}){var i;if(s)throw new Error("network");if((i=window.SP_CONFIG)!=null&&i.apiBaseUrl){const o=new URL("/events",window.SP_CONFIG.apiBaseUrl);o.searchParams.set("from",e),o.searchParams.set("to",a),t.length&&o.searchParams.set("tags",t.join(","));const d=await fetch(o.toString(),{headers:{Accept:"application/json"}});if(!d.ok)throw new Error(`api ${d.status}`);return d.json()}await sleep(120);const n=(window.SP_EVENTS||[]).filter(o=>!(e&&o.date<e||a&&o.date>a||t.length&&!t.some(d=>{var v;return(v=o.tags)==null?void 0:v.includes(d)})));return{events:n,page:1,pageSize:n.length,total:n.length,rateLimit:{remaining:100,resetAt:nowISO()}}},async getEvent(e){var t;if((t=window.SP_CONFIG)!=null&&t.apiBaseUrl){const s=await fetch(`${window.SP_CONFIG.apiBaseUrl}/events/${encodeURIComponent(e)}`);if(!s.ok)throw new Error(`api ${s.status}`);return s.json()}await sleep(80);const a=(window.SP_EVENTS||[]).find(s=>s.id===e);if(!a)throw new Error("not found");return{event:a}}},WEEKDAYS=["Dom","Seg","Ter","Qua","Qui","Sex","Sáb"],MONTHS=["Jan","Fev","Mar","Abr","Mai","Jun","Jul","Ago","Set","Out","Nov","Dez"];function toDate(e){const[a,t,s]=e.split("-").map(Number);return new Date(a,t-1,s)}function toISO(e){const a=e.getFullYear(),t=String(e.getMonth()+1).padStart(2,"0"),s=String(e.getDate()).padStart(2,"0");return`${a}-${t}-${s}`}function todayISO(){return toISO(new Date)}function addDays(e,a){const t=toDate(e);return t.setDate(t.getDate()+a),toISO(t)}function mondayOf(e){const a=toDate(e),t=a.getDay()===0?7:a.getDay();return a.setDate(a.getDate()-(t-1)),toISO(a)}function humanTime(e){return e}function formatFullDate(e){const a=toDate(e);return`${WEEKDAYS[a.getDay()]}, ${String(a.getDate()).padStart(2,"0")} ${MONTHS[a.getMonth()]}`}function isOngoing(e,a){if(!e.endTime)return!1;const t=new Date(`${e.date}T${e.startTime||"00:00"}:00`),[s]=(e.startTime||"00:00").split(":").map(Number),[n]=e.endTime.split(":").map(Number),i=n<=s,o=new Date(`${e.date}T${e.endTime}:00`);return i&&o.setDate(o.getDate()+1),a>=t&&a<=o}const TAG_COLORS={Techno:"pink",House:"cyan",Drag:"pink",Queer:"acid",Fetish:"pink",Pop:"cyan",Experimental:"acid",Bloquinho:"acid"};function tagColor(e){return TAG_COLORS[e]||"pink"}function RisoArt({event:e,children:a}){const t=(e.id||e.name||"").split("").reduce((u,c)=>u+c.charCodeAt(0),0),s=t*31%360,n=[["#FF2D87","#00E0FF"],["#F5FF3C","#FF2D87"],["#00E0FF","#F5FF3C"],["#FF2D87","#F5FF3C"],["#8A7FFF","#FF4D2E"],["#B8FF00","#FF00AA"]],i=n[t%n.length],o=t%40+"%",d=t*7%40+"%",v=t*13%40+40+"%",_=t*17%40+40+"%";return React.createElement("div",{style:{background:`linear-gradient(${s}deg, ${i[0]}, ${i[1]})`,position:"relative",height:"100%",overflow:"hidden"}},React.createElement("div",{style:{position:"absolute",top:o,left:d,width:"140px",height:"140px",borderRadius:"999px",background:"#0A0A0A",mixBlendMode:"multiply",opacity:.75,transform:"translate(-30%, -30%)"}}),React.createElement("div",{style:{position:"absolute",top:v,left:_,width:"120px",height:"120px",borderRadius:"999px",background:i[1],mixBlendMode:"screen",opacity:.55,transform:"translate(-20%, -20%)"}}),React.createElement("div",{style:{position:"absolute",inset:0,backgroundImage:`url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='100'><filter id='n'><feTurbulence baseFrequency='1.1' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)' opacity='0.9'/></svg>")`,mixBlendMode:"overlay",opacity:.25}}),a)}const Icon={Close:e=>React.createElement("svg",{width:e.size||18,height:e.size||18,viewBox:"0 0 24 24",fill:"none",stroke:"currentColor",strokeWidth:"2",strokeLinecap:"round"},React.createElement("path",{d:"M6 6l12 12M18 6L6 18"})),Back:e=>React.createElement("svg",{width:e.size||20,height:e.size||20,viewBox:"0 0 24 24",fill:"none",stroke:"currentColor",strokeWidth:"2",strokeLinecap:"round"},React.createElement("path",{d:"M15 18l-6-6 6-6"})),Map:e=>React.createElement("svg",{width:e.size||14,height:e.size||14,viewBox:"0 0 24 24",fill:"none",stroke:"currentColor",strokeWidth:"2",strokeLinecap:"round",strokeLinejoin:"round"},React.createElement("path",{d:"M1 6l8-3 6 3 8-3v15l-8 3-6-3-8 3z"}),React.createElement("path",{d:"M9 3v15M15 6v15"})),Ticket:e=>React.createElement("svg",{width:e.size||14,height:e.size||14,viewBox:"0 0 24 24",fill:"none",stroke:"currentColor",strokeWidth:"2",strokeLinecap:"round",strokeLinejoin:"round"},React.createElement("path",{d:"M3 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2z"}),React.createElement("path",{d:"M13 5v14"})),Google:()=>React.createElement("svg",{width:"18",height:"18",viewBox:"0 0 48 48"},React.createElement("path",{fill:"#FFC107",d:"M43.6 20.1H42V20H24v8h11.3C33.7 32.9 29.3 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.9 1.2 8 3.1l5.7-5.7C34.2 6.1 29.4 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20 20-8.9 20-20c0-1.3-.1-2.6-.4-3.9z"}),React.createElement("path",{fill:"#FF3D00",d:"M6.3 14.7l6.6 4.8C14.7 15.1 19 12 24 12c3.1 0 5.9 1.2 8 3.1l5.7-5.7C34.2 6.1 29.4 4 24 4 16.3 4 9.6 8.3 6.3 14.7z"}),React.createElement("path",{fill:"#4CAF50",d:"M24 44c5.2 0 10-2 13.6-5.2l-6.3-5.2C29.3 35.2 26.8 36 24 36c-5.3 0-9.7-3.1-11.3-7.9l-6.5 5C9.5 39.6 16.2 44 24 44z"}),React.createElement("path",{fill:"#1976D2",d:"M43.6 20.1H42V20H24v8h11.3c-.7 2.1-2 3.9-3.7 5.2l6.3 5.2c-.4.4 6.6-4.8 6.6-14.4 0-1.3-.1-2.6-.4-3.9z"})),Apple:()=>React.createElement("svg",{width:"18",height:"18",viewBox:"0 0 24 24",fill:"currentColor"},React.createElement("path",{d:"M16.365 1.43c0 1.14-.468 2.235-1.232 3.031-.81.84-2.09 1.476-3.135 1.395-.12-1.12.418-2.253 1.173-3.012.814-.81 2.23-1.432 3.194-1.414zM20.79 17.6c-.6 1.38-.89 2-1.66 3.22-1.08 1.7-2.6 3.81-4.48 3.82-1.68.02-2.11-.99-4.39-.98-2.28.01-2.76 1-4.44.98-1.88-.02-3.32-1.93-4.4-3.62-3.02-4.72-3.34-10.27-1.48-13.22 1.33-2.1 3.42-3.32 5.39-3.32 2 0 3.27 1.11 4.93 1.11 1.6 0 2.58-1.11 4.9-1.11 1.75 0 3.61.96 4.94 2.6-4.34 2.39-3.64 8.6.69 11.52z"})),Copy:e=>React.createElement("svg",{width:e.size||14,height:e.size||14,viewBox:"0 0 24 24",fill:"none",stroke:"currentColor",strokeWidth:"2",strokeLinecap:"round",strokeLinejoin:"round"},React.createElement("rect",{x:"9",y:"9",width:"13",height:"13",rx:"2"}),React.createElement("path",{d:"M5 15V5a2 2 0 0 1 2-2h10"})),ChevronRight:e=>React.createElement("svg",{width:e.size||16,height:e.size||16,viewBox:"0 0 24 24",fill:"none",stroke:"currentColor",strokeWidth:"2",strokeLinecap:"round"},React.createElement("path",{d:"M9 18l6-6-6-6"})),Home:e=>React.createElement("svg",{width:e.size||22,height:e.size||22,viewBox:"0 0 24 24",fill:"none",stroke:"currentColor",strokeWidth:"2",strokeLinecap:"round",strokeLinejoin:"round"},React.createElement("path",{d:"M3 12l9-8 9 8v9a1 1 0 0 1-1 1h-5v-6h-6v6H4a1 1 0 0 1-1-1z"})),User:e=>React.createElement("svg",{width:e.size||22,height:e.size||22,viewBox:"0 0 24 24",fill:"none",stroke:"currentColor",strokeWidth:"2",strokeLinecap:"round",strokeLinejoin:"round"},React.createElement("circle",{cx:"12",cy:"8",r:"4"}),React.createElement("path",{d:"M4 21c0-4 4-7 8-7s8 3 8 7"})),Heart:e=>React.createElement("svg",{width:e.size||22,height:e.size||22,viewBox:"0 0 24 24",fill:"none",stroke:"currentColor",strokeWidth:"2",strokeLinecap:"round",strokeLinejoin:"round"},React.createElement("path",{d:"M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"})),HeartFilled:e=>React.createElement("svg",{width:e.size||22,height:e.size||22,viewBox:"0 0 24 24",fill:"currentColor",stroke:"currentColor",strokeWidth:"2",strokeLinecap:"round",strokeLinejoin:"round"},React.createElement("path",{d:"M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"}))};function FeedScreen({onOpenEvent:e}){const[a,t]=useState("today"),[s,n]=useState([]),[i,o]=useState([]),[d,v]=useState(!0),[_,u]=useState(!1),[c,g]=useState(new Date);useEffect(()=>{const l=setInterval(()=>g(new Date),6e4);return()=>clearInterval(l)},[]);const r=todayISO(),m=mondayOf(r),w=addDays(m,13),y=useCallback(async()=>{v(!0);try{const l=await ApiClient.listEvents({from:m,to:w});o(l.events),u(!1),localStorage.setItem(CACHE_KEY,JSON.stringify({at:nowISO(),events:l.events}))}catch(l){const p=localStorage.getItem(CACHE_KEY);if(p){const h=JSON.parse(p);o(h.events||[]),u(!0),console.log("[SP Scene] Cache Hit — offline mode")}}finally{v(!1)}},[m,w]);useEffect(()=>{y()},[y]);const N=useMemo(()=>{let l=i;if(s.length&&(l=l.filter(p=>s.every(h=>{var f;return(f=p.tags)==null?void 0:f.includes(h)}))),a==="today")l=l.filter(p=>p.date===r||isOngoing(p,c)&&p.date===addDays(r,-1));else{const p=addDays(r,1),h=addDays(r,7);l=l.filter(f=>f.date>=p&&f.date<=h)}return l},[i,s,a,r,c]),b=useMemo(()=>{const l=new Map;for(const p of N)l.has(p.date)||l.set(p.date,[]),l.get(p.date).push(p);for(const p of l.values())p.sort((h,f)=>h.priority-f.priority);return[...l.entries()].sort(([p],[h])=>p.localeCompare(h))},[N]),k=useCallback(l=>{n(p=>p.includes(l)?p.filter(h=>h!==l):[...p,l])},[]);return React.createElement(React.Fragment,null,React.createElement("div",{className:"sp-statusbar"}),_&&React.createElement("div",{className:"sp-offline"},"● sem internet · mostrando a última agenda baixada"),React.createElement("div",{className:"sp-topbar"},React.createElement("div",{className:"sp-topbar__row"},React.createElement("div",{className:"sp-logo"},"SP",React.createElement("em",null,"Scene")),window.SP_DATA_UPDATED_AT&&React.createElement("div",{className:"sp-hello"},"atualizado ",React.createElement("strong",null,formatUpdatedAt(window.SP_DATA_UPDATED_AT)))),React.createElement("div",{className:"sp-switcher"},React.createElement("button",{className:a==="today"?"is-on":"",onClick:()=>t("today")},"Hoje"),React.createElement("button",{className:a==="week"?"is-on":"",onClick:()=>t("week")},"Próximos 7 dias"))),React.createElement("div",{className:"sp-ribbon"},React.createElement("div",{className:"sp-ribbon__inner"},(window.SP_TAGS||[]).map(l=>{const p=s.includes(l),h=tagColor(l);return React.createElement("button",{key:l,className:`sp-chip sp-chip--${h} ${p?"sp-chip--on":""}`,onClick:()=>k(l)},l)}),s.length>0&&React.createElement("button",{className:"sp-chip",style:{color:"var(--sp-ink-mute)"},onClick:()=>n([])},"limpar"))),React.createElement("div",{className:"sp-events"},d&&React.createElement("div",{className:"sp-empty"},"Carregando a cena…"),!d&&b.length===0&&React.createElement("div",{className:"sp-empty"},s.length?"Nada pra essa combinação de filtros. Tenta limpar pra ver tudo.":a==="today"?"Nenhum evento confirmado pra hoje. Dá uma olhada nos próximos 7 dias.":"Nenhum evento confirmado nos próximos 7 dias ainda."),b.map(([l,p])=>React.createElement(DayGroup,{key:l,date:l,list:p,today:r,now:c,onOpenEvent:e}))))}function DayGroup({date:e,list:a,today:t,now:s,onOpenEvent:n}){const i=toDate(e),o=WEEKDAYS[i.getDay()],d=i.getDate(),v=MONTHS[i.getMonth()],_=e===t,u=e===addDays(t,1);return React.createElement(React.Fragment,null,React.createElement("div",{className:"sp-day-head"},React.createElement("div",{className:"sp-day-head__num"},String(d).padStart(2,"0")),React.createElement("div",{className:"sp-day-head__info"},React.createElement("div",{className:"sp-day-head__dow"},o),React.createElement("div",{className:"sp-day-head__month"},v," · 2026")),_&&React.createElement("div",{className:"sp-day-head__badge sp-day-head__badge--today"},"Hoje"),u&&React.createElement("div",{className:"sp-day-head__badge sp-day-head__badge--tomorrow"},"Amanhã")),a.map(c=>React.createElement(EventCard,{key:c.id,event:c,now:s,onOpen:()=>n(c.id)})))}function EventCard({event:e,now:a,onOpen:t}){const s=isOngoing(e,a),n=(e.lineup||[]).slice(0,3).join(" · "),o=useSavedIds().includes(e.id),d=v=>{v.stopPropagation(),toggleSaved(e.id)};return React.createElement("div",{className:"sp-card",onClick:t},React.createElement("div",{className:"sp-card__art"},React.createElement(RisoArt,{event:e},React.createElement("div",{className:"sp-card__art__title"},e.name),React.createElement("div",{className:"sp-card__art__tag"},e.priority===1&&React.createElement("span",{className:"sp-prio sp-prio-1"},"Destaque")),s&&React.createElement("div",{className:"sp-card__ongoing"},"Rolando"),React.createElement("button",{className:`sp-save sp-save--card ${o?"is-on":""}`,onClick:d,"aria-label":o?"Remover dos salvos":"Salvar","aria-pressed":o},o?React.createElement(Icon.HeartFilled,{size:16}):React.createElement(Icon.Heart,{size:16})))),React.createElement("div",{className:"sp-card__body"},React.createElement("div",{className:"sp-card__time"},e.startTime," · ",e.venue),React.createElement("div",{className:"sp-card__name"},e.name),n&&React.createElement("div",{className:"sp-card__lineup"},n),React.createElement("div",{className:"sp-card__tags"},(e.tags||[]).map(v=>React.createElement("span",{key:v,className:`sp-chip sp-chip--${tagColor(v)} sp-chip--on`},v)))))}function EventDetails({eventId:e,onClose:a}){var c;const[t,s]=useState(null),[n,i]=useState(!1),d=useSavedIds().includes(e);if(useEffect(()=>{ApiClient.getEvent(e).then(g=>s(g.event)).catch(()=>{})},[e]),!t)return React.createElement("div",{className:"sp-details"},React.createElement("button",{className:"sp-details__close",onClick:a},React.createElement(Icon.Close,null)),React.createElement("div",{className:"sp-empty",style:{paddingTop:120}},"Carregando…"));const v=async()=>{try{await navigator.clipboard.writeText(t.address),i(!0),setTimeout(()=>i(!1),1500)}catch(g){}},_=()=>{const g=encodeURIComponent(t.address);window.open(`https://www.google.com/maps/search/?api=1&query=${g}`,"_blank","noopener")},u=()=>{t.ticketUrl&&window.open(t.ticketUrl,"_blank","noopener")};return React.createElement("div",{className:"sp-details"},React.createElement("div",{className:"sp-statusbar"}),React.createElement("button",{className:"sp-details__close",onClick:a,"aria-label":"Voltar"},React.createElement(Icon.Back,null)),React.createElement("button",{className:`sp-details__save ${d?"is-on":""}`,onClick:()=>toggleSaved(e),"aria-label":d?"Remover dos salvos":"Salvar evento","aria-pressed":d},d?React.createElement(Icon.HeartFilled,{size:18}):React.createElement(Icon.Heart,{size:18})),React.createElement("div",{className:"sp-details__body"},React.createElement("div",{className:"sp-details__art"},React.createElement(RisoArt,{event:t},React.createElement("div",{className:"sp-details__art__title"},t.name))),React.createElement("div",{className:"sp-details__content"},React.createElement("div",{className:"sp-details__prio-row"},t.priority===1&&React.createElement("span",{className:"sp-prio sp-prio-1"},"Destaque da semana")),React.createElement("h1",{className:"sp-details__name"},t.name),React.createElement("div",{className:"sp-details__venue"},t.venue),React.createElement("div",{className:"sp-details__meta"},React.createElement("div",{className:"sp-details__meta__item"},React.createElement("span",{className:"sp-label"},"Quando"),React.createElement("span",{className:"sp-value"},formatFullDate(t.date)," · ",t.startTime)),t.price&&React.createElement("div",{className:"sp-details__meta__item"},React.createElement("span",{className:"sp-label"},"Preço"),React.createElement("span",{className:"sp-value"},t.price))),React.createElement("div",{className:"sp-details__tags"},t.tags.map(g=>React.createElement("span",{key:g,className:`sp-chip sp-chip--${tagColor(g)} sp-chip--on`},g))),t.description&&React.createElement("div",{className:"sp-details__section"},React.createElement("h3",null,"Sobre"),React.createElement("p",null,t.description)),((c=t.lineup)==null?void 0:c.length)>0&&React.createElement("div",{className:"sp-details__section"},React.createElement("h3",null,"Lineup"),React.createElement("ul",{className:"sp-details__lineup-list"},t.lineup.map((g,r)=>React.createElement("li",{key:r},g)))),t.sourceUrl&&React.createElement("div",{className:"sp-details__section"},React.createElement("h3",null,"Fonte"),React.createElement("p",{style:{fontSize:13}},React.createElement("a",{href:t.sourceUrl,target:"_blank",rel:"noopener noreferrer",style:{color:"var(--sp-cyan, #00E0FF)"}},sourceHost(t.sourceUrl))," ","· confira antes de sair: horário e preço podem mudar.")),React.createElement("div",{className:"sp-details__section"},React.createElement("h3",null,"Endereço"),React.createElement("div",{className:"sp-details__address"},t.address),React.createElement("div",{className:"sp-details__address-actions"},React.createElement("button",{className:"sp-btn",style:{height:40,fontSize:11,flex:1},onClick:v},React.createElement(Icon.Copy,null)," ",n?"Copiado!":"Copiar"),React.createElement("button",{className:"sp-btn sp-btn--primary",style:{height:40,fontSize:11,flex:1},onClick:_},React.createElement(Icon.Map,null)," Abrir no Maps"))))),React.createElement("div",{className:"sp-details__actions"},t.ticketUrl?React.createElement("button",{className:"sp-btn sp-btn--pink",style:{flex:1},onClick:u},React.createElement(Icon.Ticket,null)," Comprar ingresso"):React.createElement("button",{className:"sp-btn",style:{flex:1},disabled:!0},React.createElement(Icon.Ticket,null)," Sem venda online informada")))}function MapScreen({onOpenEvent:e}){const[a,t]=useState([]),[s,n]=useState(!0);return useEffect(()=>{let i=!1;return(async()=>{n(!0);try{const o=todayISO(),d=addDays(o,14),v=await ApiClient.listEvents({from:o,to:d});i||t(v.events||[])}catch(o){i||t([])}finally{i||n(!1)}})(),()=>{i=!0}},[]),React.createElement(React.Fragment,null,React.createElement("div",{className:"sp-statusbar"}),React.createElement("div",{className:"sp-topbar"},React.createElement("div",{className:"sp-topbar__row"},React.createElement("div",{className:"sp-logo"},"SP",React.createElement("em",null,"Scene")),React.createElement("div",{className:"sp-screen-tag"},"Mapa"))),React.createElement(MapView,{events:a,loading:s,onOpenEvent:e}))}function MapView({events:e,onOpenEvent:a,loading:t}){const s=useRef(null),n=useRef(null),[i,o]=useState(null),[d,v]=useState(null),[_,u]=useState(!1),c=e.filter(r=>r.latitude&&r.longitude);useEffect(()=>{var w;let r=!1;const m=!!(((w=window.SP_CONFIG)==null?void 0:w.googleMapsApiKey)||"").trim();return(async()=>{if(m){if(v("google"),await loadGoogleMaps(window.SP_CONFIG.googleMapsApiKey),r||!s.current||n.current)return;const y=new window.google.maps.Map(s.current,{center:{lat:-23.55,lng:-46.64},zoom:12,styles:DARK_MAP_STYLE,disableDefaultUI:!0,zoomControl:!0,gestureHandling:"greedy"});n.current={kind:"google",map:y,markers:[]},u(!0)}else{if(v("leaflet"),await loadLeaflet(),r||!s.current||n.current)return;const y=window.L.map(s.current,{zoomControl:!0,attributionControl:!0,keyboard:!0}).setView([-23.55,-46.64],13);window.L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png",{attribution:'© <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a>',maxZoom:19}).addTo(y),n.current={kind:"leaflet",map:y,markers:[]},u(!0)}})(),()=>{if(r=!0,u(!1),n.current){if(n.current.kind==="leaflet")try{n.current.map.remove()}catch(y){}n.current=null}}},[]),useEffect(()=>{const r=n.current;if(r){for(const m of r.markers)if(r.kind==="leaflet")try{r.map.removeLayer(m)}catch(w){}else try{m.setMap(null)}catch(w){}r.markers=[];for(const m of c){const w=m.priority===1?"#F5FF3C":m.priority===2?"#00E0FF":"#FF2D87",y=m.priority===1?18:m.priority===2?15:12,N=y-3,b=y-6,k=`Evento: ${m.name} · ${m.venue} · ${m.startTime} · prioridade ${m.priority}`;if(r.kind==="leaflet"){const l=window.L.circleMarker([m.latitude,m.longitude],{radius:y,fillColor:"#0A0A0A",fillOpacity:1,color:"#0A0A0A",weight:0,interactive:!1}).addTo(r.map),p=window.L.circleMarker([m.latitude,m.longitude],{radius:N,fillColor:"#FFFFFF",fillOpacity:1,color:"#FFFFFF",weight:0,interactive:!1}).addTo(r.map),h=window.L.circleMarker([m.latitude,m.longitude],{radius:b,fillColor:w,color:"#0A0A0A",weight:2,opacity:1,fillOpacity:1,interactive:!0,bubblingMouseEvents:!1}).addTo(r.map);r.markers.push(l,p);const f=h._path;f&&(f.setAttribute("role","button"),f.setAttribute("tabindex","0"),f.setAttribute("aria-label",k),f.style.cursor="pointer",f.addEventListener("keydown",C=>{(C.key==="Enter"||C.key===" ")&&(C.preventDefault(),o(m))})),h.on("click",()=>o(m)),r.markers.push(h)}else{const l=new window.google.maps.Marker({position:{lat:m.latitude,lng:m.longitude},map:r.map,title:k,icon:{path:window.google.maps.SymbolPath.CIRCLE,scale:b,fillColor:w,fillOpacity:1,strokeColor:"#FFFFFF",strokeWeight:4}});l.addListener("click",()=>o(m)),r.markers.push(l)}}}},[e,d,_]);const g=c.length;return React.createElement("div",{className:"sp-mapwrap",role:"region","aria-label":"Mapa de eventos em São Paulo"},React.createElement("div",{className:"sp-map-legend",role:"note","aria-label":"Legenda"},React.createElement("span",{className:"sp-map-legend__dot sp-map-legend__dot--p1","aria-hidden":"true"}),React.createElement("span",{className:"sp-map-legend__label"},"P1"),React.createElement("span",{className:"sp-map-legend__dot sp-map-legend__dot--p2","aria-hidden":"true"}),React.createElement("span",{className:"sp-map-legend__label"},"P2"),React.createElement("span",{className:"sp-map-legend__dot sp-map-legend__dot--p3","aria-hidden":"true"}),React.createElement("span",{className:"sp-map-legend__label"},"P3"),React.createElement("span",{className:"sp-map-legend__count","aria-live":"polite"},g," eventos")),React.createElement("div",{className:"sp-mapwrap__map",ref:s},!d&&React.createElement("div",{className:"sp-map-nokey"},"Carregando mapa…")),i&&React.createElement("div",{className:"sp-mapwrap__pane",role:"dialog","aria-label":`Detalhes rápidos de ${i.name}`},React.createElement(MapCard,{event:i,onOpen:()=>a(i.id),onClose:()=>o(null)})))}function MapCard({event:e,onOpen:a,onClose:t}){return React.createElement("div",{className:"sp-card",onClick:a,style:{display:"flex",flexDirection:"row"}},React.createElement("div",{style:{width:92,minWidth:92,height:92}},React.createElement(RisoArt,{event:e})),React.createElement("div",{className:"sp-card__body",style:{padding:"10px 12px",flex:1,minWidth:0}},React.createElement("div",{className:"sp-card__time"},e.startTime," · ",e.venue),React.createElement("div",{className:"sp-card__name",style:{fontSize:16}},e.name),React.createElement("div",{className:"sp-card__tags"},(e.tags||[]).slice(0,3).map(s=>React.createElement("span",{key:s,className:`sp-chip sp-chip--${tagColor(s)} sp-chip--on`},s)))),React.createElement("button",{onClick:s=>{s.stopPropagation(),t()},style:{background:"transparent",border:0,padding:8,color:"var(--sp-ink-dim)",cursor:"pointer"},"aria-label":"Fechar"},React.createElement(Icon.Close,{size:14})))}const DARK_MAP_STYLE=[{elementType:"geometry",stylers:[{color:"#0A0A0A"}]},{elementType:"labels.text.stroke",stylers:[{color:"#0A0A0A"}]},{elementType:"labels.text.fill",stylers:[{color:"#746855"}]},{featureType:"road",elementType:"geometry",stylers:[{color:"#181818"}]},{featureType:"road.highway",elementType:"geometry",stylers:[{color:"#2b2b2b"}]},{featureType:"road",elementType:"labels.text.fill",stylers:[{color:"#8a8a8a"}]},{featureType:"water",elementType:"geometry",stylers:[{color:"#000000"}]},{featureType:"water",elementType:"labels.text.fill",stylers:[{color:"#3d3d3d"}]},{featureType:"poi",elementType:"geometry",stylers:[{color:"#1a1a1a"}]},{featureType:"poi",elementType:"labels.text.fill",stylers:[{color:"#6b6b6b"}]},{featureType:"transit",elementType:"geometry",stylers:[{color:"#2f2f2f"}]},{featureType:"administrative",elementType:"geometry",stylers:[{color:"#1f1f1f"}]},{featureType:"landscape",elementType:"geometry",stylers:[{color:"#0f0f0f"}]}];let _gm;function loadGoogleMaps(e){return _gm||(_gm=new Promise((a,t)=>{var n;if((n=window.google)!=null&&n.maps)return a();const s=document.createElement("script");s.src=`https://maps.googleapis.com/maps/api/js?key=${encodeURIComponent(e)}&v=weekly`,s.async=!0,s.defer=!0,s.onload=()=>a(),s.onerror=t,document.head.appendChild(s)}),_gm)}let _lf;function loadLeaflet(){return _lf||(_lf=new Promise((e,a)=>{if(window.L)return e();const t=document.createElement("link");t.rel="stylesheet",t.href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css",document.head.appendChild(t);const s=document.createElement("script");s.src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js",s.onload=()=>e(),s.onerror=a,document.head.appendChild(s)}),_lf)}function SavedScreen({onOpenEvent:e}){const a=useSavedIds(),[t,s]=useState([]),[n,i]=useState(!0),[o,d]=useState(new Date);useEffect(()=>{const u=setInterval(()=>d(new Date),6e4);return()=>clearInterval(u)},[]),useEffect(()=>{let u=!1;return(async()=>{i(!0);const c=[];for(const g of a)try{const r=await ApiClient.getEvent(g);r!=null&&r.event&&c.push(r.event)}catch(r){}u||(s(c),i(!1))})(),()=>{u=!0}},[a.join("|")]);const v=useMemo(()=>{const u=new Map;for(const c of t)u.has(c.date)||u.set(c.date,[]),u.get(c.date).push(c);for(const c of u.values())c.sort((g,r)=>g.priority-r.priority);return[...u.entries()].sort(([c],[g])=>c.localeCompare(g))},[t]),_=todayISO();return React.createElement(React.Fragment,null,React.createElement("div",{className:"sp-statusbar"}),React.createElement("div",{className:"sp-topbar"},React.createElement("div",{className:"sp-topbar__row"},React.createElement("div",{className:"sp-logo"},"SP",React.createElement("em",null,"Scene")),React.createElement("div",{className:"sp-screen-tag"},"Salvos"))),React.createElement("div",{className:"sp-events"},n&&React.createElement("div",{className:"sp-empty"},"Carregando…"),!n&&a.length===0&&React.createElement("div",{className:"sp-empty sp-empty--saved"},React.createElement("div",{className:"sp-empty__glyph"},React.createElement(Icon.Heart,{size:32})),React.createElement("h3",null,"Nada salvo ainda"),React.createElement("p",null,"Toque no ",React.createElement(Icon.Heart,{size:13})," em qualquer evento pra guardar aqui. Seus salvos ficam nesse aparelho — LGPD friendly, fica só com você.")),!n&&a.length>0&&t.length===0&&React.createElement("div",{className:"sp-empty"},"Os eventos que você salvou já não estão mais na programação."),v.map(([u,c])=>React.createElement(DayGroup,{key:u,date:u,list:c,today:_,now:o,onOpenEvent:e}))))}function AboutScreen({onClearData:e}){const[a,t]=useState(!1),[s,n]=useState(!1),i=useSavedIds(),o=window.SP_DATA_UPDATED_AT,d=(window.SP_EVENTS||[]).length;return React.createElement("div",{className:"sp-account"},React.createElement("div",{className:"sp-statusbar"}),React.createElement("div",{className:"sp-topbar sp-topbar--account"},React.createElement("div",{className:"sp-topbar__row"},React.createElement("div",{className:"sp-logo"},"SP",React.createElement("em",null,"Scene")),React.createElement("div",{className:"sp-screen-tag"},"Sobre"))),React.createElement("div",{className:"sp-account__section"},React.createElement("h3",null,"O que é"),React.createElement("p",{className:"sp-about__p"},"Agenda da noite LGBTQIA+ de São Paulo: festas, clubes, samba e cultura. Curadoria, não agregação. Só entra evento com data confirmada numa página de ingresso ou na agenda oficial da casa.")),React.createElement("div",{className:"sp-account__section"},React.createElement("h3",null,"A agenda"),o&&React.createElement("div",{className:"sp-account__kv"},React.createElement("label",null,"Atualizada em"),React.createElement("span",null,formatUpdatedAt(o))),React.createElement("div",{className:"sp-account__kv"},React.createElement("label",null,"Eventos"),React.createElement("span",null,d)),React.createElement("p",{className:"sp-about__p"},"Cada evento traz o link da fonte. Horário e preço podem mudar: confira na página da festa antes de sair.")),React.createElement("div",{className:"sp-account__section"},React.createElement("h3",null,"Privacidade"),React.createElement("p",{className:"sp-about__p"},"Não tem cadastro nem login. Seus favoritos (",i.length,") ficam salvos só neste aparelho. O mapa usa o OpenStreetMap e as fontes de letra vêm do Google Fonts; esses serviços recebem o endereço de internet de quem abre o site, como em qualquer página."),a?React.createElement("div",{style:{display:"flex",gap:8}},React.createElement("button",{className:"sp-btn",style:{flex:1},onClick:()=>t(!1)},"Cancelar"),React.createElement("button",{className:"sp-btn sp-btn--pink",style:{flex:1},onClick:()=>{e(),t(!1),n(!0)}},"Apagar favoritos")):React.createElement("button",{className:"sp-btn sp-btn--ghost",onClick:()=>{t(!0),n(!1)}},s?"Dados apagados":"Apagar meus dados deste aparelho")))}function BottomNav({tab:e,onChange:a}){const t=useSavedIds(),s=[{id:"feed",label:"Início",Icon:Icon.Home},{id:"map",label:"Mapa",Icon:Icon.Map},{id:"saved",label:"Salvos",Icon:Icon.Heart,badge:t.length},{id:"about",label:"Sobre",Icon:Icon.User}];return React.createElement("nav",{className:"sp-nav",role:"tablist","aria-label":"Navegação principal"},s.map(n=>{const i=e===n.id;return React.createElement("button",{key:n.id,className:`sp-nav__item ${i?"is-on":""}`,role:"tab","aria-selected":i,onClick:()=>a(n.id)},React.createElement("span",{className:"sp-nav__icon"},React.createElement(n.Icon,{size:22}),n.badge>0&&React.createElement("span",{className:"sp-nav__badge"},n.badge>9?"9+":n.badge)),React.createElement("span",{className:"sp-nav__label"},n.label))}))}function App(){const[e,a]=useState("feed"),[t,s]=useState(null);useEffect(()=>{try{localStorage.removeItem(USER_KEY)}catch(d){}},[]);const n=()=>{try{localStorage.removeItem(CACHE_KEY),localStorage.removeItem(SAVED_KEY),localStorage.removeItem(USER_KEY)}catch(d){}window.dispatchEvent(new CustomEvent("sp:saved-changed",{detail:[]}))},i=d=>s(d),o=()=>s(null);return React.createElement("div",{className:"sp-phone sp-phone--tabbed"},React.createElement("div",{className:"sp-phone-body"},e==="feed"&&React.createElement(FeedScreen,{onOpenEvent:i}),e==="map"&&React.createElement(MapScreen,{onOpenEvent:i}),e==="saved"&&React.createElement(SavedScreen,{onOpenEvent:i}),e==="about"&&React.createElement(AboutScreen,{onClearData:n})),t&&React.createElement(EventDetails,{eventId:t,onClose:o}),React.createElement(BottomNav,{tab:e,onChange:d=>{a(d),o()}}),React.createElement("div",{className:"sp-grain"}))}ReactDOM.createRoot(document.getElementById("sp-root")).render(React.createElement(App,null));
+</script>
+</body>
+</html>
