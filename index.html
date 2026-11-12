@@ -565,6 +565,14 @@ body {
 .sp-art--img .sp-details__art__title { display: none; }
 .sp-card__art { height: 150px; }
 
+/* 2026-11-12: separador fino entre os grupos de filtros */
+.sp-ribbon__sep {
+  flex: 0 0 1px;
+  align-self: stretch;
+  margin: 4px 4px;
+  background: var(--sp-line, rgba(255,255,255,0.18));
+}
+
 
 /* ── styles/details.css ── */
 /* Event details screen (sp-details__*) — full-screen overlay above the feed. */
@@ -1165,9 +1173,9 @@ window.SP_CONFIG = {
 
 // ── data/events.js ──
 // SP Scene — agenda de eventos (gerado por tools/write_events.py; não editar à mão)
-// Atualizado em 2026-11-12T20:01-03:00 (horário de São Paulo). Cada evento tem sourceUrl e note
+// Atualizado em 2026-11-12T20:20-03:00 (horário de São Paulo). Cada evento tem sourceUrl e note
 // dizendo onde a data foi confirmada. Coordenadas: OpenStreetMap/Nominatim.
-window.SP_DATA_UPDATED_AT = "2026-11-12T20:01-03:00";
+window.SP_DATA_UPDATED_AT = "2026-11-12T20:20-03:00";
 window.SP_EVENTS = [
   {
     "id": "evt-mixbrasil-o-onanista-ensaio-aberto-1112",
@@ -1179,8 +1187,7 @@ window.SP_EVENTS = [
     "startTime": "19:00",
     "endTime": "",
     "tags": [
-      "Queer",
-      "Experimental"
+      "Cult"
     ],
     "lineup": [
       "João Silvério Trevisan"
@@ -1204,8 +1211,7 @@ window.SP_EVENTS = [
     "startTime": "20:00",
     "endTime": "",
     "tags": [
-      "Drag",
-      "Queer"
+      "Cult"
     ],
     "lineup": [
       "Alexia Twister",
@@ -1279,6 +1285,32 @@ window.SP_EVENTS = [
     "image": ""
   },
   {
+    "id": "evt-dedge-moving-1112",
+    "priority": 3,
+    "name": "Moving: Tim Baresko (FR)",
+    "venue": "D-EDGE",
+    "description": "Festa Moving da D-EDGE com Sheldon, Tim Baresko e M4RKZ.",
+    "date": "2026-11-12",
+    "startTime": "22:00",
+    "endTime": "06:00",
+    "tags": [
+      "House"
+    ],
+    "lineup": [
+      "Sheldon",
+      "Tim Baresko",
+      "M4RKZ"
+    ],
+    "address": "Av. Mário de Andrade, 141 · Barra Funda, São Paulo",
+    "latitude": -23.52812,
+    "longitude": -46.66222,
+    "ticketUrl": "https://www.ingresse.com/moving121126/",
+    "price": "",
+    "sourceUrl": "https://ra.co/events/2579274",
+    "note": "casa fixa incluída a pedido do Rafael em 12/11/2026; data, horário e lineup vistos em 12/11/2026 na página do RA (https://ra.co/events/2579274) e a data confirmada na agenda do site oficial d-edge.com.br (\"12.NOV -MOVING\"), que linka o Ingresse; página do Ingresse não abriu (403), preço não visto. Sem sinal LGBTQIA+ na página (só o aviso padrão de que não se tolera assédio/discriminação).",
+    "image": "https://kraken.ingresse.com/event/posters/110125/medium/1793385920.888612.jpg"
+  },
+  {
     "id": "evt-peaches-zig-1113",
     "priority": 1,
     "name": "Peaches (ao vivo): No Lube So Rude Tour",
@@ -1312,8 +1344,7 @@ window.SP_EVENTS = [
     "startTime": "16:00",
     "endTime": "22:00",
     "tags": [
-      "Queer",
-      "Experimental"
+      "Cult"
     ],
     "lineup": [],
     "address": "Rua do Arouche, 24 · República, São Paulo",
@@ -1335,8 +1366,7 @@ window.SP_EVENTS = [
     "startTime": "19:00",
     "endTime": "",
     "tags": [
-      "Queer",
-      "Pop"
+      "Cult"
     ],
     "lineup": [
       "Jup do Bairro"
@@ -1360,7 +1390,7 @@ window.SP_EVENTS = [
     "startTime": "19:30",
     "endTime": "",
     "tags": [
-      "Queer"
+      "Cult"
     ],
     "lineup": [],
     "address": "Rua Augusta, 2075 · Cerqueira César, São Paulo",
@@ -1382,8 +1412,7 @@ window.SP_EVENTS = [
     "startTime": "20:00",
     "endTime": "",
     "tags": [
-      "Drag",
-      "Queer"
+      "Cult"
     ],
     "lineup": [
       "Alexia Twister",
@@ -1539,6 +1568,83 @@ window.SP_EVENTS = [
     "image": ""
   },
   {
+    "id": "evt-gaspar-vermelho-1113",
+    "priority": 3,
+    "name": "Vermelho no Gaspar",
+    "venue": "Gaspar Bar & Praça",
+    "description": "Set de house e techno do DJ Vermelho no bar Gaspar, na praça Dom José Gaspar.",
+    "date": "2026-11-13",
+    "startTime": "20:00",
+    "endTime": "00:00",
+    "tags": [
+      "Bar",
+      "House",
+      "Techno"
+    ],
+    "lineup": [
+      "Vermelho"
+    ],
+    "address": "Praça Dom José Gaspar, 42 · República, São Paulo",
+    "latitude": -23.54647,
+    "longitude": -46.64184,
+    "ticketUrl": "",
+    "price": "",
+    "sourceUrl": "https://www.instagram.com/p/DfkMAOclGtT/",
+    "note": "casa fixa (bar com DJs na praça e galpão coberto); incluída a pedido do Rafael em 12/11/2026; não se apresenta como LGBTQIA+ nas páginas vistas. 'SEXTA (20h às 0h)' no post de programação do fim de semana de @gaspar.sp publicado em 10/11/2026 (sexta = 13/11), lido pelo Chrome em 12/11/2026",
+    "image": ""
+  },
+  {
+    "id": "evt-ephigenia-paraiso-perdido-1113",
+    "priority": 3,
+    "name": "Paraíso Perdido + Tropicaos",
+    "venue": "Ephigenia",
+    "description": "O coletivo Paraíso Perdido recebe a dupla carioca Tropicaos.",
+    "date": "2026-11-13",
+    "startTime": "23:00",
+    "endTime": "06:00",
+    "tags": [],
+    "lineup": [
+      "Paraíso Perdido",
+      "Tropicaos"
+    ],
+    "address": "Viaduto Santa Ifigênia, 66 · Santa Ifigênia, São Paulo",
+    "latitude": -23.54325,
+    "longitude": -46.63486,
+    "ticketUrl": "https://www.sympla.com.br/evento/paraiso-perdido-tropicals-ephigenia/3619223",
+    "price": "",
+    "sourceUrl": "https://www.sympla.com.br/evento/paraiso-perdido-tropicals-ephigenia/3619223",
+    "note": "casa fixa incluída a pedido do Rafael em 12/11/2026; data, horário e endereço vistos em 12/11/2026 na página do evento na Sympla (https://www.sympla.com.br/evento/paraiso-perdido-tropicals-ephigenia/3619223), festa no Sympla do produtor \"Ephigenia\"; local na cobertura (andares 22 e 23). Preço não escrito na página. O título na Sympla escreve \"Tropicals\", mas a descrição diz \"Tropicaos\". Gênero não informado. A descrição chama o público de \"as perdidas\" (gíria no feminino, sinal fraco, sem menção explícita LGBTQIA+).",
+    "image": "https://images.sympla.com.br/6ad625fdeaeec-lg.png"
+  },
+  {
+    "id": "evt-dedge-freak-chic-1113",
+    "priority": 3,
+    "name": "Freak Chic: Âme LIVE (DE)",
+    "venue": "D-EDGE",
+    "description": "Festa Freak Chic da D-EDGE com Edu Poppo, Âme, Hoo, Ingrid e Pure Juice.",
+    "date": "2026-11-13",
+    "startTime": "23:59",
+    "endTime": "08:00",
+    "tags": [
+      "House"
+    ],
+    "lineup": [
+      "Edu Poppo",
+      "Âme",
+      "Hoo",
+      "Ingrid",
+      "Pure Juice"
+    ],
+    "address": "Av. Mário de Andrade, 141 · Barra Funda, São Paulo",
+    "latitude": -23.52812,
+    "longitude": -46.66222,
+    "ticketUrl": "https://www.ingresse.com/freak131126/",
+    "price": "",
+    "sourceUrl": "https://ra.co/events/2579278",
+    "note": "casa fixa incluída a pedido do Rafael em 12/11/2026; data, horário e lineup vistos em 12/11/2026 na página do RA (https://ra.co/events/2579278) e a data confirmada na agenda do site oficial d-edge.com.br (\"13.NOV -FREAK CHIC\"), que linka o Ingresse; página do Ingresse não abriu (403), preço não visto. Sem sinal LGBTQIA+ na página (só o aviso padrão de que não se tolera assédio/discriminação).",
+    "image": "https://kraken.ingresse.com/event/posters/110132/medium/1793898534.4339283.jpg"
+  },
+  {
     "id": "evt-batekoo-festival-1114",
     "priority": 1,
     "name": "BATEKOO Festival 2026",
@@ -1645,8 +1751,7 @@ window.SP_EVENTS = [
     "startTime": "17:15",
     "endTime": "",
     "tags": [
-      "Queer",
-      "Drag"
+      "Cult"
     ],
     "lineup": [
       "Ney Matogrosso"
@@ -1670,7 +1775,7 @@ window.SP_EVENTS = [
     "startTime": "17:45",
     "endTime": "",
     "tags": [
-      "Queer"
+      "Cult"
     ],
     "lineup": [],
     "address": "Rua Vergueiro, 1000 · Paraíso, São Paulo",
@@ -1692,8 +1797,7 @@ window.SP_EVENTS = [
     "startTime": "20:00",
     "endTime": "",
     "tags": [
-      "Drag",
-      "Queer"
+      "Cult"
     ],
     "lineup": [
       "Alexia Twister",
@@ -1880,6 +1984,33 @@ window.SP_EVENTS = [
     "image": "https://assets.shotgun.live/image/upload/c_limit,w_1200,h_630,f_jpg,q_auto/production/artworks/Prancheta_1_copiar_e32ja0.png"
   },
   {
+    "id": "evt-zig-homoteka-1114",
+    "priority": 2,
+    "name": "Homoteka c/ Clementaum",
+    "venue": "ZIG Studio",
+    "description": "Edição de novembro da Homoteka na ZIG, com Clementaum, RYANBNOG e Balera.",
+    "date": "2026-11-14",
+    "startTime": "23:30",
+    "endTime": "07:00",
+    "tags": [
+      "House",
+      "Queer"
+    ],
+    "lineup": [
+      "Clementaum",
+      "RYANBNOG",
+      "Balera"
+    ],
+    "address": "Avenida Pacaembu, 33 · Barra Funda, São Paulo",
+    "latitude": -23.53235,
+    "longitude": -46.6613,
+    "ticketUrl": "https://shotgun.live/pt-br/events/homoteka-c-xxxxxxxxxx-sab-14-11-zig-studio",
+    "price": "Grátis até 00h30 (lote gratuito); depois R$ 30–40",
+    "sourceUrl": "https://shotgun.live/pt-br/events/homoteka-c-xxxxxxxxxx-sab-14-11-zig-studio",
+    "note": "casa fixa; a ZIG se apresenta como 'clube queer LGBTQIAPN+ feito por e para pessoas LGBTQIAPN+' na página da Shotgun; 18+. data, horário, lineup e lotes vistos na Shotgun pelo Chrome em 12/11/2026",
+    "image": "https://assets.shotgun.live/image/upload/c_limit,w_1200,h_630,f_jpg,q_auto/production/artworks/gvrjvenfd_b6mogq.png"
+  },
+  {
     "id": "evt-minhoqueens-baronesa-1114",
     "priority": 3,
     "name": "Estreia! Minhoqueens no Terraço Baronesa",
@@ -1902,6 +2033,32 @@ window.SP_EVENTS = [
     "sourceUrl": "https://shotgun.live/pt-br/events/estreia-minhoqueens-no-terraco-baronesa-14-11",
     "note": "itinerante; data e horário vistos na página do evento na Shotgun em 07/11. NÃO reconfirmado em 11/11: o WebFetch não abriu a página e o curl é bloqueado pela Shotgun. Preço visto na página da Minhoqueens na Shotgun em 07/11. O rótulo de bloco LGBT vem de uma matéria da Band (fev/2026). · reconfirmado em 12/11 na página do evento na Shotgun (sáb 14/11, 15h–22h, Baronesa Rooftop, Rua Formosa, 51); a página hoje não mostra nomes de DJs (fala só em \"nossos DJs\") nem valores, por isso line-up e preço (R$ 30, visto em 07/11 na página da Minhoqueens) foram retirados; a página do evento não usa palavras LGBT · checagem 12/11: preço R$ 30 visto no card do evento no perfil do organizador na Shotgun; o bloco se apresenta como \"um dos maiores blocos LGBT+\"",
     "image": "https://assets.shotgun.live/image/upload/c_limit,w_1200,h_630,f_jpg,q_auto/production/artworks/terra%C3%A7o_baronesa_-_sunset_-_capa_wcr6s5.png"
+  },
+  {
+    "id": "evt-gaspar-house-no-jardim-1114",
+    "priority": 3,
+    "name": "House no Jardim: Gustavo Bezzi + Machado",
+    "venue": "Gaspar Bar & Praça",
+    "description": "Tarde e noite de house music na praça, com Gustavo Bezzi e Machado.",
+    "date": "2026-11-14",
+    "startTime": "17:00",
+    "endTime": "00:00",
+    "tags": [
+      "Bar",
+      "House"
+    ],
+    "lineup": [
+      "Gustavo Bezzi",
+      "Machado"
+    ],
+    "address": "Praça Dom José Gaspar, 42 · República, São Paulo",
+    "latitude": -23.54647,
+    "longitude": -46.64184,
+    "ticketUrl": "",
+    "price": "",
+    "sourceUrl": "https://www.instagram.com/p/DfpKbwOgshp/",
+    "note": "casa fixa (bar com DJs na praça e galpão coberto); incluída a pedido do Rafael em 12/11/2026; não se apresenta como LGBTQIA+ nas páginas vistas. 'nesse sábado', 17h às 0h, no post de @gaspar.sp de 12/11/2026 (sábado = 14/11) e no post de programação de 10/11, lidos pelo Chrome em 12/11/2026",
+    "image": ""
   },
   {
     "id": "evt-malice-1114",
@@ -2003,6 +2160,65 @@ window.SP_EVENTS = [
     "image": ""
   },
   {
+    "id": "evt-ephigenia-dj-topo-1114",
+    "priority": 3,
+    "name": "DJ Topo",
+    "venue": "Ephigenia",
+    "description": "DJ Topo toca remixes de funk, pop e música brasileira, com mais cinco DJs em duas pistas.",
+    "date": "2026-11-14",
+    "startTime": "22:00",
+    "endTime": "05:00",
+    "tags": [
+      "Pop"
+    ],
+    "lineup": [
+      "Thay Girão",
+      "MXCE",
+      "DJ Topo",
+      "Gabs Fernandes",
+      "Thasol",
+      "Miya B"
+    ],
+    "address": "Viaduto Santa Ifigênia, 66 · Santa Ifigênia, São Paulo",
+    "latitude": -23.54325,
+    "longitude": -46.63486,
+    "ticketUrl": "https://www.sympla.com.br/evento/dj-topo-ephigenia/3606083",
+    "price": "",
+    "sourceUrl": "https://www.sympla.com.br/evento/dj-topo-ephigenia/3606083",
+    "note": "casa fixa incluída a pedido do Rafael em 12/11/2026; data, horário e endereço vistos em 12/11/2026 na página do evento na Sympla (https://www.sympla.com.br/evento/dj-topo-ephigenia/3606083), festa no Sympla do produtor \"Ephigenia\"; local na cobertura (andares 22 e 23). Preço não escrito na página.",
+    "image": "https://images.sympla.com.br/6ad68f8f92c55-lg.png"
+  },
+  {
+    "id": "evt-dedge-nave-1114",
+    "priority": 3,
+    "name": "Nave: PACS, DJ Murphy",
+    "venue": "D-EDGE",
+    "description": "Festa Nave da D-EDGE com KAF3R, PACS, DJ Murphy, Mary Gripa, Ella Candeu e Andre Torquato.",
+    "date": "2026-11-14",
+    "startTime": "23:59",
+    "endTime": "08:00",
+    "tags": [
+      "Techno",
+      "House"
+    ],
+    "lineup": [
+      "KAF3R",
+      "PACS",
+      "DJ Murphy",
+      "Mary Gripa",
+      "Ella Candeu",
+      "Andre Torquato"
+    ],
+    "address": "Av. Mário de Andrade, 141 · Barra Funda, São Paulo",
+    "latitude": -23.52812,
+    "longitude": -46.66222,
+    "ticketUrl": "https://www.ingresse.com/nave141126/",
+    "price": "",
+    "sourceUrl": "https://ra.co/events/2579282",
+    "note": "casa fixa incluída a pedido do Rafael em 12/11/2026; data, horário e lineup vistos em 12/11/2026 na página do RA (https://ra.co/events/2579282) e a data confirmada na agenda do site oficial d-edge.com.br (\"14.NOV -NAVE\"), que linka o Ingresse; página do Ingresse não abriu (403), preço não visto. Sem sinal LGBTQIA+ na página (só o aviso padrão de que não se tolera assédio/discriminação).",
+    "image": "https://kraken.ingresse.com/event/posters/110137/medium/1793898259.934194.jpg"
+  },
+  {
     "id": "evt-macbeth-drag-sesc-pompeia-1115",
     "priority": 2,
     "name": "Macbeth (versão drag) — Cia. Extemporânea",
@@ -2012,8 +2228,7 @@ window.SP_EVENTS = [
     "startTime": "18:00",
     "endTime": "",
     "tags": [
-      "Drag",
-      "Queer"
+      "Cult"
     ],
     "lineup": [
       "Alexia Twister",
@@ -2045,8 +2260,7 @@ window.SP_EVENTS = [
     "startTime": "19:30",
     "endTime": "",
     "tags": [
-      "Queer",
-      "Pop"
+      "Cult"
     ],
     "lineup": [],
     "address": "Rua Vergueiro, 1000 · Paraíso, São Paulo",
@@ -2057,6 +2271,32 @@ window.SP_EVENTS = [
     "sourceUrl": "https://2026.mixbrasil.org.br/pop-mix/alice-junior-ferias-de-verao/",
     "note": "cultura; data e local vistos na página do filme, na grade oficial do MixBrasil e na página do CCSP em 12/11/2026 ('15 NOV (DOM) | 19h30 | Spcine CCSP Lima Barreto'). 120 min. CCSP: gratuito, por ordem de chegada. Outras sessões: 13/11 19h no Cine na Praça e 22/11 19h45 no Spcine CCSP Paulo Emilio. · checagem 12/11: preço conforme a página /ingressos/ do festival (CCSP)",
     "image": "https://i0.wp.com/2026.mixbrasil.org.br/wp-content/uploads/2026/11/55571065329_93078f3e47_o.jpg?fit=1860%2C779&ssl=1"
+  },
+  {
+    "id": "evt-dedge-superafter-1115",
+    "priority": 3,
+    "name": "Superafter: Bervon",
+    "venue": "D-EDGE",
+    "description": "Festa Superafter da D-EDGE com Bekka Lopez, Bervon e Chiari.",
+    "date": "2026-11-15",
+    "startTime": "05:00",
+    "endTime": "12:00",
+    "tags": [
+      "House"
+    ],
+    "lineup": [
+      "Bekka Lopez",
+      "Bervon",
+      "Chiari"
+    ],
+    "address": "Av. Mário de Andrade, 141 · Barra Funda, São Paulo",
+    "latitude": -23.52812,
+    "longitude": -46.66222,
+    "ticketUrl": "https://www.ingresse.com/superafter151126/",
+    "price": "",
+    "sourceUrl": "https://ra.co/events/2579284",
+    "note": "casa fixa incluída a pedido do Rafael em 12/11/2026; data, horário e lineup vistos em 12/11/2026 na página do RA (https://ra.co/events/2579284) e a data confirmada na agenda do site oficial d-edge.com.br (\"15.NOV -SUPERAFTER\"), que linka o Ingresse; página do Ingresse não abriu (403), preço não visto. Sem sinal LGBTQIA+ na página (só o aviso padrão de que não se tolera assédio/discriminação). Superafter é evento separado da Nave da noite anterior (página própria no RA e linha própria na agenda do site).",
+    "image": "https://kraken.ingresse.com/event/posters/110141/medium/1793727649.6198704.jpg"
   },
   {
     "id": "evt-dragzissima-1115",
@@ -2112,6 +2352,57 @@ window.SP_EVENTS = [
     "image": ""
   },
   {
+    "id": "evt-ephigenia-samba-da-ephigenia-1115",
+    "priority": 3,
+    "name": "Samba da Ephigenia convida Samba do Pedrinho",
+    "venue": "Ephigenia",
+    "description": "Roda do Samba do Pedrinho no Samba da Ephigenia, com os DJs Andi e Calu.",
+    "date": "2026-11-15",
+    "startTime": "16:00",
+    "endTime": "22:00",
+    "tags": [
+      "Samba"
+    ],
+    "lineup": [
+      "Samba do Pedrinho",
+      "Andi",
+      "Calu"
+    ],
+    "address": "Viaduto Santa Ifigênia, 66 · Santa Ifigênia, São Paulo",
+    "latitude": -23.54325,
+    "longitude": -46.63486,
+    "ticketUrl": "https://www.sympla.com.br/evento/samba-da-ephigenia-convida-samba-do-pedrinho-entrada-gratuita/3619224",
+    "price": "Gratuito",
+    "sourceUrl": "https://www.sympla.com.br/evento/samba-da-ephigenia-convida-samba-do-pedrinho-entrada-gratuita/3619224",
+    "note": "casa fixa incluída a pedido do Rafael em 12/11/2026; data, horário e endereço vistos em 12/11/2026 na página do evento na Sympla (https://www.sympla.com.br/evento/samba-da-ephigenia-convida-samba-do-pedrinho-entrada-gratuita/3619224), festa no Sympla do produtor \"Ephigenia\"; local na cobertura (andares 22 e 23). Entrada gratuita (escrito no título; evento sem cobrança na Sympla).",
+    "image": "https://www.sympla.com.br/images/logo-sympla-for-facebook.png"
+  },
+  {
+    "id": "evt-gaspar-baile-latino-1115",
+    "priority": 3,
+    "name": "Baile de estação com Rios Luc e Clauh Calixto",
+    "venue": "Gaspar Bar & Praça",
+    "description": "Baile com som latino no Gaspar, comandado por Rios Luc e Clauh Calixto.",
+    "date": "2026-11-15",
+    "startTime": "17:00",
+    "endTime": "",
+    "tags": [
+      "Bar"
+    ],
+    "lineup": [
+      "Rios Luc",
+      "Clauh Calixto"
+    ],
+    "address": "Praça Dom José Gaspar, 42 · República, São Paulo",
+    "latitude": -23.54647,
+    "longitude": -46.64184,
+    "ticketUrl": "",
+    "price": "",
+    "sourceUrl": "https://www.instagram.com/p/Dfhx49hG4cr/",
+    "note": "casa fixa (bar com DJs na praça e galpão coberto); incluída a pedido do Rafael em 12/11/2026; não se apresenta como LGBTQIA+ nas páginas vistas. 'No dia 15/11, domingo… a partir das 17h' no post de @gaspar.sp de 09/11/2026, lido pelo Chrome em 12/11/2026",
+    "image": ""
+  },
+  {
     "id": "evt-dois-dois-galocanto-1115",
     "priority": 3,
     "name": "Galocantô no Dois-Dois",
@@ -2146,8 +2437,7 @@ window.SP_EVENTS = [
     "startTime": "19:00",
     "endTime": "",
     "tags": [
-      "Queer",
-      "Experimental"
+      "Cult"
     ],
     "lineup": [
       "Luca Lauri",
@@ -2174,7 +2464,7 @@ window.SP_EVENTS = [
     "startTime": "18:00",
     "endTime": "",
     "tags": [
-      "Queer"
+      "Cult"
     ],
     "lineup": [
       "Guilherme Terreri",
@@ -2200,8 +2490,7 @@ window.SP_EVENTS = [
     "startTime": "20:00",
     "endTime": "",
     "tags": [
-      "Drag",
-      "Queer"
+      "Cult"
     ],
     "lineup": [
       "Suzy Brasil",
@@ -2226,8 +2515,7 @@ window.SP_EVENTS = [
     "startTime": "19:00",
     "endTime": "",
     "tags": [
-      "Queer",
-      "Drag"
+      "Cult"
     ],
     "lineup": [],
     "address": "Avenida Europa, 158 · Jardim Europa, São Paulo",
@@ -2275,7 +2563,7 @@ window.SP_EVENTS = [
     "startTime": "20:00",
     "endTime": "",
     "tags": [
-      "Queer"
+      "Cult"
     ],
     "lineup": [
       "Lufe Steffen"
@@ -2455,6 +2743,33 @@ window.SP_EVENTS = [
     "image": ""
   },
   {
+    "id": "evt-dedge-moving-1119",
+    "priority": 3,
+    "name": "Moving: Kolombo",
+    "venue": "D-EDGE",
+    "description": "Festa Moving da D-EDGE com Dopecupid, Fran Bortolossi, Kolombo e Kevin b2b Tunis.",
+    "date": "2026-11-19",
+    "startTime": "22:00",
+    "endTime": "06:00",
+    "tags": [
+      "House"
+    ],
+    "lineup": [
+      "Dopecupid",
+      "Fran Bortolossi",
+      "Kolombo",
+      "Kevin b2b Tunis"
+    ],
+    "address": "Av. Mário de Andrade, 141 · Barra Funda, São Paulo",
+    "latitude": -23.52812,
+    "longitude": -46.66222,
+    "ticketUrl": "https://www.ingresse.com/moving191126/",
+    "price": "",
+    "sourceUrl": "https://ra.co/events/2579288",
+    "note": "casa fixa incluída a pedido do Rafael em 12/11/2026; data, horário e lineup vistos em 12/11/2026 na página do RA (https://ra.co/events/2579288) e a data confirmada na agenda do site oficial d-edge.com.br (\"19.NOV -MOVING\"), que linka o Ingresse; página do Ingresse não abriu (403), preço não visto. Sem sinal LGBTQIA+ na página (só o aviso padrão de que não se tolera assédio/discriminação).",
+    "image": "https://kraken.ingresse.com/event/posters/110126/medium/1793385994.1020005.jpg"
+  },
+  {
     "id": "evt-bananal-1119",
     "priority": 3,
     "name": "Festa Bananal",
@@ -2479,6 +2794,35 @@ window.SP_EVENTS = [
     "image": "https://images.sympla.com.br/6af20ed73078c-lg.jpg"
   },
   {
+    "id": "evt-ephigenia-darco-1119",
+    "priority": 3,
+    "name": "Darco (Maccabi House)",
+    "venue": "Ephigenia",
+    "description": "O DJ e produtor Darco toca house na véspera de feriado, com DJs locais nas duas pistas.",
+    "date": "2026-11-19",
+    "startTime": "23:00",
+    "endTime": "06:00",
+    "tags": [
+      "House"
+    ],
+    "lineup": [
+      "Darco",
+      "Miss Natalia",
+      "Classmatic",
+      "Greg 99",
+      "Malu",
+      "Ella Candeu"
+    ],
+    "address": "Viaduto Santa Ifigênia, 66 · Santa Ifigênia, São Paulo",
+    "latitude": -23.54325,
+    "longitude": -46.63486,
+    "ticketUrl": "https://www.sympla.com.br/evento/darco-maccabi-house-ephigenia-vespera-de-feriado/3619233",
+    "price": "",
+    "sourceUrl": "https://www.sympla.com.br/evento/darco-maccabi-house-ephigenia-vespera-de-feriado/3619233",
+    "note": "casa fixa incluída a pedido do Rafael em 12/11/2026; data, horário e endereço vistos em 12/11/2026 na página do evento na Sympla (https://www.sympla.com.br/evento/darco-maccabi-house-ephigenia-vespera-de-feriado/3619233), festa no Sympla do produtor \"Ephigenia\"; local na cobertura (andares 22 e 23). Preço não escrito na página.",
+    "image": "https://images.sympla.com.br/6ad68f0a5acdc-lg.png"
+  },
+  {
     "id": "evt-cineclube-negrum3-mds-1120",
     "priority": 2,
     "name": "Cineclube MDS: NEGRUM3 + conversa com Diego Paulino",
@@ -2488,7 +2832,7 @@ window.SP_EVENTS = [
     "startTime": "15:00",
     "endTime": "17:00",
     "tags": [
-      "Queer"
+      "Cult"
     ],
     "lineup": [
       "Diego Paulino"
@@ -2512,7 +2856,7 @@ window.SP_EVENTS = [
     "startTime": "16:00",
     "endTime": "",
     "tags": [
-      "Queer"
+      "Cult"
     ],
     "lineup": [],
     "address": "Avenida Europa, 158 · Jardim Europa, São Paulo",
@@ -2654,6 +2998,61 @@ window.SP_EVENTS = [
     "image": "https://images.sympla.com.br/6af38cce62aea-lg.jpg"
   },
   {
+    "id": "evt-ephigenia-gabe-bixbita-1120",
+    "priority": 3,
+    "name": "GABE + Bixbita (ES)",
+    "venue": "Ephigenia",
+    "description": "Gabe e a espanhola Bixbita tocam house e techno.",
+    "date": "2026-11-20",
+    "startTime": "23:00",
+    "endTime": "06:00",
+    "tags": [
+      "House",
+      "Techno"
+    ],
+    "lineup": [
+      "Gabe",
+      "Bixbita",
+      "Meriva",
+      "Halfcab",
+      "Alirio"
+    ],
+    "address": "Viaduto Santa Ifigênia, 66 · Santa Ifigênia, São Paulo",
+    "latitude": -23.54325,
+    "longitude": -46.63486,
+    "ticketUrl": "https://www.sympla.com.br/evento/gabe-bixbita-es-ephigenia/3619237",
+    "price": "",
+    "sourceUrl": "https://www.sympla.com.br/evento/gabe-bixbita-es-ephigenia/3619237",
+    "note": "casa fixa incluída a pedido do Rafael em 12/11/2026; data, horário e endereço vistos em 12/11/2026 na página do evento na Sympla (https://www.sympla.com.br/evento/gabe-bixbita-es-ephigenia/3619237), festa no Sympla do produtor \"Ephigenia\"; local na cobertura (andares 22 e 23). Preço não escrito na página.",
+    "image": "https://images.sympla.com.br/6aee02ca4e272-lg.png"
+  },
+  {
+    "id": "evt-dedge-freak-chic-1120",
+    "priority": 3,
+    "name": "Freak Chic: CJ Jeff (GR)",
+    "venue": "D-EDGE",
+    "description": "Festa Freak Chic da D-EDGE com Édel, CJ Jeff e Bauhouse.",
+    "date": "2026-11-20",
+    "startTime": "23:59",
+    "endTime": "08:00",
+    "tags": [
+      "House"
+    ],
+    "lineup": [
+      "Édel",
+      "CJ Jeff",
+      "Bauhouse"
+    ],
+    "address": "Av. Mário de Andrade, 141 · Barra Funda, São Paulo",
+    "latitude": -23.52812,
+    "longitude": -46.66222,
+    "ticketUrl": "https://www.ingresse.com/freak201126/",
+    "price": "",
+    "sourceUrl": "https://ra.co/events/2579290",
+    "note": "casa fixa incluída a pedido do Rafael em 12/11/2026; data, horário e lineup vistos em 12/11/2026 na página do RA (https://ra.co/events/2579290) e a data confirmada na agenda do site oficial d-edge.com.br (\"20.NOV -FREAK CHIC\"), que linka o Ingresse; página do Ingresse não abriu (403), preço não visto. Sem sinal LGBTQIA+ na página (só o aviso padrão de que não se tolera assédio/discriminação).",
+    "image": "https://kraken.ingresse.com/event/posters/110133/medium/1793898356.30904.jpg"
+  },
+  {
     "id": "evt-rolezinho-lgbtqia-mds-1121",
     "priority": 2,
     "name": "Rolezinho LGBTQIA+: Presenças LGBT+ em São Paulo, com Gretta Starr",
@@ -2663,7 +3062,7 @@ window.SP_EVENTS = [
     "startTime": "15:00",
     "endTime": "17:00",
     "tags": [
-      "Queer"
+      "Cult"
     ],
     "lineup": [
       "Gretta Starr",
@@ -2688,8 +3087,7 @@ window.SP_EVENTS = [
     "startTime": "20:00",
     "endTime": "",
     "tags": [
-      "Queer",
-      "Experimental"
+      "Cult"
     ],
     "lineup": [],
     "address": "Praça Franklin Roosevelt, 172 · Consolação, São Paulo",
@@ -2863,6 +3261,78 @@ window.SP_EVENTS = [
     "image": "https://images.sympla.com.br/6ad69f782fffc-lg.png"
   },
   {
+    "id": "evt-ephigenia-indietronica-1121",
+    "priority": 3,
+    "name": "Indietronica",
+    "venue": "Ephigenia",
+    "description": "Noite Indietronica na Ephigenia.",
+    "date": "2026-11-21",
+    "startTime": "22:00",
+    "endTime": "05:00",
+    "tags": [],
+    "lineup": [],
+    "address": "Viaduto Santa Ifigênia, 66 · Santa Ifigênia, São Paulo",
+    "latitude": -23.54325,
+    "longitude": -46.63486,
+    "ticketUrl": "https://www.sympla.com.br/evento/indietronica-ephigenia/3634918",
+    "price": "",
+    "sourceUrl": "https://www.sympla.com.br/evento/indietronica-ephigenia/3634918",
+    "note": "casa fixa incluída a pedido do Rafael em 12/11/2026; data, horário e endereço vistos em 12/11/2026 na página do evento na Sympla (https://www.sympla.com.br/evento/indietronica-ephigenia/3634918), festa no Sympla do produtor \"Ephigenia\"; local na cobertura (andares 22 e 23). A página na Sympla não tem descrição: lineup, gênero e preço não vistos.",
+    "image": "https://www.sympla.com.br/images/logo-sympla-for-facebook.png"
+  },
+  {
+    "id": "evt-zig-justice-for-artpop-1121",
+    "priority": 3,
+    "name": "Justice for ARTPOP: 13 anos",
+    "venue": "ZIG Studio",
+    "description": "Noite em homenagem aos 13 anos do álbum ARTPOP, de Lady Gaga, na pista da ZIG.",
+    "date": "2026-11-21",
+    "startTime": "23:30",
+    "endTime": "06:00",
+    "tags": [
+      "Pop",
+      "Queer"
+    ],
+    "lineup": [],
+    "address": "Avenida Pacaembu, 33 · Barra Funda, São Paulo",
+    "latitude": -23.53235,
+    "longitude": -46.6613,
+    "ticketUrl": "https://shotgun.live/pt-br/events/artpop-ball-13-anos-sabado-19-11",
+    "price": "R$ 25–45 (lotes)",
+    "sourceUrl": "https://shotgun.live/pt-br/events/artpop-ball-13-anos-sabado-19-11",
+    "note": "casa fixa; a ZIG se apresenta como 'clube queer LGBTQIAPN+ feito por e para pessoas LGBTQIAPN+' na página da Shotgun; 18+. data, horário e lotes vistos na Shotgun pelo Chrome em 12/11/2026 (o link da página diz '19-11', mas a página diz sábado 21/11)",
+    "image": "https://assets.shotgun.live/image/upload/c_limit,w_1200,h_630,f_jpg,q_auto/production/artworks/1234_nzagbm.png"
+  },
+  {
+    "id": "evt-dedge-nave-1121",
+    "priority": 3,
+    "name": "Nave: Supernova (IT), Kenny Larkin (US)",
+    "venue": "D-EDGE",
+    "description": "Festa Nave da D-EDGE com Ray, Renato Ratier, Supernova, Kenny Larkin, Anønimat e Sonore DJs.",
+    "date": "2026-11-21",
+    "startTime": "23:59",
+    "endTime": "08:00",
+    "tags": [
+      "House"
+    ],
+    "lineup": [
+      "Ray",
+      "Renato Ratier",
+      "Supernova",
+      "Kenny Larkin",
+      "Anønimat",
+      "Sonore DJs"
+    ],
+    "address": "Av. Mário de Andrade, 141 · Barra Funda, São Paulo",
+    "latitude": -23.52812,
+    "longitude": -46.66222,
+    "ticketUrl": "https://www.ingresse.com/nave211126/",
+    "price": "",
+    "sourceUrl": "https://ra.co/events/2579294",
+    "note": "casa fixa incluída a pedido do Rafael em 12/11/2026; data, horário e lineup vistos em 12/11/2026 na página do RA (https://ra.co/events/2579294) e a data confirmada na agenda do site oficial d-edge.com.br (\"21.NOV -NAVE\"), que linka o Ingresse; página do Ingresse não abriu (403), preço não visto. Sem sinal LGBTQIA+ na página (só o aviso padrão de que não se tolera assédio/discriminação).",
+    "image": "https://kraken.ingresse.com/event/posters/110138/medium/1793727552.0695498.jpg"
+  },
+  {
     "id": "evt-mixbrasil-salivar-os-nos-do-corpo-1122",
     "priority": 2,
     "name": "Festival MixBrasil: Salivar os Nós do Corpo – uma prática afrotranstópica",
@@ -2872,7 +3342,7 @@ window.SP_EVENTS = [
     "startTime": "11:00",
     "endTime": "15:00",
     "tags": [
-      "Queer"
+      "Cult"
     ],
     "lineup": [
       "Mario Lopes"
@@ -2911,19 +3381,269 @@ window.SP_EVENTS = [
     "sourceUrl": "https://www.instagram.com/p/Dfe4E34xzUr/",
     "note": "casa fixa (bar de samba); incluída a pedido do Rafael em 12/11/2026 — o perfil @doisdois.sp não se apresenta como LGBTQIA+ nas páginas vistas. data no post 'Programação de novembro' de @doisdois.sp (08/11), lido no Instagram em 12/11/2026; o post não traz horário nem preço",
     "image": ""
+  },
+  {
+    "id": "evt-dedge-superafter-1122",
+    "priority": 3,
+    "name": "Superafter: Jonatas C",
+    "venue": "D-EDGE",
+    "description": "Festa Superafter da D-EDGE com Mary Mesk, Jonatas C, Soulfie e Noma.",
+    "date": "2026-11-22",
+    "startTime": "05:00",
+    "endTime": "12:00",
+    "tags": [
+      "House"
+    ],
+    "lineup": [
+      "Mary Mesk",
+      "Jonatas C",
+      "Soulfie",
+      "Noma"
+    ],
+    "address": "Av. Mário de Andrade, 141 · Barra Funda, São Paulo",
+    "latitude": -23.52812,
+    "longitude": -46.66222,
+    "ticketUrl": "https://www.ingresse.com/superafter221126/",
+    "price": "",
+    "sourceUrl": "https://ra.co/events/2579295",
+    "note": "casa fixa incluída a pedido do Rafael em 12/11/2026; data, horário e lineup vistos em 12/11/2026 na página do RA (https://ra.co/events/2579295) e a data confirmada na agenda do site oficial d-edge.com.br (\"22.NOV -SUPERAFTER\"), que linka o Ingresse; página do Ingresse não abriu (403), preço não visto. Sem sinal LGBTQIA+ na página (só o aviso padrão de que não se tolera assédio/discriminação). Superafter é evento separado da Nave da noite anterior (página própria no RA e linha própria na agenda do site).",
+    "image": "https://kraken.ingresse.com/event/posters/110142/medium/1793727712.5946088.jpg"
+  },
+  {
+    "id": "evt-ephigenia-cremosa-vinil-1122",
+    "priority": 3,
+    "name": "Cremosa Vinil",
+    "venue": "Ephigenia",
+    "description": "A dupla Cremosa Vinil toca disco, house e soul em vinil num domingo à tarde.",
+    "date": "2026-11-22",
+    "startTime": "16:00",
+    "endTime": "22:00",
+    "tags": [
+      "House"
+    ],
+    "lineup": [
+      "Júlia Weck",
+      "Rafa Jazz"
+    ],
+    "address": "Viaduto Santa Ifigênia, 66 · Santa Ifigênia, São Paulo",
+    "latitude": -23.54325,
+    "longitude": -46.63486,
+    "ticketUrl": "https://www.sympla.com.br/evento/cremosa-vinil-ephigenia-entrada-gratuita/3619234",
+    "price": "Gratuito",
+    "sourceUrl": "https://www.sympla.com.br/evento/cremosa-vinil-ephigenia-entrada-gratuita/3619234",
+    "note": "casa fixa incluída a pedido do Rafael em 12/11/2026; data, horário e endereço vistos em 12/11/2026 na página do evento na Sympla (https://www.sympla.com.br/evento/cremosa-vinil-ephigenia-entrada-gratuita/3619234), festa no Sympla do produtor \"Ephigenia\"; local na cobertura (andares 22 e 23). Entrada gratuita (escrito no título; evento sem cobrança na Sympla).",
+    "image": "https://www.sympla.com.br/images/logo-sympla-for-facebook.png"
+  },
+  {
+    "id": "evt-dedge-moving-1126",
+    "priority": 3,
+    "name": "Moving: Dogghaüz Showcase",
+    "venue": "D-EDGE",
+    "description": "Festa Moving da D-EDGE com Ehlla, Cesar Nardini, Jay Mariani e Beatric.",
+    "date": "2026-11-26",
+    "startTime": "22:00",
+    "endTime": "06:00",
+    "tags": [
+      "House"
+    ],
+    "lineup": [
+      "Ehlla",
+      "Cesar Nardini",
+      "Jay Mariani",
+      "Beatric"
+    ],
+    "address": "Av. Mário de Andrade, 141 · Barra Funda, São Paulo",
+    "latitude": -23.52812,
+    "longitude": -46.66222,
+    "ticketUrl": "https://www.ingresse.com/moving261126/",
+    "price": "",
+    "sourceUrl": "https://ra.co/events/2579298",
+    "note": "casa fixa incluída a pedido do Rafael em 12/11/2026; data, horário e lineup vistos em 12/11/2026 na página do RA (https://ra.co/events/2579298) e a data confirmada na agenda do site oficial d-edge.com.br (\"26.NOV -MOVING\"), que linka o Ingresse; página do Ingresse não abriu (403), preço não visto. Sem sinal LGBTQIA+ na página (só o aviso padrão de que não se tolera assédio/discriminação). Pista 1 é o \"Dogghaüz Showcase\".",
+    "image": "https://kraken.ingresse.com/event/posters/110128/medium/1793824758.0838885.jpg"
+  },
+  {
+    "id": "evt-ephigenia-eli-iwasa-1127",
+    "priority": 3,
+    "name": "Eli Iwasa + Hugo Martinez (IBZ) + Deep Mariano (ARG)",
+    "venue": "Ephigenia",
+    "description": "Eli Iwasa, Hugo Martinez e Deep Mariano tocam house e techno.",
+    "date": "2026-11-27",
+    "startTime": "23:00",
+    "endTime": "06:00",
+    "tags": [
+      "House",
+      "Techno"
+    ],
+    "lineup": [
+      "Eli Iwasa",
+      "Hugo Martinez",
+      "Deep Mariano",
+      "Exequiel",
+      "Dion"
+    ],
+    "address": "Viaduto Santa Ifigênia, 66 · Santa Ifigênia, São Paulo",
+    "latitude": -23.54325,
+    "longitude": -46.63486,
+    "ticketUrl": "https://www.sympla.com.br/evento/eli-iwasa-hugo-martinez-ibz-deep-mariano-arg-ephigenia/3619239",
+    "price": "",
+    "sourceUrl": "https://www.sympla.com.br/evento/eli-iwasa-hugo-martinez-ibz-deep-mariano-arg-ephigenia/3619239",
+    "note": "casa fixa incluída a pedido do Rafael em 12/11/2026; data, horário e endereço vistos em 12/11/2026 na página do evento na Sympla (https://www.sympla.com.br/evento/eli-iwasa-hugo-martinez-ibz-deep-mariano-arg-ephigenia/3619239), festa no Sympla do produtor \"Ephigenia\"; local na cobertura (andares 22 e 23). Preço não escrito na página.",
+    "image": "https://www.sympla.com.br/images/logo-sympla-for-facebook.png"
+  },
+  {
+    "id": "evt-dedge-freak-chic-1127",
+    "priority": 3,
+    "name": "Freak Chic: 20 anos de Serialism",
+    "venue": "D-EDGE",
+    "description": "Festa Freak Chic da D-EDGE com Cesare vs Disorder, Sublee e Botanic Soundsystem.",
+    "date": "2026-11-27",
+    "startTime": "23:59",
+    "endTime": "08:00",
+    "tags": [
+      "House"
+    ],
+    "lineup": [
+      "Cesare vs Disorder",
+      "Sublee",
+      "Botanic Soundsystem"
+    ],
+    "address": "Av. Mário de Andrade, 141 · Barra Funda, São Paulo",
+    "latitude": -23.52812,
+    "longitude": -46.66222,
+    "ticketUrl": "https://www.ingresse.com/freak271126/",
+    "price": "",
+    "sourceUrl": "https://ra.co/events/2579300",
+    "note": "casa fixa incluída a pedido do Rafael em 12/11/2026; data, horário e lineup vistos em 12/11/2026 na página do RA (https://ra.co/events/2579300) e a data confirmada na agenda do site oficial d-edge.com.br (\"27.NOV -FREAK CHIC\"), que linka o Ingresse; página do Ingresse não abriu (403), preço não visto. Sem sinal LGBTQIA+ na página (só o aviso padrão de que não se tolera assédio/discriminação). Pista 1 é \"20 anos de Serialism\"; o RA também marca Minimal (fora das tags permitidas).",
+    "image": "https://kraken.ingresse.com/event/posters/110134/medium/1793727474.5880437.jpg"
+  },
+  {
+    "id": "evt-ephigenia-metropolis-1128",
+    "priority": 3,
+    "name": "Metropolis apresenta Jyotv (UK) e Mango&Ginger (USA)",
+    "venue": "Ephigenia",
+    "description": "A festa Metropolis recebe Jyotv e Mango&Ginger.",
+    "date": "2026-11-28",
+    "startTime": "22:00",
+    "endTime": "05:00",
+    "tags": [],
+    "lineup": [
+      "Jyotv",
+      "Mango&Ginger"
+    ],
+    "address": "Viaduto Santa Ifigênia, 66 · Santa Ifigênia, São Paulo",
+    "latitude": -23.54325,
+    "longitude": -46.63486,
+    "ticketUrl": "https://www.sympla.com.br/evento/metropolis-apresenta-jyotv-uk-e-mango-ginger-usa-ephigneia/3634917",
+    "price": "",
+    "sourceUrl": "https://www.sympla.com.br/evento/metropolis-apresenta-jyotv-uk-e-mango-ginger-usa-ephigneia/3634917",
+    "note": "casa fixa incluída a pedido do Rafael em 12/11/2026; data, horário e endereço vistos em 12/11/2026 na página do evento na Sympla (https://www.sympla.com.br/evento/metropolis-apresenta-jyotv-uk-e-mango-ginger-usa-ephigneia/3634917), festa no Sympla do produtor \"Ephigenia\"; local na cobertura (andares 22 e 23). A página na Sympla não tem descrição: lineup só pelo título; gênero e preço não vistos. O título escreve \"Ephigneia\".",
+    "image": "https://www.sympla.com.br/images/logo-sympla-for-facebook.png"
+  },
+  {
+    "id": "evt-dedge-nave-1128",
+    "priority": 3,
+    "name": "Nave: Cuff Music Showcase",
+    "venue": "D-EDGE",
+    "description": "Festa Nave da D-EDGE com BAPP, Amine Edge, Ragie Ban, Cactunes, Ana Jones e Dix Sounds.",
+    "date": "2026-11-28",
+    "startTime": "23:59",
+    "endTime": "08:00",
+    "tags": [
+      "House"
+    ],
+    "lineup": [
+      "BAPP",
+      "Amine Edge",
+      "Ragie Ban",
+      "Cactunes",
+      "Ana Jones",
+      "Dix Sounds"
+    ],
+    "address": "Av. Mário de Andrade, 141 · Barra Funda, São Paulo",
+    "latitude": -23.52812,
+    "longitude": -46.66222,
+    "ticketUrl": "https://www.ingresse.com/nave281126/",
+    "price": "",
+    "sourceUrl": "https://ra.co/events/2579301",
+    "note": "casa fixa incluída a pedido do Rafael em 12/11/2026; data, horário e lineup vistos em 12/11/2026 na página do RA (https://ra.co/events/2579301) e a data confirmada na agenda do site oficial d-edge.com.br (\"28.NOV -NAVE\"), que linka o Ingresse; página do Ingresse não abriu (403), preço não visto. Sem sinal LGBTQIA+ na página (só o aviso padrão de que não se tolera assédio/discriminação). Pista 1 é o \"Cuff Music Showcase\".",
+    "image": "https://kraken.ingresse.com/event/posters/110140/medium/1793739853.935592.jpg"
+  },
+  {
+    "id": "evt-dedge-superafter-1129",
+    "priority": 3,
+    "name": "Superafter: Diogo Accioly",
+    "venue": "D-EDGE",
+    "description": "Festa Superafter da D-EDGE com Diogo Accioly, Stereo e Luma.",
+    "date": "2026-11-29",
+    "startTime": "05:00",
+    "endTime": "12:00",
+    "tags": [
+      "House"
+    ],
+    "lineup": [
+      "Diogo Accioly",
+      "Stereo",
+      "Luma"
+    ],
+    "address": "Av. Mário de Andrade, 141 · Barra Funda, São Paulo",
+    "latitude": -23.52812,
+    "longitude": -46.66222,
+    "ticketUrl": "https://www.ingresse.com/superafter291126/",
+    "price": "",
+    "sourceUrl": "https://ra.co/events/2579309",
+    "note": "casa fixa incluída a pedido do Rafael em 12/11/2026; data, horário e lineup vistos em 12/11/2026 na página do RA (https://ra.co/events/2579309) e a data confirmada na agenda do site oficial d-edge.com.br (\"29.NOV -SUPERAFTER\"), que linka o Ingresse; página do Ingresse não abriu (403), preço não visto. Sem sinal LGBTQIA+ na página (só o aviso padrão de que não se tolera assédio/discriminação). Superafter é evento separado da Nave da noite anterior (página própria no RA e linha própria na agenda do site).",
+    "image": "https://kraken.ingresse.com/event/posters/110143/medium/1793727746.0805137.jpg"
+  },
+  {
+    "id": "evt-ephigenia-paula-tape-1211",
+    "priority": 3,
+    "name": "Paula Tape (CH) + Felipe Gordon (COL) + Badsista",
+    "venue": "Ephigenia",
+    "description": "Paula Tape e Felipe Gordon no 22º andar e Badsista no 23º, entre house e techno.",
+    "date": "2026-12-11",
+    "startTime": "23:00",
+    "endTime": "06:00",
+    "tags": [
+      "House",
+      "Techno"
+    ],
+    "lineup": [
+      "Paula Tape",
+      "Felipe Gordon",
+      "Tessuto",
+      "Badsista",
+      "Aya Ibeji"
+    ],
+    "address": "Viaduto Santa Ifigênia, 66 · Santa Ifigênia, São Paulo",
+    "latitude": -23.54325,
+    "longitude": -46.63486,
+    "ticketUrl": "https://www.sympla.com.br/evento/paula-tape-ch-felipe-gordon-col-badsista-ephigenia/3653829",
+    "price": "",
+    "sourceUrl": "https://www.sympla.com.br/evento/paula-tape-ch-felipe-gordon-col-badsista-ephigenia/3653829",
+    "note": "casa fixa incluída a pedido do Rafael em 12/11/2026; data, horário e endereço vistos em 12/11/2026 na página do evento na Sympla (https://www.sympla.com.br/evento/paula-tape-ch-felipe-gordon-col-badsista-ephigenia/3653829), festa no Sympla do produtor \"Ephigenia\"; local na cobertura (andares 22 e 23). Preço não escrito na página. A página cita \"vogue beat\" (cultura ballroom) no set de Aya Ibeji e fala em \"liberdade\"; sinal queer fraco, sem menção explícita LGBTQIA+.",
+    "image": "https://images.sympla.com.br/6af62d2421937-lg.png"
   }
 ];
 
 
 // ── data/tags.js ──
-// Tag taxonomy (matches PRD). Order = display order in the filter ribbon.
-// 2026-11-12 (pedido do Rafael): Samba e Bar vêm primeiro no filtro.
-// Festas de sexo entram em Fetish (pedido do Rafael, 12/11).
-window.SP_TAGS = ["Samba", "Bar", "Techno", "House", "Drag", "Queer", "Fetish", "Pop", "Experimental", "Bloquinho"];
+// Tag taxonomy. Order = display order in the filter ribbon.
+// 2026-11-12 (pedidos do Rafael): filtros em grupos — lugar/tipo (Bar, Samba,
+// Cult), som (Techno, House, Pop, Experimental), vibe (Queer, Fetish) e, no
+// fim, Bloquinho (fora de época) e Drag. Festas de sexo entram em Fetish.
+// "Cult" = eventos culturais (cinema, teatro, museu, festival); um evento Cult
+// tem SÓ essa tag, para não poluir os outros filtros.
+window.SP_TAG_GROUPS = [
+  ["Bar", "Samba", "Cult"],
+  ["Techno", "House", "Pop", "Experimental"],
+  ["Queer", "Fetish"],
+  ["Bloquinho", "Drag"],
+];
+window.SP_TAGS = window.SP_TAG_GROUPS.flat();
 
 </script>
 <script>
-const{useState,useEffect,useMemo,useCallback,useRef}=React,CACHE_KEY="sp_scene_cache_v1",USER_KEY="sp_scene_user_v1",SAVED_KEY="sp_scene_saved_v1";function sleep(e){return new Promise(t=>setTimeout(t,e))}function nowISO(){return new Date().toISOString()}function sourceHost(e){try{return new URL(e).hostname.replace(/^www\./,"")}catch(t){return e}}function formatUpdatedAt(e){const t=new Date(e);if(isNaN(t))return"";const a=["dom","seg","ter","qua","qui","sex","sáb"][t.getDay()],s=String(t.getDate()).padStart(2,"0"),o=String(t.getMonth()+1).padStart(2,"0");return`${a} ${s}/${o}`}function getSavedIds(){try{return JSON.parse(localStorage.getItem(SAVED_KEY)||"[]")}catch(e){return[]}}function setSavedIds(e){localStorage.setItem(SAVED_KEY,JSON.stringify(e)),window.dispatchEvent(new CustomEvent("sp:saved-changed",{detail:e}))}function isSaved(e){return getSavedIds().includes(e)}function toggleSaved(e){const t=getSavedIds(),a=t.indexOf(e);return a>=0?t.splice(a,1):t.push(e),setSavedIds(t),t}function useSavedIds(){const[e,t]=useState(()=>getSavedIds());return useEffect(()=>{const a=()=>t(getSavedIds());return window.addEventListener("sp:saved-changed",a),window.addEventListener("storage",a),()=>{window.removeEventListener("sp:saved-changed",a),window.removeEventListener("storage",a)}},[]),e}const ApiClient={async listEvents({from:e,to:t,tags:a=[],simulateFailure:s=!1}={}){var i;if(s)throw new Error("network");if((i=window.SP_CONFIG)!=null&&i.apiBaseUrl){const n=new URL("/events",window.SP_CONFIG.apiBaseUrl);n.searchParams.set("from",e),n.searchParams.set("to",t),a.length&&n.searchParams.set("tags",a.join(","));const d=await fetch(n.toString(),{headers:{Accept:"application/json"}});if(!d.ok)throw new Error(`api ${d.status}`);return d.json()}await sleep(120);const o=(window.SP_EVENTS||[]).filter(n=>!(e&&n.date<e||t&&n.date>t||a.length&&!a.some(d=>{var v;return(v=n.tags)==null?void 0:v.includes(d)})));return{events:o,page:1,pageSize:o.length,total:o.length,rateLimit:{remaining:100,resetAt:nowISO()}}},async getEvent(e){var a;if((a=window.SP_CONFIG)!=null&&a.apiBaseUrl){const s=await fetch(`${window.SP_CONFIG.apiBaseUrl}/events/${encodeURIComponent(e)}`);if(!s.ok)throw new Error(`api ${s.status}`);return s.json()}await sleep(80);const t=(window.SP_EVENTS||[]).find(s=>s.id===e);if(!t)throw new Error("not found");return{event:t}}},WEEKDAYS=["Dom","Seg","Ter","Qua","Qui","Sex","Sáb"],MONTHS=["Jan","Fev","Mar","Abr","Mai","Jun","Jul","Ago","Set","Out","Nov","Dez"];function toDate(e){const[t,a,s]=e.split("-").map(Number);return new Date(t,a-1,s)}function toISO(e){const t=e.getFullYear(),a=String(e.getMonth()+1).padStart(2,"0"),s=String(e.getDate()).padStart(2,"0");return`${t}-${a}-${s}`}function todayISO(){return toISO(new Date)}function addDays(e,t){const a=toDate(e);return a.setDate(a.getDate()+t),toISO(a)}function mondayOf(e){const t=toDate(e),a=t.getDay()===0?7:t.getDay();return t.setDate(t.getDate()-(a-1)),toISO(t)}function humanTime(e){return e}function formatFullDate(e){const t=toDate(e);return`${WEEKDAYS[t.getDay()]}, ${String(t.getDate()).padStart(2,"0")} ${MONTHS[t.getMonth()]}`}function isOngoing(e,t){if(!e.endTime)return!1;const a=new Date(`${e.date}T${e.startTime||"00:00"}:00`),[s]=(e.startTime||"00:00").split(":").map(Number),[o]=e.endTime.split(":").map(Number),i=o<=s,n=new Date(`${e.date}T${e.endTime}:00`);return i&&n.setDate(n.getDate()+1),t>=a&&t<=n}const TAG_COLORS={Techno:"pink",House:"cyan",Drag:"pink",Queer:"acid",Fetish:"pink",Pop:"cyan",Experimental:"acid",Bloquinho:"acid",Samba:"acid",Bar:"cyan"};function tagColor(e){return TAG_COLORS[e]||"pink"}function EventImage({src:e,fit:t,onFail:a}){const s={position:"absolute",inset:0,width:"100%",height:"100%"};return React.createElement(React.Fragment,null,t==="contain"&&React.createElement("img",{src:e,alt:"","aria-hidden":"true",referrerPolicy:"no-referrer",loading:"lazy",style:{...s,objectFit:"cover",filter:"blur(18px) brightness(0.6)",transform:"scale(1.15)"}}),React.createElement("img",{src:e,alt:"",referrerPolicy:"no-referrer",loading:"lazy",decoding:"async",onError:a,style:{...s,objectFit:t==="contain"?"contain":"cover",objectPosition:"center 35%"}}))}function RisoArt({event:e,children:t,fit:a}){const[s,o]=useState(!1),i=!!e.image&&!s,n=(e.id||e.name||"").split("").reduce((c,_)=>c+_.charCodeAt(0),0),d=n*31%360,v=[["#FF2D87","#00E0FF"],["#F5FF3C","#FF2D87"],["#00E0FF","#F5FF3C"],["#FF2D87","#F5FF3C"],["#8A7FFF","#FF4D2E"],["#B8FF00","#FF00AA"]],y=v[n%v.length],u=n%40+"%",p=n*7%25+65+"%",g=n*13%40+40+"%",r=n*17%40+40+"%";return React.createElement("div",{className:i?"sp-art sp-art--img":"sp-art",style:{background:`linear-gradient(${d}deg, ${y[0]}, ${y[1]})`,position:"relative",height:"100%",overflow:"hidden"}},React.createElement("div",{style:{position:"absolute",top:u,left:p,width:"140px",height:"140px",borderRadius:"999px",background:"#FFFFFF",mixBlendMode:"soft-light",opacity:.45,transform:"translate(-30%, -30%)"}}),React.createElement("div",{style:{position:"absolute",top:g,left:r,width:"120px",height:"120px",borderRadius:"999px",background:y[1],mixBlendMode:"screen",opacity:.55,transform:"translate(-20%, -20%)"}}),React.createElement("div",{style:{position:"absolute",inset:0,backgroundImage:`url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='100'><filter id='n'><feTurbulence baseFrequency='1.1' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)' opacity='0.9'/></svg>")`,mixBlendMode:"overlay",opacity:.25}}),i&&React.createElement(EventImage,{src:e.image,fit:a,onFail:()=>o(!0)}),t)}const Icon={Close:e=>React.createElement("svg",{width:e.size||18,height:e.size||18,viewBox:"0 0 24 24",fill:"none",stroke:"currentColor",strokeWidth:"2",strokeLinecap:"round"},React.createElement("path",{d:"M6 6l12 12M18 6L6 18"})),Back:e=>React.createElement("svg",{width:e.size||20,height:e.size||20,viewBox:"0 0 24 24",fill:"none",stroke:"currentColor",strokeWidth:"2",strokeLinecap:"round"},React.createElement("path",{d:"M15 18l-6-6 6-6"})),Map:e=>React.createElement("svg",{width:e.size||14,height:e.size||14,viewBox:"0 0 24 24",fill:"none",stroke:"currentColor",strokeWidth:"2",strokeLinecap:"round",strokeLinejoin:"round"},React.createElement("path",{d:"M1 6l8-3 6 3 8-3v15l-8 3-6-3-8 3z"}),React.createElement("path",{d:"M9 3v15M15 6v15"})),Ticket:e=>React.createElement("svg",{width:e.size||14,height:e.size||14,viewBox:"0 0 24 24",fill:"none",stroke:"currentColor",strokeWidth:"2",strokeLinecap:"round",strokeLinejoin:"round"},React.createElement("path",{d:"M3 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2z"}),React.createElement("path",{d:"M13 5v14"})),Google:()=>React.createElement("svg",{width:"18",height:"18",viewBox:"0 0 48 48"},React.createElement("path",{fill:"#FFC107",d:"M43.6 20.1H42V20H24v8h11.3C33.7 32.9 29.3 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.9 1.2 8 3.1l5.7-5.7C34.2 6.1 29.4 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20 20-8.9 20-20c0-1.3-.1-2.6-.4-3.9z"}),React.createElement("path",{fill:"#FF3D00",d:"M6.3 14.7l6.6 4.8C14.7 15.1 19 12 24 12c3.1 0 5.9 1.2 8 3.1l5.7-5.7C34.2 6.1 29.4 4 24 4 16.3 4 9.6 8.3 6.3 14.7z"}),React.createElement("path",{fill:"#4CAF50",d:"M24 44c5.2 0 10-2 13.6-5.2l-6.3-5.2C29.3 35.2 26.8 36 24 36c-5.3 0-9.7-3.1-11.3-7.9l-6.5 5C9.5 39.6 16.2 44 24 44z"}),React.createElement("path",{fill:"#1976D2",d:"M43.6 20.1H42V20H24v8h11.3c-.7 2.1-2 3.9-3.7 5.2l6.3 5.2c-.4.4 6.6-4.8 6.6-14.4 0-1.3-.1-2.6-.4-3.9z"})),Apple:()=>React.createElement("svg",{width:"18",height:"18",viewBox:"0 0 24 24",fill:"currentColor"},React.createElement("path",{d:"M16.365 1.43c0 1.14-.468 2.235-1.232 3.031-.81.84-2.09 1.476-3.135 1.395-.12-1.12.418-2.253 1.173-3.012.814-.81 2.23-1.432 3.194-1.414zM20.79 17.6c-.6 1.38-.89 2-1.66 3.22-1.08 1.7-2.6 3.81-4.48 3.82-1.68.02-2.11-.99-4.39-.98-2.28.01-2.76 1-4.44.98-1.88-.02-3.32-1.93-4.4-3.62-3.02-4.72-3.34-10.27-1.48-13.22 1.33-2.1 3.42-3.32 5.39-3.32 2 0 3.27 1.11 4.93 1.11 1.6 0 2.58-1.11 4.9-1.11 1.75 0 3.61.96 4.94 2.6-4.34 2.39-3.64 8.6.69 11.52z"})),Copy:e=>React.createElement("svg",{width:e.size||14,height:e.size||14,viewBox:"0 0 24 24",fill:"none",stroke:"currentColor",strokeWidth:"2",strokeLinecap:"round",strokeLinejoin:"round"},React.createElement("rect",{x:"9",y:"9",width:"13",height:"13",rx:"2"}),React.createElement("path",{d:"M5 15V5a2 2 0 0 1 2-2h10"})),ChevronRight:e=>React.createElement("svg",{width:e.size||16,height:e.size||16,viewBox:"0 0 24 24",fill:"none",stroke:"currentColor",strokeWidth:"2",strokeLinecap:"round"},React.createElement("path",{d:"M9 18l6-6-6-6"})),Home:e=>React.createElement("svg",{width:e.size||22,height:e.size||22,viewBox:"0 0 24 24",fill:"none",stroke:"currentColor",strokeWidth:"2",strokeLinecap:"round",strokeLinejoin:"round"},React.createElement("path",{d:"M3 12l9-8 9 8v9a1 1 0 0 1-1 1h-5v-6h-6v6H4a1 1 0 0 1-1-1z"})),User:e=>React.createElement("svg",{width:e.size||22,height:e.size||22,viewBox:"0 0 24 24",fill:"none",stroke:"currentColor",strokeWidth:"2",strokeLinecap:"round",strokeLinejoin:"round"},React.createElement("circle",{cx:"12",cy:"8",r:"4"}),React.createElement("path",{d:"M4 21c0-4 4-7 8-7s8 3 8 7"})),Heart:e=>React.createElement("svg",{width:e.size||22,height:e.size||22,viewBox:"0 0 24 24",fill:"none",stroke:"currentColor",strokeWidth:"2",strokeLinecap:"round",strokeLinejoin:"round"},React.createElement("path",{d:"M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"})),HeartFilled:e=>React.createElement("svg",{width:e.size||22,height:e.size||22,viewBox:"0 0 24 24",fill:"currentColor",stroke:"currentColor",strokeWidth:"2",strokeLinecap:"round",strokeLinejoin:"round"},React.createElement("path",{d:"M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"}))};function FeedScreen({onOpenEvent:e}){const[t,a]=useState("today"),[s,o]=useState([]),[i,n]=useState([]),[d,v]=useState(!0),[y,u]=useState(!1),[p,g]=useState(new Date);useEffect(()=>{const l=setInterval(()=>g(new Date),6e4);return()=>clearInterval(l)},[]);const r=todayISO(),c=mondayOf(r),_=addDays(c,13),b=useCallback(async()=>{v(!0);try{const l=await ApiClient.listEvents({from:c,to:_});n(l.events),u(!1),localStorage.setItem(CACHE_KEY,JSON.stringify({at:nowISO(),events:l.events}))}catch(l){const m=localStorage.getItem(CACHE_KEY);if(m){const h=JSON.parse(m);n(h.events||[]),u(!0),console.log("[SP Scene] Cache Hit — offline mode")}}finally{v(!1)}},[c,_]);useEffect(()=>{b()},[b]);const N=useMemo(()=>{let l=i;if(s.length&&(l=l.filter(m=>s.every(h=>{var f;return(f=m.tags)==null?void 0:f.includes(h)}))),t==="today")l=l.filter(m=>m.date===r||isOngoing(m,p)&&m.date===addDays(r,-1));else{const m=addDays(r,1),h=addDays(r,7);l=l.filter(f=>f.date>=m&&f.date<=h)}return l},[i,s,t,r,p]),w=useMemo(()=>{const l=new Map;for(const m of N)l.has(m.date)||l.set(m.date,[]),l.get(m.date).push(m);for(const m of l.values())m.sort((h,f)=>h.priority-f.priority);return[...l.entries()].sort(([m],[h])=>m.localeCompare(h))},[N]),k=useCallback(l=>{o(m=>m.includes(l)?m.filter(h=>h!==l):[...m,l])},[]);return React.createElement(React.Fragment,null,React.createElement("div",{className:"sp-statusbar"}),y&&React.createElement("div",{className:"sp-offline"},"● sem internet · mostrando a última agenda baixada"),React.createElement("div",{className:"sp-topbar"},React.createElement("div",{className:"sp-topbar__row"},React.createElement("div",{className:"sp-logo"},"SP",React.createElement("em",null,"Scene")),window.SP_DATA_UPDATED_AT&&React.createElement("div",{className:"sp-hello"},"atualizado ",React.createElement("strong",null,formatUpdatedAt(window.SP_DATA_UPDATED_AT)))),React.createElement("div",{className:"sp-switcher"},React.createElement("button",{className:t==="today"?"is-on":"",onClick:()=>a("today")},"Hoje"),React.createElement("button",{className:t==="week"?"is-on":"",onClick:()=>a("week")},"Próximos 7 dias"))),React.createElement("div",{className:"sp-ribbon"},React.createElement("div",{className:"sp-ribbon__inner"},(window.SP_TAGS||[]).map(l=>{const m=s.includes(l),h=tagColor(l);return React.createElement("button",{key:l,className:`sp-chip sp-chip--${h} ${m?"sp-chip--on":""}`,onClick:()=>k(l)},l)}),s.length>0&&React.createElement("button",{className:"sp-chip",style:{color:"var(--sp-ink-mute)"},onClick:()=>o([])},"limpar"))),React.createElement("div",{className:"sp-events"},d&&React.createElement("div",{className:"sp-empty"},"Carregando a cena…"),!d&&w.length===0&&React.createElement("div",{className:"sp-empty"},s.length?"Nada pra essa combinação de filtros. Tenta limpar pra ver tudo.":t==="today"?"Nenhum evento confirmado pra hoje. Dá uma olhada nos próximos 7 dias.":"Nenhum evento confirmado nos próximos 7 dias ainda."),w.map(([l,m])=>React.createElement(DayGroup,{key:l,date:l,list:m,today:r,now:p,onOpenEvent:e}))))}function DayGroup({date:e,list:t,today:a,now:s,onOpenEvent:o}){const i=toDate(e),n=WEEKDAYS[i.getDay()],d=i.getDate(),v=MONTHS[i.getMonth()],y=e===a,u=e===addDays(a,1);return React.createElement(React.Fragment,null,React.createElement("div",{className:"sp-day-head"},React.createElement("div",{className:"sp-day-head__num"},String(d).padStart(2,"0")),React.createElement("div",{className:"sp-day-head__info"},React.createElement("div",{className:"sp-day-head__dow"},n),React.createElement("div",{className:"sp-day-head__month"},v," · 2026")),y&&React.createElement("div",{className:"sp-day-head__badge sp-day-head__badge--today"},"Hoje"),u&&React.createElement("div",{className:"sp-day-head__badge sp-day-head__badge--tomorrow"},"Amanhã")),t.map(p=>React.createElement(EventCard,{key:p.id,event:p,now:s,onOpen:()=>o(p.id)})))}function EventCard({event:e,now:t,onOpen:a}){const s=isOngoing(e,t),o=(e.lineup||[]).slice(0,3).join(" · "),n=useSavedIds().includes(e.id),d=v=>{v.stopPropagation(),toggleSaved(e.id)};return React.createElement("div",{className:"sp-card",onClick:a},React.createElement("div",{className:"sp-card__art"},React.createElement(RisoArt,{event:e},React.createElement("div",{className:"sp-card__art__title"},e.name),React.createElement("div",{className:"sp-card__art__tag"},e.priority===1&&React.createElement("span",{className:"sp-prio sp-prio-1"},"Destaque")),s&&React.createElement("div",{className:"sp-card__ongoing"},"Rolando"),React.createElement("button",{className:`sp-save sp-save--card ${n?"is-on":""}`,onClick:d,"aria-label":n?"Remover dos salvos":"Salvar","aria-pressed":n},n?React.createElement(Icon.HeartFilled,{size:16}):React.createElement(Icon.Heart,{size:16})))),React.createElement("div",{className:"sp-card__body"},React.createElement("div",{className:"sp-card__time"},e.startTime||"horário a confirmar"," · ",e.venue),React.createElement("div",{className:"sp-card__name"},e.name),o&&React.createElement("div",{className:"sp-card__lineup"},o),React.createElement("div",{className:"sp-card__tags"},(e.tags||[]).map(v=>React.createElement("span",{key:v,className:`sp-chip sp-chip--${tagColor(v)} sp-chip--on`},v)))))}function EventDetails({eventId:e,onClose:t}){var p;const[a,s]=useState(null),[o,i]=useState(!1),d=useSavedIds().includes(e);if(useEffect(()=>{ApiClient.getEvent(e).then(g=>s(g.event)).catch(()=>{})},[e]),!a)return React.createElement("div",{className:"sp-details"},React.createElement("button",{className:"sp-details__close",onClick:t},React.createElement(Icon.Close,null)),React.createElement("div",{className:"sp-empty",style:{paddingTop:120}},"Carregando…"));const v=async()=>{try{await navigator.clipboard.writeText(a.address),i(!0),setTimeout(()=>i(!1),1500)}catch(g){}},y=()=>{const g=encodeURIComponent(a.address);window.open(`https://www.google.com/maps/search/?api=1&query=${g}`,"_blank","noopener")},u=()=>{a.ticketUrl&&window.open(a.ticketUrl,"_blank","noopener")};return React.createElement("div",{className:"sp-details"},React.createElement("div",{className:"sp-statusbar"}),React.createElement("button",{className:"sp-details__close",onClick:t,"aria-label":"Voltar"},React.createElement(Icon.Back,null)),React.createElement("button",{className:`sp-details__save ${d?"is-on":""}`,onClick:()=>toggleSaved(e),"aria-label":d?"Remover dos salvos":"Salvar evento","aria-pressed":d},d?React.createElement(Icon.HeartFilled,{size:18}):React.createElement(Icon.Heart,{size:18})),React.createElement("div",{className:"sp-details__body"},React.createElement("div",{className:"sp-details__art"},React.createElement(RisoArt,{event:a,fit:"contain"},React.createElement("div",{className:"sp-details__art__title"},a.name))),React.createElement("div",{className:"sp-details__content"},React.createElement("div",{className:"sp-details__prio-row"},a.priority===1&&React.createElement("span",{className:"sp-prio sp-prio-1"},"Destaque da semana")),React.createElement("h1",{className:"sp-details__name"},a.name),React.createElement("div",{className:"sp-details__venue"},a.venue),React.createElement("div",{className:"sp-details__meta"},React.createElement("div",{className:"sp-details__meta__item"},React.createElement("span",{className:"sp-label"},"Quando"),React.createElement("span",{className:"sp-value"},formatFullDate(a.date)," · ",a.startTime||"horário a confirmar")),a.price&&React.createElement("div",{className:"sp-details__meta__item"},React.createElement("span",{className:"sp-label"},"Preço"),React.createElement("span",{className:"sp-value"},a.price))),React.createElement("div",{className:"sp-details__tags"},a.tags.map(g=>React.createElement("span",{key:g,className:`sp-chip sp-chip--${tagColor(g)} sp-chip--on`},g))),a.description&&React.createElement("div",{className:"sp-details__section"},React.createElement("h3",null,"Sobre"),React.createElement("p",null,a.description)),((p=a.lineup)==null?void 0:p.length)>0&&React.createElement("div",{className:"sp-details__section"},React.createElement("h3",null,"Lineup"),React.createElement("ul",{className:"sp-details__lineup-list"},a.lineup.map((g,r)=>React.createElement("li",{key:r},g)))),a.sourceUrl&&React.createElement("div",{className:"sp-details__section"},React.createElement("h3",null,"Fonte"),React.createElement("p",{style:{fontSize:13}},React.createElement("a",{href:a.sourceUrl,target:"_blank",rel:"noopener noreferrer",style:{color:"var(--sp-cyan, #00E0FF)"}},sourceHost(a.sourceUrl))," ","· confira antes de sair: horário e preço podem mudar."),a.image&&React.createElement("p",{style:{fontSize:12,color:"var(--sp-ink-mute)",marginTop:6}},"Arte: divulgação do evento, exibida a partir da página de ",sourceHost(a.sourceUrl),".")),React.createElement("div",{className:"sp-details__section"},React.createElement("h3",null,"Endereço"),React.createElement("div",{className:"sp-details__address"},a.address||"Local ainda não confirmado. Veja a fonte acima."),a.address&&React.createElement("div",{className:"sp-details__address-actions"},React.createElement("button",{className:"sp-btn",style:{height:40,fontSize:11,flex:1},onClick:v},React.createElement(Icon.Copy,null)," ",o?"Copiado!":"Copiar"),React.createElement("button",{className:"sp-btn sp-btn--primary",style:{height:40,fontSize:11,flex:1},onClick:y},React.createElement(Icon.Map,null)," Abrir no Maps"))))),React.createElement("div",{className:"sp-details__actions"},a.ticketUrl?React.createElement("button",{className:"sp-btn sp-btn--pink",style:{flex:1},onClick:u},React.createElement(Icon.Ticket,null)," Comprar ingresso"):React.createElement("button",{className:"sp-btn",style:{flex:1},disabled:!0},React.createElement(Icon.Ticket,null)," Sem venda online informada")))}function MapScreen({onOpenEvent:e}){const[t,a]=useState([]),[s,o]=useState(!0);return useEffect(()=>{let i=!1;return(async()=>{o(!0);try{const n=todayISO(),d=addDays(n,14),v=await ApiClient.listEvents({from:n,to:d});i||a(v.events||[])}catch(n){i||a([])}finally{i||o(!1)}})(),()=>{i=!0}},[]),React.createElement(React.Fragment,null,React.createElement("div",{className:"sp-statusbar"}),React.createElement("div",{className:"sp-topbar"},React.createElement("div",{className:"sp-topbar__row"},React.createElement("div",{className:"sp-logo"},"SP",React.createElement("em",null,"Scene")),React.createElement("div",{className:"sp-screen-tag"},"Mapa"))),React.createElement(MapView,{events:t,loading:s,onOpenEvent:e}))}function MapView({events:e,onOpenEvent:t,loading:a}){const s=useRef(null),o=useRef(null),[i,n]=useState(null),[d,v]=useState(null),[y,u]=useState(!1),p=e.filter(r=>r.latitude&&r.longitude);useEffect(()=>{var _;let r=!1;const c=!!(((_=window.SP_CONFIG)==null?void 0:_.googleMapsApiKey)||"").trim();return(async()=>{if(c){if(v("google"),await loadGoogleMaps(window.SP_CONFIG.googleMapsApiKey),r||!s.current||o.current)return;const b=new window.google.maps.Map(s.current,{center:{lat:-23.55,lng:-46.64},zoom:12,styles:DARK_MAP_STYLE,disableDefaultUI:!0,zoomControl:!0,gestureHandling:"greedy"});o.current={kind:"google",map:b,markers:[]},u(!0)}else{if(v("leaflet"),await loadLeaflet(),r||!s.current||o.current)return;const b=window.L.map(s.current,{zoomControl:!0,attributionControl:!0,keyboard:!0}).setView([-23.55,-46.64],13);window.L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png",{attribution:'© <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a>',maxZoom:19}).addTo(b),o.current={kind:"leaflet",map:b,markers:[]},u(!0)}})(),()=>{if(r=!0,u(!1),o.current){if(o.current.kind==="leaflet")try{o.current.map.remove()}catch(b){}o.current=null}}},[]),useEffect(()=>{const r=o.current;if(r){for(const c of r.markers)if(r.kind==="leaflet")try{r.map.removeLayer(c)}catch(_){}else try{c.setMap(null)}catch(_){}r.markers=[];for(const c of p){const _=c.priority===1?"#F5FF3C":c.priority===2?"#00E0FF":"#FF2D87",b=c.priority===1?18:c.priority===2?15:12,N=b-3,w=b-6,k=`Evento: ${c.name} · ${c.venue} · ${c.startTime} · prioridade ${c.priority}`;if(r.kind==="leaflet"){const l=window.L.circleMarker([c.latitude,c.longitude],{radius:b,fillColor:"#0A0A0A",fillOpacity:1,color:"#0A0A0A",weight:0,interactive:!1}).addTo(r.map),m=window.L.circleMarker([c.latitude,c.longitude],{radius:N,fillColor:"#FFFFFF",fillOpacity:1,color:"#FFFFFF",weight:0,interactive:!1}).addTo(r.map),h=window.L.circleMarker([c.latitude,c.longitude],{radius:w,fillColor:_,color:"#0A0A0A",weight:2,opacity:1,fillOpacity:1,interactive:!0,bubblingMouseEvents:!1}).addTo(r.map);r.markers.push(l,m);const f=h._path;f&&(f.setAttribute("role","button"),f.setAttribute("tabindex","0"),f.setAttribute("aria-label",k),f.style.cursor="pointer",f.addEventListener("keydown",S=>{(S.key==="Enter"||S.key===" ")&&(S.preventDefault(),n(c))})),h.on("click",()=>n(c)),r.markers.push(h)}else{const l=new window.google.maps.Marker({position:{lat:c.latitude,lng:c.longitude},map:r.map,title:k,icon:{path:window.google.maps.SymbolPath.CIRCLE,scale:w,fillColor:_,fillOpacity:1,strokeColor:"#FFFFFF",strokeWeight:4}});l.addListener("click",()=>n(c)),r.markers.push(l)}}}},[e,d,y]);const g=p.length;return React.createElement("div",{className:"sp-mapwrap",role:"region","aria-label":"Mapa de eventos em São Paulo"},React.createElement("div",{className:"sp-map-legend",role:"note","aria-label":"Legenda"},React.createElement("span",{className:"sp-map-legend__dot sp-map-legend__dot--p1","aria-hidden":"true"}),React.createElement("span",{className:"sp-map-legend__label"},"P1"),React.createElement("span",{className:"sp-map-legend__dot sp-map-legend__dot--p2","aria-hidden":"true"}),React.createElement("span",{className:"sp-map-legend__label"},"P2"),React.createElement("span",{className:"sp-map-legend__dot sp-map-legend__dot--p3","aria-hidden":"true"}),React.createElement("span",{className:"sp-map-legend__label"},"P3"),React.createElement("span",{className:"sp-map-legend__count","aria-live":"polite"},g," eventos")),React.createElement("div",{className:"sp-mapwrap__map",ref:s},!d&&React.createElement("div",{className:"sp-map-nokey"},"Carregando mapa…")),i&&React.createElement("div",{className:"sp-mapwrap__pane",role:"dialog","aria-label":`Detalhes rápidos de ${i.name}`},React.createElement(MapCard,{event:i,onOpen:()=>t(i.id),onClose:()=>n(null)})))}function MapCard({event:e,onOpen:t,onClose:a}){return React.createElement("div",{className:"sp-card",onClick:t,style:{display:"flex",flexDirection:"row"}},React.createElement("div",{style:{width:92,minWidth:92,height:92}},React.createElement(RisoArt,{event:e})),React.createElement("div",{className:"sp-card__body",style:{padding:"10px 12px",flex:1,minWidth:0}},React.createElement("div",{className:"sp-card__time"},e.startTime," · ",e.venue),React.createElement("div",{className:"sp-card__name",style:{fontSize:16}},e.name),React.createElement("div",{className:"sp-card__tags"},(e.tags||[]).slice(0,3).map(s=>React.createElement("span",{key:s,className:`sp-chip sp-chip--${tagColor(s)} sp-chip--on`},s)))),React.createElement("button",{onClick:s=>{s.stopPropagation(),a()},style:{background:"transparent",border:0,padding:8,color:"var(--sp-ink-dim)",cursor:"pointer"},"aria-label":"Fechar"},React.createElement(Icon.Close,{size:14})))}const DARK_MAP_STYLE=[{elementType:"geometry",stylers:[{color:"#0A0A0A"}]},{elementType:"labels.text.stroke",stylers:[{color:"#0A0A0A"}]},{elementType:"labels.text.fill",stylers:[{color:"#746855"}]},{featureType:"road",elementType:"geometry",stylers:[{color:"#181818"}]},{featureType:"road.highway",elementType:"geometry",stylers:[{color:"#2b2b2b"}]},{featureType:"road",elementType:"labels.text.fill",stylers:[{color:"#8a8a8a"}]},{featureType:"water",elementType:"geometry",stylers:[{color:"#000000"}]},{featureType:"water",elementType:"labels.text.fill",stylers:[{color:"#3d3d3d"}]},{featureType:"poi",elementType:"geometry",stylers:[{color:"#1a1a1a"}]},{featureType:"poi",elementType:"labels.text.fill",stylers:[{color:"#6b6b6b"}]},{featureType:"transit",elementType:"geometry",stylers:[{color:"#2f2f2f"}]},{featureType:"administrative",elementType:"geometry",stylers:[{color:"#1f1f1f"}]},{featureType:"landscape",elementType:"geometry",stylers:[{color:"#0f0f0f"}]}];let _gm;function loadGoogleMaps(e){return _gm||(_gm=new Promise((t,a)=>{var o;if((o=window.google)!=null&&o.maps)return t();const s=document.createElement("script");s.src=`https://maps.googleapis.com/maps/api/js?key=${encodeURIComponent(e)}&v=weekly`,s.async=!0,s.defer=!0,s.onload=()=>t(),s.onerror=a,document.head.appendChild(s)}),_gm)}let _lf;function loadLeaflet(){return _lf||(_lf=new Promise((e,t)=>{if(window.L)return e();const a=document.createElement("link");a.rel="stylesheet",a.href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css",document.head.appendChild(a);const s=document.createElement("script");s.src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js",s.onload=()=>e(),s.onerror=t,document.head.appendChild(s)}),_lf)}function SavedScreen({onOpenEvent:e}){const t=useSavedIds(),[a,s]=useState([]),[o,i]=useState(!0),[n,d]=useState(new Date);useEffect(()=>{const u=setInterval(()=>d(new Date),6e4);return()=>clearInterval(u)},[]),useEffect(()=>{let u=!1;return(async()=>{i(!0);const p=[];for(const g of t)try{const r=await ApiClient.getEvent(g);r!=null&&r.event&&p.push(r.event)}catch(r){}u||(s(p),i(!1))})(),()=>{u=!0}},[t.join("|")]);const v=useMemo(()=>{const u=new Map;for(const p of a)u.has(p.date)||u.set(p.date,[]),u.get(p.date).push(p);for(const p of u.values())p.sort((g,r)=>g.priority-r.priority);return[...u.entries()].sort(([p],[g])=>p.localeCompare(g))},[a]),y=todayISO();return React.createElement(React.Fragment,null,React.createElement("div",{className:"sp-statusbar"}),React.createElement("div",{className:"sp-topbar"},React.createElement("div",{className:"sp-topbar__row"},React.createElement("div",{className:"sp-logo"},"SP",React.createElement("em",null,"Scene")),React.createElement("div",{className:"sp-screen-tag"},"Salvos"))),React.createElement("div",{className:"sp-events"},o&&React.createElement("div",{className:"sp-empty"},"Carregando…"),!o&&t.length===0&&React.createElement("div",{className:"sp-empty sp-empty--saved"},React.createElement("div",{className:"sp-empty__glyph"},React.createElement(Icon.Heart,{size:32})),React.createElement("h3",null,"Nada salvo ainda"),React.createElement("p",null,"Toque no ",React.createElement(Icon.Heart,{size:13})," em qualquer evento pra guardar aqui. Seus salvos ficam nesse aparelho — LGPD friendly, fica só com você.")),!o&&t.length>0&&a.length===0&&React.createElement("div",{className:"sp-empty"},"Os eventos que você salvou já não estão mais na programação."),v.map(([u,p])=>React.createElement(DayGroup,{key:u,date:u,list:p,today:y,now:n,onOpenEvent:e}))))}function AboutScreen({onClearData:e}){const[t,a]=useState(!1),[s,o]=useState(!1),i=useSavedIds(),n=window.SP_DATA_UPDATED_AT,d=(window.SP_EVENTS||[]).length;return React.createElement("div",{className:"sp-account"},React.createElement("div",{className:"sp-statusbar"}),React.createElement("div",{className:"sp-topbar sp-topbar--account"},React.createElement("div",{className:"sp-topbar__row"},React.createElement("div",{className:"sp-logo"},"SP",React.createElement("em",null,"Scene")),React.createElement("div",{className:"sp-screen-tag"},"Sobre"))),React.createElement("div",{className:"sp-account__section"},React.createElement("h3",null,"O que é"),React.createElement("p",{className:"sp-about__p"},"Agenda da noite LGBTQIA+ de São Paulo: festas, clubes, samba e cultura. Curadoria, não agregação. Só entra evento com data confirmada numa página de ingresso ou na agenda oficial da casa.")),React.createElement("div",{className:"sp-account__section"},React.createElement("h3",null,"A agenda"),n&&React.createElement("div",{className:"sp-account__kv"},React.createElement("label",null,"Atualizada em"),React.createElement("span",null,formatUpdatedAt(n))),React.createElement("div",{className:"sp-account__kv"},React.createElement("label",null,"Eventos"),React.createElement("span",null,d)),React.createElement("p",{className:"sp-about__p"},"Cada evento traz o link da fonte. Horário e preço podem mudar: confira na página da festa antes de sair."),React.createElement("p",{className:"sp-about__p"},"As artes são a imagem de divulgação que a própria página do evento oferece para compartilhar, e continuam no servidor de quem a publicou. Se você produz um evento e prefere que a arte não apareça aqui, abra um pedido em github.com/rctobr/spscene/issues e ela sai na hora.")),React.createElement("div",{className:"sp-account__section"},React.createElement("h3",null,"Privacidade"),React.createElement("p",{className:"sp-about__p"},"Não tem cadastro nem login. Seus favoritos (",i.length,") ficam salvos só neste aparelho. O mapa usa o OpenStreetMap e as fontes de letra vêm do Google Fonts, e as artes dos eventos vêm dos sites de ingresso; esses serviços recebem o endereço de internet de quem abre o site, como em qualquer página."),t?React.createElement("div",{style:{display:"flex",gap:8}},React.createElement("button",{className:"sp-btn",style:{flex:1},onClick:()=>a(!1)},"Cancelar"),React.createElement("button",{className:"sp-btn sp-btn--pink",style:{flex:1},onClick:()=>{e(),a(!1),o(!0)}},"Apagar favoritos")):React.createElement("button",{className:"sp-btn sp-btn--ghost",onClick:()=>{a(!0),o(!1)}},s?"Dados apagados":"Apagar meus dados deste aparelho")))}function BottomNav({tab:e,onChange:t}){const a=useSavedIds(),s=[{id:"feed",label:"Início",Icon:Icon.Home},{id:"map",label:"Mapa",Icon:Icon.Map},{id:"saved",label:"Salvos",Icon:Icon.Heart,badge:a.length},{id:"about",label:"Sobre",Icon:Icon.User}];return React.createElement("nav",{className:"sp-nav",role:"tablist","aria-label":"Navegação principal"},s.map(o=>{const i=e===o.id;return React.createElement("button",{key:o.id,className:`sp-nav__item ${i?"is-on":""}`,role:"tab","aria-selected":i,onClick:()=>t(o.id)},React.createElement("span",{className:"sp-nav__icon"},React.createElement(o.Icon,{size:22}),o.badge>0&&React.createElement("span",{className:"sp-nav__badge"},o.badge>9?"9+":o.badge)),React.createElement("span",{className:"sp-nav__label"},o.label))}))}function App(){const[e,t]=useState("feed"),[a,s]=useState(null);useEffect(()=>{try{localStorage.removeItem(USER_KEY)}catch(d){}},[]);const o=()=>{try{localStorage.removeItem(CACHE_KEY),localStorage.removeItem(SAVED_KEY),localStorage.removeItem(USER_KEY)}catch(d){}window.dispatchEvent(new CustomEvent("sp:saved-changed",{detail:[]}))},i=d=>s(d),n=()=>s(null);return React.createElement("div",{className:"sp-phone sp-phone--tabbed"},React.createElement("div",{className:"sp-phone-body"},e==="feed"&&React.createElement(FeedScreen,{onOpenEvent:i}),e==="map"&&React.createElement(MapScreen,{onOpenEvent:i}),e==="saved"&&React.createElement(SavedScreen,{onOpenEvent:i}),e==="about"&&React.createElement(AboutScreen,{onClearData:o})),a&&React.createElement(EventDetails,{eventId:a,onClose:n}),React.createElement(BottomNav,{tab:e,onChange:d=>{t(d),n()}}),React.createElement("div",{className:"sp-grain"}))}ReactDOM.createRoot(document.getElementById("sp-root")).render(React.createElement(App,null));
+const{useState,useEffect,useMemo,useCallback,useRef}=React,CACHE_KEY="sp_scene_cache_v1",USER_KEY="sp_scene_user_v1",SAVED_KEY="sp_scene_saved_v1";function sleep(e){return new Promise(t=>setTimeout(t,e))}function nowISO(){return new Date().toISOString()}function sourceHost(e){try{return new URL(e).hostname.replace(/^www\./,"")}catch(t){return e}}function formatUpdatedAt(e){const t=new Date(e);if(isNaN(t))return"";const a=["dom","seg","ter","qua","qui","sex","sáb"][t.getDay()],s=String(t.getDate()).padStart(2,"0"),o=String(t.getMonth()+1).padStart(2,"0");return`${a} ${s}/${o}`}function getSavedIds(){try{return JSON.parse(localStorage.getItem(SAVED_KEY)||"[]")}catch(e){return[]}}function setSavedIds(e){localStorage.setItem(SAVED_KEY,JSON.stringify(e)),window.dispatchEvent(new CustomEvent("sp:saved-changed",{detail:e}))}function isSaved(e){return getSavedIds().includes(e)}function toggleSaved(e){const t=getSavedIds(),a=t.indexOf(e);return a>=0?t.splice(a,1):t.push(e),setSavedIds(t),t}function useSavedIds(){const[e,t]=useState(()=>getSavedIds());return useEffect(()=>{const a=()=>t(getSavedIds());return window.addEventListener("sp:saved-changed",a),window.addEventListener("storage",a),()=>{window.removeEventListener("sp:saved-changed",a),window.removeEventListener("storage",a)}},[]),e}const ApiClient={async listEvents({from:e,to:t,tags:a=[],simulateFailure:s=!1}={}){var i;if(s)throw new Error("network");if((i=window.SP_CONFIG)!=null&&i.apiBaseUrl){const n=new URL("/events",window.SP_CONFIG.apiBaseUrl);n.searchParams.set("from",e),n.searchParams.set("to",t),a.length&&n.searchParams.set("tags",a.join(","));const l=await fetch(n.toString(),{headers:{Accept:"application/json"}});if(!l.ok)throw new Error(`api ${l.status}`);return l.json()}await sleep(120);const o=(window.SP_EVENTS||[]).filter(n=>!(e&&n.date<e||t&&n.date>t||a.length&&!a.some(l=>{var v;return(v=n.tags)==null?void 0:v.includes(l)})));return{events:o,page:1,pageSize:o.length,total:o.length,rateLimit:{remaining:100,resetAt:nowISO()}}},async getEvent(e){var a;if((a=window.SP_CONFIG)!=null&&a.apiBaseUrl){const s=await fetch(`${window.SP_CONFIG.apiBaseUrl}/events/${encodeURIComponent(e)}`);if(!s.ok)throw new Error(`api ${s.status}`);return s.json()}await sleep(80);const t=(window.SP_EVENTS||[]).find(s=>s.id===e);if(!t)throw new Error("not found");return{event:t}}},WEEKDAYS=["Dom","Seg","Ter","Qua","Qui","Sex","Sáb"],MONTHS=["Jan","Fev","Mar","Abr","Mai","Jun","Jul","Ago","Set","Out","Nov","Dez"];function toDate(e){const[t,a,s]=e.split("-").map(Number);return new Date(t,a-1,s)}function toISO(e){const t=e.getFullYear(),a=String(e.getMonth()+1).padStart(2,"0"),s=String(e.getDate()).padStart(2,"0");return`${t}-${a}-${s}`}function todayISO(){return toISO(new Date)}function addDays(e,t){const a=toDate(e);return a.setDate(a.getDate()+t),toISO(a)}function mondayOf(e){const t=toDate(e),a=t.getDay()===0?7:t.getDay();return t.setDate(t.getDate()-(a-1)),toISO(t)}function humanTime(e){return e}function formatFullDate(e){const t=toDate(e);return`${WEEKDAYS[t.getDay()]}, ${String(t.getDate()).padStart(2,"0")} ${MONTHS[t.getMonth()]}`}function isOngoing(e,t){if(!e.endTime)return!1;const a=new Date(`${e.date}T${e.startTime||"00:00"}:00`),[s]=(e.startTime||"00:00").split(":").map(Number),[o]=e.endTime.split(":").map(Number),i=o<=s,n=new Date(`${e.date}T${e.endTime}:00`);return i&&n.setDate(n.getDate()+1),t>=a&&t<=n}const TAG_COLORS={Techno:"pink",House:"cyan",Drag:"pink",Queer:"acid",Fetish:"pink",Pop:"cyan",Experimental:"acid",Bloquinho:"acid",Samba:"acid",Bar:"cyan",Cult:"cyan"};function tagColor(e){return TAG_COLORS[e]||"pink"}function EventImage({src:e,fit:t,onFail:a}){const s={position:"absolute",inset:0,width:"100%",height:"100%"};return React.createElement(React.Fragment,null,t==="contain"&&React.createElement("img",{src:e,alt:"","aria-hidden":"true",referrerPolicy:"no-referrer",loading:"lazy",style:{...s,objectFit:"cover",filter:"blur(18px) brightness(0.6)",transform:"scale(1.15)"}}),React.createElement("img",{src:e,alt:"",referrerPolicy:"no-referrer",loading:"lazy",decoding:"async",onError:a,style:{...s,objectFit:t==="contain"?"contain":"cover",objectPosition:"center 35%"}}))}function RisoArt({event:e,children:t,fit:a}){const[s,o]=useState(!1),i=!!e.image&&!s,n=(e.id||e.name||"").split("").reduce((c,_)=>c+_.charCodeAt(0),0),l=n*31%360,v=[["#FF2D87","#00E0FF"],["#F5FF3C","#FF2D87"],["#00E0FF","#F5FF3C"],["#FF2D87","#F5FF3C"],["#8A7FFF","#FF4D2E"],["#B8FF00","#FF00AA"]],y=v[n%v.length],u=n%40+"%",m=n*7%25+65+"%",g=n*13%40+40+"%",r=n*17%40+40+"%";return React.createElement("div",{className:i?"sp-art sp-art--img":"sp-art",style:{background:`linear-gradient(${l}deg, ${y[0]}, ${y[1]})`,position:"relative",height:"100%",overflow:"hidden"}},React.createElement("div",{style:{position:"absolute",top:u,left:m,width:"140px",height:"140px",borderRadius:"999px",background:"#FFFFFF",mixBlendMode:"soft-light",opacity:.45,transform:"translate(-30%, -30%)"}}),React.createElement("div",{style:{position:"absolute",top:g,left:r,width:"120px",height:"120px",borderRadius:"999px",background:y[1],mixBlendMode:"screen",opacity:.55,transform:"translate(-20%, -20%)"}}),React.createElement("div",{style:{position:"absolute",inset:0,backgroundImage:`url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='100'><filter id='n'><feTurbulence baseFrequency='1.1' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)' opacity='0.9'/></svg>")`,mixBlendMode:"overlay",opacity:.25}}),i&&React.createElement(EventImage,{src:e.image,fit:a,onFail:()=>o(!0)}),t)}const Icon={Close:e=>React.createElement("svg",{width:e.size||18,height:e.size||18,viewBox:"0 0 24 24",fill:"none",stroke:"currentColor",strokeWidth:"2",strokeLinecap:"round"},React.createElement("path",{d:"M6 6l12 12M18 6L6 18"})),Back:e=>React.createElement("svg",{width:e.size||20,height:e.size||20,viewBox:"0 0 24 24",fill:"none",stroke:"currentColor",strokeWidth:"2",strokeLinecap:"round"},React.createElement("path",{d:"M15 18l-6-6 6-6"})),Map:e=>React.createElement("svg",{width:e.size||14,height:e.size||14,viewBox:"0 0 24 24",fill:"none",stroke:"currentColor",strokeWidth:"2",strokeLinecap:"round",strokeLinejoin:"round"},React.createElement("path",{d:"M1 6l8-3 6 3 8-3v15l-8 3-6-3-8 3z"}),React.createElement("path",{d:"M9 3v15M15 6v15"})),Ticket:e=>React.createElement("svg",{width:e.size||14,height:e.size||14,viewBox:"0 0 24 24",fill:"none",stroke:"currentColor",strokeWidth:"2",strokeLinecap:"round",strokeLinejoin:"round"},React.createElement("path",{d:"M3 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2z"}),React.createElement("path",{d:"M13 5v14"})),Google:()=>React.createElement("svg",{width:"18",height:"18",viewBox:"0 0 48 48"},React.createElement("path",{fill:"#FFC107",d:"M43.6 20.1H42V20H24v8h11.3C33.7 32.9 29.3 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.9 1.2 8 3.1l5.7-5.7C34.2 6.1 29.4 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20 20-8.9 20-20c0-1.3-.1-2.6-.4-3.9z"}),React.createElement("path",{fill:"#FF3D00",d:"M6.3 14.7l6.6 4.8C14.7 15.1 19 12 24 12c3.1 0 5.9 1.2 8 3.1l5.7-5.7C34.2 6.1 29.4 4 24 4 16.3 4 9.6 8.3 6.3 14.7z"}),React.createElement("path",{fill:"#4CAF50",d:"M24 44c5.2 0 10-2 13.6-5.2l-6.3-5.2C29.3 35.2 26.8 36 24 36c-5.3 0-9.7-3.1-11.3-7.9l-6.5 5C9.5 39.6 16.2 44 24 44z"}),React.createElement("path",{fill:"#1976D2",d:"M43.6 20.1H42V20H24v8h11.3c-.7 2.1-2 3.9-3.7 5.2l6.3 5.2c-.4.4 6.6-4.8 6.6-14.4 0-1.3-.1-2.6-.4-3.9z"})),Apple:()=>React.createElement("svg",{width:"18",height:"18",viewBox:"0 0 24 24",fill:"currentColor"},React.createElement("path",{d:"M16.365 1.43c0 1.14-.468 2.235-1.232 3.031-.81.84-2.09 1.476-3.135 1.395-.12-1.12.418-2.253 1.173-3.012.814-.81 2.23-1.432 3.194-1.414zM20.79 17.6c-.6 1.38-.89 2-1.66 3.22-1.08 1.7-2.6 3.81-4.48 3.82-1.68.02-2.11-.99-4.39-.98-2.28.01-2.76 1-4.44.98-1.88-.02-3.32-1.93-4.4-3.62-3.02-4.72-3.34-10.27-1.48-13.22 1.33-2.1 3.42-3.32 5.39-3.32 2 0 3.27 1.11 4.93 1.11 1.6 0 2.58-1.11 4.9-1.11 1.75 0 3.61.96 4.94 2.6-4.34 2.39-3.64 8.6.69 11.52z"})),Copy:e=>React.createElement("svg",{width:e.size||14,height:e.size||14,viewBox:"0 0 24 24",fill:"none",stroke:"currentColor",strokeWidth:"2",strokeLinecap:"round",strokeLinejoin:"round"},React.createElement("rect",{x:"9",y:"9",width:"13",height:"13",rx:"2"}),React.createElement("path",{d:"M5 15V5a2 2 0 0 1 2-2h10"})),ChevronRight:e=>React.createElement("svg",{width:e.size||16,height:e.size||16,viewBox:"0 0 24 24",fill:"none",stroke:"currentColor",strokeWidth:"2",strokeLinecap:"round"},React.createElement("path",{d:"M9 18l6-6-6-6"})),Home:e=>React.createElement("svg",{width:e.size||22,height:e.size||22,viewBox:"0 0 24 24",fill:"none",stroke:"currentColor",strokeWidth:"2",strokeLinecap:"round",strokeLinejoin:"round"},React.createElement("path",{d:"M3 12l9-8 9 8v9a1 1 0 0 1-1 1h-5v-6h-6v6H4a1 1 0 0 1-1-1z"})),User:e=>React.createElement("svg",{width:e.size||22,height:e.size||22,viewBox:"0 0 24 24",fill:"none",stroke:"currentColor",strokeWidth:"2",strokeLinecap:"round",strokeLinejoin:"round"},React.createElement("circle",{cx:"12",cy:"8",r:"4"}),React.createElement("path",{d:"M4 21c0-4 4-7 8-7s8 3 8 7"})),Heart:e=>React.createElement("svg",{width:e.size||22,height:e.size||22,viewBox:"0 0 24 24",fill:"none",stroke:"currentColor",strokeWidth:"2",strokeLinecap:"round",strokeLinejoin:"round"},React.createElement("path",{d:"M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"})),HeartFilled:e=>React.createElement("svg",{width:e.size||22,height:e.size||22,viewBox:"0 0 24 24",fill:"currentColor",stroke:"currentColor",strokeWidth:"2",strokeLinecap:"round",strokeLinejoin:"round"},React.createElement("path",{d:"M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"}))};function FeedScreen({onOpenEvent:e}){const[t,a]=useState("today"),[s,o]=useState([]),[i,n]=useState([]),[l,v]=useState(!0),[y,u]=useState(!1),[m,g]=useState(new Date);useEffect(()=>{const d=setInterval(()=>g(new Date),6e4);return()=>clearInterval(d)},[]);const r=todayISO(),c=mondayOf(r),_=addDays(c,13),b=useCallback(async()=>{v(!0);try{const d=await ApiClient.listEvents({from:c,to:_});n(d.events),u(!1),localStorage.setItem(CACHE_KEY,JSON.stringify({at:nowISO(),events:d.events}))}catch(d){const p=localStorage.getItem(CACHE_KEY);if(p){const h=JSON.parse(p);n(h.events||[]),u(!0),console.log("[SP Scene] Cache Hit — offline mode")}}finally{v(!1)}},[c,_]);useEffect(()=>{b()},[b]);const k=useMemo(()=>{let d=i;if(s.length&&(d=d.filter(p=>s.every(h=>{var f;return(f=p.tags)==null?void 0:f.includes(h)}))),t==="today")d=d.filter(p=>p.date===r||isOngoing(p,m)&&p.date===addDays(r,-1));else{const p=addDays(r,1),h=addDays(r,7);d=d.filter(f=>f.date>=p&&f.date<=h)}return d},[i,s,t,r,m]),w=useMemo(()=>{const d=new Map;for(const p of k)d.has(p.date)||d.set(p.date,[]),d.get(p.date).push(p);for(const p of d.values())p.sort((h,f)=>h.priority-f.priority);return[...d.entries()].sort(([p],[h])=>p.localeCompare(h))},[k]),S=useCallback(d=>{o(p=>p.includes(d)?p.filter(h=>h!==d):[...p,d])},[]);return React.createElement(React.Fragment,null,React.createElement("div",{className:"sp-statusbar"}),y&&React.createElement("div",{className:"sp-offline"},"● sem internet · mostrando a última agenda baixada"),React.createElement("div",{className:"sp-topbar"},React.createElement("div",{className:"sp-topbar__row"},React.createElement("div",{className:"sp-logo"},"SP",React.createElement("em",null,"Scene")),window.SP_DATA_UPDATED_AT&&React.createElement("div",{className:"sp-hello"},"atualizado ",React.createElement("strong",null,formatUpdatedAt(window.SP_DATA_UPDATED_AT)))),React.createElement("div",{className:"sp-switcher"},React.createElement("button",{className:t==="today"?"is-on":"",onClick:()=>a("today")},"Hoje"),React.createElement("button",{className:t==="week"?"is-on":"",onClick:()=>a("week")},"Próximos 7 dias"))),React.createElement("div",{className:"sp-ribbon"},React.createElement("div",{className:"sp-ribbon__inner"},(window.SP_TAG_GROUPS||[window.SP_TAGS||[]]).map((d,p)=>React.createElement(React.Fragment,{key:p},p>0&&React.createElement("span",{className:"sp-ribbon__sep","aria-hidden":"true"}),d.map(h=>{const f=s.includes(h),N=tagColor(h);return React.createElement("button",{key:h,className:`sp-chip sp-chip--${N} ${f?"sp-chip--on":""}`,onClick:()=>S(h)},h)}))),s.length>0&&React.createElement("button",{className:"sp-chip",style:{color:"var(--sp-ink-mute)"},onClick:()=>o([])},"limpar"))),React.createElement("div",{className:"sp-events"},l&&React.createElement("div",{className:"sp-empty"},"Carregando a cena…"),!l&&w.length===0&&React.createElement("div",{className:"sp-empty"},s.length?"Nada pra essa combinação de filtros. Tenta limpar pra ver tudo.":t==="today"?"Nenhum evento confirmado pra hoje. Dá uma olhada nos próximos 7 dias.":"Nenhum evento confirmado nos próximos 7 dias ainda."),w.map(([d,p])=>React.createElement(DayGroup,{key:d,date:d,list:p,today:r,now:m,onOpenEvent:e}))))}function DayGroup({date:e,list:t,today:a,now:s,onOpenEvent:o}){const i=toDate(e),n=WEEKDAYS[i.getDay()],l=i.getDate(),v=MONTHS[i.getMonth()],y=e===a,u=e===addDays(a,1);return React.createElement(React.Fragment,null,React.createElement("div",{className:"sp-day-head"},React.createElement("div",{className:"sp-day-head__num"},String(l).padStart(2,"0")),React.createElement("div",{className:"sp-day-head__info"},React.createElement("div",{className:"sp-day-head__dow"},n),React.createElement("div",{className:"sp-day-head__month"},v," · 2026")),y&&React.createElement("div",{className:"sp-day-head__badge sp-day-head__badge--today"},"Hoje"),u&&React.createElement("div",{className:"sp-day-head__badge sp-day-head__badge--tomorrow"},"Amanhã")),t.map(m=>React.createElement(EventCard,{key:m.id,event:m,now:s,onOpen:()=>o(m.id)})))}function EventCard({event:e,now:t,onOpen:a}){const s=isOngoing(e,t),o=(e.lineup||[]).slice(0,3).join(" · "),n=useSavedIds().includes(e.id),l=v=>{v.stopPropagation(),toggleSaved(e.id)};return React.createElement("div",{className:"sp-card",onClick:a},React.createElement("div",{className:"sp-card__art"},React.createElement(RisoArt,{event:e},React.createElement("div",{className:"sp-card__art__title"},e.name),React.createElement("div",{className:"sp-card__art__tag"},e.priority===1&&React.createElement("span",{className:"sp-prio sp-prio-1"},"Destaque")),s&&React.createElement("div",{className:"sp-card__ongoing"},"Rolando"),React.createElement("button",{className:`sp-save sp-save--card ${n?"is-on":""}`,onClick:l,"aria-label":n?"Remover dos salvos":"Salvar","aria-pressed":n},n?React.createElement(Icon.HeartFilled,{size:16}):React.createElement(Icon.Heart,{size:16})))),React.createElement("div",{className:"sp-card__body"},React.createElement("div",{className:"sp-card__time"},e.startTime||"horário a confirmar"," · ",e.venue),React.createElement("div",{className:"sp-card__name"},e.name),o&&React.createElement("div",{className:"sp-card__lineup"},o),React.createElement("div",{className:"sp-card__tags"},(e.tags||[]).map(v=>React.createElement("span",{key:v,className:`sp-chip sp-chip--${tagColor(v)} sp-chip--on`},v)))))}function EventDetails({eventId:e,onClose:t}){var m;const[a,s]=useState(null),[o,i]=useState(!1),l=useSavedIds().includes(e);if(useEffect(()=>{ApiClient.getEvent(e).then(g=>s(g.event)).catch(()=>{})},[e]),!a)return React.createElement("div",{className:"sp-details"},React.createElement("button",{className:"sp-details__close",onClick:t},React.createElement(Icon.Close,null)),React.createElement("div",{className:"sp-empty",style:{paddingTop:120}},"Carregando…"));const v=async()=>{try{await navigator.clipboard.writeText(a.address),i(!0),setTimeout(()=>i(!1),1500)}catch(g){}},y=()=>{const g=encodeURIComponent(a.address);window.open(`https://www.google.com/maps/search/?api=1&query=${g}`,"_blank","noopener")},u=()=>{a.ticketUrl&&window.open(a.ticketUrl,"_blank","noopener")};return React.createElement("div",{className:"sp-details"},React.createElement("div",{className:"sp-statusbar"}),React.createElement("button",{className:"sp-details__close",onClick:t,"aria-label":"Voltar"},React.createElement(Icon.Back,null)),React.createElement("button",{className:`sp-details__save ${l?"is-on":""}`,onClick:()=>toggleSaved(e),"aria-label":l?"Remover dos salvos":"Salvar evento","aria-pressed":l},l?React.createElement(Icon.HeartFilled,{size:18}):React.createElement(Icon.Heart,{size:18})),React.createElement("div",{className:"sp-details__body"},React.createElement("div",{className:"sp-details__art"},React.createElement(RisoArt,{event:a,fit:"contain"},React.createElement("div",{className:"sp-details__art__title"},a.name))),React.createElement("div",{className:"sp-details__content"},React.createElement("div",{className:"sp-details__prio-row"},a.priority===1&&React.createElement("span",{className:"sp-prio sp-prio-1"},"Destaque da semana")),React.createElement("h1",{className:"sp-details__name"},a.name),React.createElement("div",{className:"sp-details__venue"},a.venue),React.createElement("div",{className:"sp-details__meta"},React.createElement("div",{className:"sp-details__meta__item"},React.createElement("span",{className:"sp-label"},"Quando"),React.createElement("span",{className:"sp-value"},formatFullDate(a.date)," · ",a.startTime||"horário a confirmar")),a.price&&React.createElement("div",{className:"sp-details__meta__item"},React.createElement("span",{className:"sp-label"},"Preço"),React.createElement("span",{className:"sp-value"},a.price))),React.createElement("div",{className:"sp-details__tags"},a.tags.map(g=>React.createElement("span",{key:g,className:`sp-chip sp-chip--${tagColor(g)} sp-chip--on`},g))),a.description&&React.createElement("div",{className:"sp-details__section"},React.createElement("h3",null,"Sobre"),React.createElement("p",null,a.description)),((m=a.lineup)==null?void 0:m.length)>0&&React.createElement("div",{className:"sp-details__section"},React.createElement("h3",null,"Lineup"),React.createElement("ul",{className:"sp-details__lineup-list"},a.lineup.map((g,r)=>React.createElement("li",{key:r},g)))),a.sourceUrl&&React.createElement("div",{className:"sp-details__section"},React.createElement("h3",null,"Fonte"),React.createElement("p",{style:{fontSize:13}},React.createElement("a",{href:a.sourceUrl,target:"_blank",rel:"noopener noreferrer",style:{color:"var(--sp-cyan, #00E0FF)"}},sourceHost(a.sourceUrl))," ","· confira antes de sair: horário e preço podem mudar."),a.image&&React.createElement("p",{style:{fontSize:12,color:"var(--sp-ink-mute)",marginTop:6}},"Arte: divulgação do evento, exibida a partir da página de ",sourceHost(a.sourceUrl),".")),React.createElement("div",{className:"sp-details__section"},React.createElement("h3",null,"Endereço"),React.createElement("div",{className:"sp-details__address"},a.address||"Local ainda não confirmado. Veja a fonte acima."),a.address&&React.createElement("div",{className:"sp-details__address-actions"},React.createElement("button",{className:"sp-btn",style:{height:40,fontSize:11,flex:1},onClick:v},React.createElement(Icon.Copy,null)," ",o?"Copiado!":"Copiar"),React.createElement("button",{className:"sp-btn sp-btn--primary",style:{height:40,fontSize:11,flex:1},onClick:y},React.createElement(Icon.Map,null)," Abrir no Maps"))))),React.createElement("div",{className:"sp-details__actions"},a.ticketUrl?React.createElement("button",{className:"sp-btn sp-btn--pink",style:{flex:1},onClick:u},React.createElement(Icon.Ticket,null)," Comprar ingresso"):React.createElement("button",{className:"sp-btn",style:{flex:1},disabled:!0},React.createElement(Icon.Ticket,null)," Sem venda online informada")))}function MapScreen({onOpenEvent:e}){const[t,a]=useState([]),[s,o]=useState(!0);return useEffect(()=>{let i=!1;return(async()=>{o(!0);try{const n=todayISO(),l=addDays(n,14),v=await ApiClient.listEvents({from:n,to:l});i||a(v.events||[])}catch(n){i||a([])}finally{i||o(!1)}})(),()=>{i=!0}},[]),React.createElement(React.Fragment,null,React.createElement("div",{className:"sp-statusbar"}),React.createElement("div",{className:"sp-topbar"},React.createElement("div",{className:"sp-topbar__row"},React.createElement("div",{className:"sp-logo"},"SP",React.createElement("em",null,"Scene")),React.createElement("div",{className:"sp-screen-tag"},"Mapa"))),React.createElement(MapView,{events:t,loading:s,onOpenEvent:e}))}function MapView({events:e,onOpenEvent:t,loading:a}){const s=useRef(null),o=useRef(null),[i,n]=useState(null),[l,v]=useState(null),[y,u]=useState(!1),m=e.filter(r=>r.latitude&&r.longitude);useEffect(()=>{var _;let r=!1;const c=!!(((_=window.SP_CONFIG)==null?void 0:_.googleMapsApiKey)||"").trim();return(async()=>{if(c){if(v("google"),await loadGoogleMaps(window.SP_CONFIG.googleMapsApiKey),r||!s.current||o.current)return;const b=new window.google.maps.Map(s.current,{center:{lat:-23.55,lng:-46.64},zoom:12,styles:DARK_MAP_STYLE,disableDefaultUI:!0,zoomControl:!0,gestureHandling:"greedy"});o.current={kind:"google",map:b,markers:[]},u(!0)}else{if(v("leaflet"),await loadLeaflet(),r||!s.current||o.current)return;const b=window.L.map(s.current,{zoomControl:!0,attributionControl:!0,keyboard:!0}).setView([-23.55,-46.64],13);window.L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png",{attribution:'© <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a>',maxZoom:19}).addTo(b),o.current={kind:"leaflet",map:b,markers:[]},u(!0)}})(),()=>{if(r=!0,u(!1),o.current){if(o.current.kind==="leaflet")try{o.current.map.remove()}catch(b){}o.current=null}}},[]),useEffect(()=>{const r=o.current;if(r){for(const c of r.markers)if(r.kind==="leaflet")try{r.map.removeLayer(c)}catch(_){}else try{c.setMap(null)}catch(_){}r.markers=[];for(const c of m){const _=c.priority===1?"#F5FF3C":c.priority===2?"#00E0FF":"#FF2D87",b=c.priority===1?18:c.priority===2?15:12,k=b-3,w=b-6,S=`Evento: ${c.name} · ${c.venue} · ${c.startTime} · prioridade ${c.priority}`;if(r.kind==="leaflet"){const d=window.L.circleMarker([c.latitude,c.longitude],{radius:b,fillColor:"#0A0A0A",fillOpacity:1,color:"#0A0A0A",weight:0,interactive:!1}).addTo(r.map),p=window.L.circleMarker([c.latitude,c.longitude],{radius:k,fillColor:"#FFFFFF",fillOpacity:1,color:"#FFFFFF",weight:0,interactive:!1}).addTo(r.map),h=window.L.circleMarker([c.latitude,c.longitude],{radius:w,fillColor:_,color:"#0A0A0A",weight:2,opacity:1,fillOpacity:1,interactive:!0,bubblingMouseEvents:!1}).addTo(r.map);r.markers.push(d,p);const f=h._path;f&&(f.setAttribute("role","button"),f.setAttribute("tabindex","0"),f.setAttribute("aria-label",S),f.style.cursor="pointer",f.addEventListener("keydown",N=>{(N.key==="Enter"||N.key===" ")&&(N.preventDefault(),n(c))})),h.on("click",()=>n(c)),r.markers.push(h)}else{const d=new window.google.maps.Marker({position:{lat:c.latitude,lng:c.longitude},map:r.map,title:S,icon:{path:window.google.maps.SymbolPath.CIRCLE,scale:w,fillColor:_,fillOpacity:1,strokeColor:"#FFFFFF",strokeWeight:4}});d.addListener("click",()=>n(c)),r.markers.push(d)}}}},[e,l,y]);const g=m.length;return React.createElement("div",{className:"sp-mapwrap",role:"region","aria-label":"Mapa de eventos em São Paulo"},React.createElement("div",{className:"sp-map-legend",role:"note","aria-label":"Legenda"},React.createElement("span",{className:"sp-map-legend__dot sp-map-legend__dot--p1","aria-hidden":"true"}),React.createElement("span",{className:"sp-map-legend__label"},"P1"),React.createElement("span",{className:"sp-map-legend__dot sp-map-legend__dot--p2","aria-hidden":"true"}),React.createElement("span",{className:"sp-map-legend__label"},"P2"),React.createElement("span",{className:"sp-map-legend__dot sp-map-legend__dot--p3","aria-hidden":"true"}),React.createElement("span",{className:"sp-map-legend__label"},"P3"),React.createElement("span",{className:"sp-map-legend__count","aria-live":"polite"},g," eventos")),React.createElement("div",{className:"sp-mapwrap__map",ref:s},!l&&React.createElement("div",{className:"sp-map-nokey"},"Carregando mapa…")),i&&React.createElement("div",{className:"sp-mapwrap__pane",role:"dialog","aria-label":`Detalhes rápidos de ${i.name}`},React.createElement(MapCard,{event:i,onOpen:()=>t(i.id),onClose:()=>n(null)})))}function MapCard({event:e,onOpen:t,onClose:a}){return React.createElement("div",{className:"sp-card",onClick:t,style:{display:"flex",flexDirection:"row"}},React.createElement("div",{style:{width:92,minWidth:92,height:92}},React.createElement(RisoArt,{event:e})),React.createElement("div",{className:"sp-card__body",style:{padding:"10px 12px",flex:1,minWidth:0}},React.createElement("div",{className:"sp-card__time"},e.startTime," · ",e.venue),React.createElement("div",{className:"sp-card__name",style:{fontSize:16}},e.name),React.createElement("div",{className:"sp-card__tags"},(e.tags||[]).slice(0,3).map(s=>React.createElement("span",{key:s,className:`sp-chip sp-chip--${tagColor(s)} sp-chip--on`},s)))),React.createElement("button",{onClick:s=>{s.stopPropagation(),a()},style:{background:"transparent",border:0,padding:8,color:"var(--sp-ink-dim)",cursor:"pointer"},"aria-label":"Fechar"},React.createElement(Icon.Close,{size:14})))}const DARK_MAP_STYLE=[{elementType:"geometry",stylers:[{color:"#0A0A0A"}]},{elementType:"labels.text.stroke",stylers:[{color:"#0A0A0A"}]},{elementType:"labels.text.fill",stylers:[{color:"#746855"}]},{featureType:"road",elementType:"geometry",stylers:[{color:"#181818"}]},{featureType:"road.highway",elementType:"geometry",stylers:[{color:"#2b2b2b"}]},{featureType:"road",elementType:"labels.text.fill",stylers:[{color:"#8a8a8a"}]},{featureType:"water",elementType:"geometry",stylers:[{color:"#000000"}]},{featureType:"water",elementType:"labels.text.fill",stylers:[{color:"#3d3d3d"}]},{featureType:"poi",elementType:"geometry",stylers:[{color:"#1a1a1a"}]},{featureType:"poi",elementType:"labels.text.fill",stylers:[{color:"#6b6b6b"}]},{featureType:"transit",elementType:"geometry",stylers:[{color:"#2f2f2f"}]},{featureType:"administrative",elementType:"geometry",stylers:[{color:"#1f1f1f"}]},{featureType:"landscape",elementType:"geometry",stylers:[{color:"#0f0f0f"}]}];let _gm;function loadGoogleMaps(e){return _gm||(_gm=new Promise((t,a)=>{var o;if((o=window.google)!=null&&o.maps)return t();const s=document.createElement("script");s.src=`https://maps.googleapis.com/maps/api/js?key=${encodeURIComponent(e)}&v=weekly`,s.async=!0,s.defer=!0,s.onload=()=>t(),s.onerror=a,document.head.appendChild(s)}),_gm)}let _lf;function loadLeaflet(){return _lf||(_lf=new Promise((e,t)=>{if(window.L)return e();const a=document.createElement("link");a.rel="stylesheet",a.href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css",document.head.appendChild(a);const s=document.createElement("script");s.src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js",s.onload=()=>e(),s.onerror=t,document.head.appendChild(s)}),_lf)}function SavedScreen({onOpenEvent:e}){const t=useSavedIds(),[a,s]=useState([]),[o,i]=useState(!0),[n,l]=useState(new Date);useEffect(()=>{const u=setInterval(()=>l(new Date),6e4);return()=>clearInterval(u)},[]),useEffect(()=>{let u=!1;return(async()=>{i(!0);const m=[];for(const g of t)try{const r=await ApiClient.getEvent(g);r!=null&&r.event&&m.push(r.event)}catch(r){}u||(s(m),i(!1))})(),()=>{u=!0}},[t.join("|")]);const v=useMemo(()=>{const u=new Map;for(const m of a)u.has(m.date)||u.set(m.date,[]),u.get(m.date).push(m);for(const m of u.values())m.sort((g,r)=>g.priority-r.priority);return[...u.entries()].sort(([m],[g])=>m.localeCompare(g))},[a]),y=todayISO();return React.createElement(React.Fragment,null,React.createElement("div",{className:"sp-statusbar"}),React.createElement("div",{className:"sp-topbar"},React.createElement("div",{className:"sp-topbar__row"},React.createElement("div",{className:"sp-logo"},"SP",React.createElement("em",null,"Scene")),React.createElement("div",{className:"sp-screen-tag"},"Salvos"))),React.createElement("div",{className:"sp-events"},o&&React.createElement("div",{className:"sp-empty"},"Carregando…"),!o&&t.length===0&&React.createElement("div",{className:"sp-empty sp-empty--saved"},React.createElement("div",{className:"sp-empty__glyph"},React.createElement(Icon.Heart,{size:32})),React.createElement("h3",null,"Nada salvo ainda"),React.createElement("p",null,"Toque no ",React.createElement(Icon.Heart,{size:13})," em qualquer evento pra guardar aqui. Seus salvos ficam nesse aparelho — LGPD friendly, fica só com você.")),!o&&t.length>0&&a.length===0&&React.createElement("div",{className:"sp-empty"},"Os eventos que você salvou já não estão mais na programação."),v.map(([u,m])=>React.createElement(DayGroup,{key:u,date:u,list:m,today:y,now:n,onOpenEvent:e}))))}function AboutScreen({onClearData:e}){const[t,a]=useState(!1),[s,o]=useState(!1),i=useSavedIds(),n=window.SP_DATA_UPDATED_AT,l=(window.SP_EVENTS||[]).length;return React.createElement("div",{className:"sp-account"},React.createElement("div",{className:"sp-statusbar"}),React.createElement("div",{className:"sp-topbar sp-topbar--account"},React.createElement("div",{className:"sp-topbar__row"},React.createElement("div",{className:"sp-logo"},"SP",React.createElement("em",null,"Scene")),React.createElement("div",{className:"sp-screen-tag"},"Sobre"))),React.createElement("div",{className:"sp-account__section"},React.createElement("h3",null,"O que é"),React.createElement("p",{className:"sp-about__p"},"Agenda da noite LGBTQIA+ de São Paulo: festas, clubes, samba e cultura. Curadoria, não agregação. Só entra evento com data confirmada numa página de ingresso ou na agenda oficial da casa.")),React.createElement("div",{className:"sp-account__section"},React.createElement("h3",null,"A agenda"),n&&React.createElement("div",{className:"sp-account__kv"},React.createElement("label",null,"Atualizada em"),React.createElement("span",null,formatUpdatedAt(n))),React.createElement("div",{className:"sp-account__kv"},React.createElement("label",null,"Eventos"),React.createElement("span",null,l)),React.createElement("p",{className:"sp-about__p"},"Cada evento traz o link da fonte. Horário e preço podem mudar: confira na página da festa antes de sair."),React.createElement("p",{className:"sp-about__p"},"As artes são a imagem de divulgação que a própria página do evento oferece para compartilhar, e continuam no servidor de quem a publicou. Se você produz um evento e prefere que a arte não apareça aqui, abra um pedido em github.com/rctobr/spscene/issues e ela sai na hora.")),React.createElement("div",{className:"sp-account__section"},React.createElement("h3",null,"Privacidade"),React.createElement("p",{className:"sp-about__p"},"Não tem cadastro nem login. Seus favoritos (",i.length,") ficam salvos só neste aparelho. O mapa usa o OpenStreetMap e as fontes de letra vêm do Google Fonts, e as artes dos eventos vêm dos sites de ingresso; esses serviços recebem o endereço de internet de quem abre o site, como em qualquer página."),t?React.createElement("div",{style:{display:"flex",gap:8}},React.createElement("button",{className:"sp-btn",style:{flex:1},onClick:()=>a(!1)},"Cancelar"),React.createElement("button",{className:"sp-btn sp-btn--pink",style:{flex:1},onClick:()=>{e(),a(!1),o(!0)}},"Apagar favoritos")):React.createElement("button",{className:"sp-btn sp-btn--ghost",onClick:()=>{a(!0),o(!1)}},s?"Dados apagados":"Apagar meus dados deste aparelho")))}function BottomNav({tab:e,onChange:t}){const a=useSavedIds(),s=[{id:"feed",label:"Início",Icon:Icon.Home},{id:"map",label:"Mapa",Icon:Icon.Map},{id:"saved",label:"Salvos",Icon:Icon.Heart,badge:a.length},{id:"about",label:"Sobre",Icon:Icon.User}];return React.createElement("nav",{className:"sp-nav",role:"tablist","aria-label":"Navegação principal"},s.map(o=>{const i=e===o.id;return React.createElement("button",{key:o.id,className:`sp-nav__item ${i?"is-on":""}`,role:"tab","aria-selected":i,onClick:()=>t(o.id)},React.createElement("span",{className:"sp-nav__icon"},React.createElement(o.Icon,{size:22}),o.badge>0&&React.createElement("span",{className:"sp-nav__badge"},o.badge>9?"9+":o.badge)),React.createElement("span",{className:"sp-nav__label"},o.label))}))}function App(){const[e,t]=useState("feed"),[a,s]=useState(null);useEffect(()=>{try{localStorage.removeItem(USER_KEY)}catch(l){}},[]);const o=()=>{try{localStorage.removeItem(CACHE_KEY),localStorage.removeItem(SAVED_KEY),localStorage.removeItem(USER_KEY)}catch(l){}window.dispatchEvent(new CustomEvent("sp:saved-changed",{detail:[]}))},i=l=>s(l),n=()=>s(null);return React.createElement("div",{className:"sp-phone sp-phone--tabbed"},React.createElement("div",{className:"sp-phone-body"},e==="feed"&&React.createElement(FeedScreen,{onOpenEvent:i}),e==="map"&&React.createElement(MapScreen,{onOpenEvent:i}),e==="saved"&&React.createElement(SavedScreen,{onOpenEvent:i}),e==="about"&&React.createElement(AboutScreen,{onClearData:o})),a&&React.createElement(EventDetails,{eventId:a,onClose:n}),React.createElement(BottomNav,{tab:e,onChange:l=>{t(l),n()}}),React.createElement("div",{className:"sp-grain"}))}ReactDOM.createRoot(document.getElementById("sp-root")).render(React.createElement(App,null));
 </script>
 </body>
 </html>
